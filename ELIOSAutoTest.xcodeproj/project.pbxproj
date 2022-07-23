@@ -14,6 +14,13 @@
 		1290321B288024DE0024364C /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12903219288024DE0024364C /* RootViewController.swift */; };
 		1290321C288024DE0024364C /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1290321A288024DE0024364C /* RootViewController.xib */; };
 		12903223288065B70024364C /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 12903222288065B70024364C /* .swiftlint.yml */; };
+		12903226288197FB0024364C /* ObjcTestClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 12903225288197FB0024364C /* ObjcTestClass.m */; };
+		1290322A2881B6290024364C /* AVFAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 129032292881B6290024364C /* AVFAudio.framework */; };
+		12AB96AB2884E42D005D3458 /* ELProxyUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AB96A62884E42D005D3458 /* ELProxyUtils.swift */; };
+		12AB96AC2884E42D005D3458 /* ELPRequestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AB96A72884E42D005D3458 /* ELPRequestClient.swift */; };
+		12AB96AD2884E42D005D3458 /* ELPClientRequestMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AB96A82884E42D005D3458 /* ELPClientRequestMessages.swift */; };
+		12AB96AE2884E42D005D3458 /* IOSAutotestMessageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AB96A92884E42D005D3458 /* IOSAutotestMessageManager.swift */; };
+		12AB96AF2884E42D005D3458 /* ELPRequestClientMessageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AB96AA2884E42D005D3458 /* ELPRequestClientMessageManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +33,15 @@
 		12903219288024DE0024364C /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
 		1290321A288024DE0024364C /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
 		12903222288065B70024364C /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
+		12903224288197FB0024364C /* ELIOSAutoTest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ELIOSAutoTest-Bridging-Header.h"; sourceTree = "<group>"; };
+		12903225288197FB0024364C /* ObjcTestClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjcTestClass.m; sourceTree = "<group>"; };
+		1290322728819A120024364C /* ObjcTestClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjcTestClass.h; sourceTree = "<group>"; };
+		129032292881B6290024364C /* AVFAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFAudio.framework; path = System/Library/Frameworks/AVFAudio.framework; sourceTree = SDKROOT; };
+		12AB96A62884E42D005D3458 /* ELProxyUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ELProxyUtils.swift; sourceTree = "<group>"; };
+		12AB96A72884E42D005D3458 /* ELPRequestClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ELPRequestClient.swift; sourceTree = "<group>"; };
+		12AB96A82884E42D005D3458 /* ELPClientRequestMessages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ELPClientRequestMessages.swift; sourceTree = "<group>"; };
+		12AB96A92884E42D005D3458 /* IOSAutotestMessageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOSAutotestMessageManager.swift; sourceTree = "<group>"; };
+		12AB96AA2884E42D005D3458 /* ELPRequestClientMessageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ELPRequestClientMessageManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1290322A2881B6290024364C /* AVFAudio.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -44,6 +61,7 @@
 			children = (
 				12903204288024900024364C /* ELIOSAutoTest */,
 				12903203288024900024364C /* Products */,
+				129032282881B6280024364C /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,6 +76,7 @@
 		12903204288024900024364C /* ELIOSAutoTest */ = {
 			isa = PBXGroup;
 			children = (
+				12AB96A52884E42D005D3458 /* Client */,
 				1290321E288024FA0024364C /* AppDelegate */,
 				1290321D288024EB0024364C /* ViewControllers */,
 				1290320E288024920024364C /* Assets.xcassets */,
@@ -70,8 +89,8 @@
 		1290321D288024EB0024364C /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				1290321A288024DE0024364C /* RootViewController.xib */,
 				12903219288024DE0024364C /* RootViewController.swift */,
+				1290321A288024DE0024364C /* RootViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -82,8 +101,31 @@
 				12903205288024900024364C /* AppDelegate.swift */,
 				12903207288024900024364C /* SceneDelegate.swift */,
 				12903210288024920024364C /* LaunchScreen.storyboard */,
+				12903225288197FB0024364C /* ObjcTestClass.m */,
+				1290322728819A120024364C /* ObjcTestClass.h */,
+				12903224288197FB0024364C /* ELIOSAutoTest-Bridging-Header.h */,
 			);
 			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		129032282881B6280024364C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				129032292881B6290024364C /* AVFAudio.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		12AB96A52884E42D005D3458 /* Client */ = {
+			isa = PBXGroup;
+			children = (
+				12AB96A62884E42D005D3458 /* ELProxyUtils.swift */,
+				12AB96A72884E42D005D3458 /* ELPRequestClient.swift */,
+				12AB96A82884E42D005D3458 /* ELPClientRequestMessages.swift */,
+				12AB96A92884E42D005D3458 /* IOSAutotestMessageManager.swift */,
+				12AB96AA2884E42D005D3458 /* ELPRequestClientMessageManager.swift */,
+			);
+			path = Client;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -119,6 +161,7 @@
 				TargetAttributes = {
 					12903201288024900024364C = {
 						CreatedOnToolsVersion = 13.4.1;
+						LastSwiftMigration = 1340;
 					};
 				};
 			};
@@ -180,7 +223,13 @@
 			buildActionMask = 2147483647;
 			files = (
 				12903206288024900024364C /* AppDelegate.swift in Sources */,
+				12AB96AD2884E42D005D3458 /* ELPClientRequestMessages.swift in Sources */,
 				12903208288024900024364C /* SceneDelegate.swift in Sources */,
+				12903226288197FB0024364C /* ObjcTestClass.m in Sources */,
+				12AB96AF2884E42D005D3458 /* ELPRequestClientMessageManager.swift in Sources */,
+				12AB96AB2884E42D005D3458 /* ELProxyUtils.swift in Sources */,
+				12AB96AE2884E42D005D3458 /* IOSAutotestMessageManager.swift in Sources */,
+				12AB96AC2884E42D005D3458 /* ELPRequestClient.swift in Sources */,
 				1290321B288024DE0024364C /* RootViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -318,6 +367,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = B8QMGNX782;
@@ -335,6 +385,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = abc.ELIOSAutoTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "ELIOSAutoTest/AppDelegate/ELIOSAutoTest-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -345,6 +397,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = B8QMGNX782;
@@ -362,6 +415,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = abc.ELIOSAutoTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "ELIOSAutoTest/AppDelegate/ELIOSAutoTest-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
