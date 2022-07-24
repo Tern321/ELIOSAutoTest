@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		121DAD9A288C77EC004BFA63 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121DAD98288C77EC004BFA63 /* SecondViewController.swift */; };
+		121DAD9B288C77EC004BFA63 /* SecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 121DAD99288C77EC004BFA63 /* SecondViewController.xib */; };
+		121DAD9D288CC64B004BFA63 /* ELTestableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121DAD9C288CC64B004BFA63 /* ELTestableViewController.swift */; };
+		121DADA0288CFCD6004BFA63 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121DAD9F288CFCD6004BFA63 /* Model.swift */; };
+		121DADA2288CFDD3004BFA63 /* TestScreenData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121DADA1288CFDD3004BFA63 /* TestScreenData.swift */; };
+		121DADA4288CFF4E004BFA63 /* ELTestableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121DADA3288CFF4E004BFA63 /* ELTestableModel.swift */; };
 		12903206288024900024364C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12903205288024900024364C /* AppDelegate.swift */; };
 		12903208288024900024364C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12903207288024900024364C /* SceneDelegate.swift */; };
 		1290320F288024920024364C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1290320E288024920024364C /* Assets.xcassets */; };
@@ -24,6 +30,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		121DAD98288C77EC004BFA63 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		121DAD99288C77EC004BFA63 /* SecondViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondViewController.xib; sourceTree = "<group>"; };
+		121DAD9C288CC64B004BFA63 /* ELTestableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ELTestableViewController.swift; sourceTree = "<group>"; };
+		121DAD9F288CFCD6004BFA63 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		121DADA1288CFDD3004BFA63 /* TestScreenData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestScreenData.swift; sourceTree = "<group>"; };
+		121DADA3288CFF4E004BFA63 /* ELTestableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ELTestableModel.swift; sourceTree = "<group>"; };
 		12903202288024900024364C /* ELIOSAutoTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ELIOSAutoTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12903205288024900024364C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		12903207288024900024364C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -56,6 +68,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		121DAD9E288CC69A004BFA63 /* ELAutotest */ = {
+			isa = PBXGroup;
+			children = (
+				121DAD9C288CC64B004BFA63 /* ELTestableViewController.swift */,
+				12AB96A92884E42D005D3458 /* IOSAutotestMessageManager.swift */,
+				12AB96A52884E42D005D3458 /* Client */,
+				121DADA1288CFDD3004BFA63 /* TestScreenData.swift */,
+				121DADA3288CFF4E004BFA63 /* ELTestableModel.swift */,
+			);
+			path = ELAutotest;
+			sourceTree = "<group>";
+		};
 		129031F9288024900024364C = {
 			isa = PBXGroup;
 			children = (
@@ -76,7 +100,7 @@
 		12903204288024900024364C /* ELIOSAutoTest */ = {
 			isa = PBXGroup;
 			children = (
-				12AB96A52884E42D005D3458 /* Client */,
+				121DAD9E288CC69A004BFA63 /* ELAutotest */,
 				1290321E288024FA0024364C /* AppDelegate */,
 				1290321D288024EB0024364C /* ViewControllers */,
 				1290320E288024920024364C /* Assets.xcassets */,
@@ -91,6 +115,8 @@
 			children = (
 				12903219288024DE0024364C /* RootViewController.swift */,
 				1290321A288024DE0024364C /* RootViewController.xib */,
+				121DAD98288C77EC004BFA63 /* SecondViewController.swift */,
+				121DAD99288C77EC004BFA63 /* SecondViewController.xib */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -104,6 +130,7 @@
 				12903225288197FB0024364C /* ObjcTestClass.m */,
 				1290322728819A120024364C /* ObjcTestClass.h */,
 				12903224288197FB0024364C /* ELIOSAutoTest-Bridging-Header.h */,
+				121DAD9F288CFCD6004BFA63 /* Model.swift */,
 			);
 			path = AppDelegate;
 			sourceTree = "<group>";
@@ -122,7 +149,6 @@
 				12AB96A62884E42D005D3458 /* ELProxyUtils.swift */,
 				12AB96A72884E42D005D3458 /* ELPRequestClient.swift */,
 				12AB96A82884E42D005D3458 /* ELPClientRequestMessages.swift */,
-				12AB96A92884E42D005D3458 /* IOSAutotestMessageManager.swift */,
 				12AB96AA2884E42D005D3458 /* ELPRequestClientMessageManager.swift */,
 			);
 			path = Client;
@@ -192,6 +218,7 @@
 				12903212288024920024364C /* LaunchScreen.storyboard in Resources */,
 				1290320F288024920024364C /* Assets.xcassets in Resources */,
 				1290321C288024DE0024364C /* RootViewController.xib in Resources */,
+				121DAD9B288C77EC004BFA63 /* SecondViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -224,12 +251,17 @@
 			files = (
 				12903206288024900024364C /* AppDelegate.swift in Sources */,
 				12AB96AD2884E42D005D3458 /* ELPClientRequestMessages.swift in Sources */,
+				121DADA2288CFDD3004BFA63 /* TestScreenData.swift in Sources */,
+				121DAD9D288CC64B004BFA63 /* ELTestableViewController.swift in Sources */,
+				121DADA0288CFCD6004BFA63 /* Model.swift in Sources */,
 				12903208288024900024364C /* SceneDelegate.swift in Sources */,
+				121DADA4288CFF4E004BFA63 /* ELTestableModel.swift in Sources */,
 				12903226288197FB0024364C /* ObjcTestClass.m in Sources */,
 				12AB96AF2884E42D005D3458 /* ELPRequestClientMessageManager.swift in Sources */,
 				12AB96AB2884E42D005D3458 /* ELProxyUtils.swift in Sources */,
 				12AB96AE2884E42D005D3458 /* IOSAutotestMessageManager.swift in Sources */,
 				12AB96AC2884E42D005D3458 /* ELPRequestClient.swift in Sources */,
+				121DAD9A288C77EC004BFA63 /* SecondViewController.swift in Sources */,
 				1290321B288024DE0024364C /* RootViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
