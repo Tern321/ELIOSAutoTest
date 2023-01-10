@@ -10,12 +10,6 @@ import UIKit
 protocol ELTestableViewControllerP {
     
 }
-extension UIViewController {
-    static func loadViewControllerFromXib() -> Self {
-        let identifier = "\(Self.self)"
-        return Self(nibName: identifier, bundle: nil)
-    }
-}
 
 class ELTestableViewControllerState: Codable {
     
@@ -24,7 +18,6 @@ class ELTestableViewControllerState: Codable {
 class ELTestableViewController: UIViewController {
 
     var state = ELTestableViewControllerState()
-    
     
     func getCurrentStateJson() -> String {
         return ""
@@ -46,11 +39,11 @@ class ELTestableViewController: UIViewController {
         let layer = UIApplication.shared.keyWindow!.layer
         let scale = UIScreen.main.scale
         // Creates UIImage of same size as view
-        UIGraphicsBeginImageContextWithOptions(layer.frame.size, false, scale);
+        UIGraphicsBeginImageContextWithOptions(layer.frame.size, false, scale)
         layer.render(in: UIGraphicsGetCurrentContext()!)
         let screenshot = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
-        var data = screenshot?.jpegData(compressionQuality: 0.5)
+        let data = screenshot?.jpegData(compressionQuality: 0.5)
         return data!
     }
 

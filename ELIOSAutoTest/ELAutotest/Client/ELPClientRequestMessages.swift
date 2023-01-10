@@ -54,10 +54,16 @@ class ELPClientResponseMessage: Codable {
     var Response: String?
     var MessageType: String?
     var ClientId: String?
+    var TargetClientId: String?
     
     var ClientMessageType: String?
     var ClientMessageData: String?
     
+    func testScreenData() -> TestScreenData {
+        let corrected = Response!.replacingOccurrences(of: "\n", with: "", options: .literal, range: nil)
+        let problemJson = String(bytes: corrected.base64DecodedBytes!, encoding: .utf8)!
+        return try! JSONDecoder().decode(TestScreenData.self, from: Data(problemJson.utf8))
+    }
     init(_ requestIndex: String, _ apiKey: String) {
             RequestIndex = requestIndex
             ApiKey = apiKey

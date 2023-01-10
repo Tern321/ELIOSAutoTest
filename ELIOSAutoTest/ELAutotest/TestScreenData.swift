@@ -8,10 +8,12 @@
 import UIKit
 
 class TestScreenData: Codable {
+    
+    var testId: String? = ""
     var testName: String? = ""
     var testCaseId: String? = ""
-    
-    
+    var testCaseName: String? = ""
+    var hideBackButton: Bool = false
     var rotation: Int = 1
     var screenBase64: String? = ""
     var deviceId: String? = ""

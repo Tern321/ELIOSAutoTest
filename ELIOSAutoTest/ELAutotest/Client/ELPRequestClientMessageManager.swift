@@ -34,8 +34,7 @@ class ELPRequestClientMessageManager: NSObject {
     
     func gotSharedMessage(message: ELPClientResponseMessage, data: Data) {
         print("gotSharedMessage")
-        print(message.Response)
-        
+        print("\(message.Response)")
     }
     
     //http://localhost:5300/forumApi/Page/FileName
@@ -44,18 +43,19 @@ class ELPRequestClientMessageManager: NSObject {
     }
     
     func respondToMessage(requestObject: ELPClientRequestObject) -> String {
-        let page = ELPRequestClientMessageManager.page(requestObject)
+//        let page = ELPRequestClientMessageManager.page(requestObject)
         let responseMessage = ELPClientResponseMessage(requestObject.requestInfo?.RequestIndex ?? "", HttpApiKey)
         return responseMessage.updateResponse("test ios response 3")
     }
     
-    func sendSharedMessage(message: String, ClientMessageType: String) {
+    func sendSharedMessage(message: String, ClientMessageType: String, targetClientId: String?) {
         let responseMessage = ELPClientResponseMessage("", SharedApiKey)
         responseMessage.Response = message
         responseMessage.MessageType = ELPRequestMessage.sharedApiData
         responseMessage.ApiKey = SharedApiKey
         responseMessage.ClientId = clientId
         responseMessage.ClientMessageType = ClientMessageType
+        responseMessage.TargetClientId = targetClientId
         self.client?.sendDataAsMessage(stringData: responseMessage.ToJson())
     }
     

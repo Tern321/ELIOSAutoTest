@@ -9,9 +9,30 @@ import UIKit
 
 class IOSAutotestMessageManager: ELPRequestClientMessageManager {
     
+    static var manager: IOSAutotestMessageManager = {
+            return  IOSAutotestMessageManager()
+        }()
+    
+    var testsToRun: [TestScreenData] = []
+    var timer: Timer?
+    
+    @objc func runTestCycle() {
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+//            self.runTestCycle()
+//        }
+        DispatchQueue.main.async {
+            if !self.testsToRun.isEmpty {
+                print("run test case \(self.testsToRun)")
+                self.runTestCaseWithStateJson(testInfo: self.testsToRun.removeFirst())
+            }
+        }
+        
+    }
+    
     override init() {
+        
         super.init()
-        var openPorts = true
+        let openPorts = false
         if openPorts {
             self.IP = "192.168.1.10"
             self.port = 5201
@@ -23,24 +44,27 @@ class IOSAutotestMessageManager: ELPRequestClientMessageManager {
         self.SharedApiKey = "iosAutotestSharedApi"
         self.HttpApiKey = "iosAutotestApi"
         self.clientId = "ios_forum_client_1"
+        runTestCycle()
+        
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(runTestCycle), userInfo: nil, repeats: true)
+        start()
     }
     
     override func respondToMessage(requestObject: ELPClientRequestObject) -> String {
-        let page = ELPRequestClientMessageManager.page(requestObject)
+//        let page = ELPRequestClientMessageManager.page(requestObject)
         let responseMessage = ELPClientResponseMessage(requestObject.requestInfo?.RequestIndex ?? "", HttpApiKey)
         return responseMessage.updateResponse("test ios response 3")
     }
     
     func sendSharedMessage() {
-        print("sendSharedMessage");
+        print("sendSharedMessage")
 
-        var responseMessage = ELPClientResponseMessage("", HttpApiKey);
-        responseMessage.MessageType = ELPRequestMessage.sharedApiData;
-        responseMessage.Response = "shared message from c#";
-        responseMessage.ApiKey = SharedApiKey;
-        client.sendDataAsMessage(stringData: responseMessage.ToJson());
+        let responseMessage = ELPClientResponseMessage("", HttpApiKey)
+        responseMessage.MessageType = ELPRequestMessage.sharedApiData
+        responseMessage.Response = "shared message from c#"
+        responseMessage.ApiKey = SharedApiKey
+        client.sendDataAsMessage(stringData: responseMessage.ToJson())
     }
-    
     
     func modelIdentifier() -> String {
         if let simulatorModelIdentifier = ProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"] { return simulatorModelIdentifier }
@@ -49,20 +73,32 @@ class IOSAutotestMessageManager: ELPRequestClientMessageManager {
         return String(bytes: Data(bytes: &sysinfo.machine, count: Int(_SYS_NAMELEN)), encoding: .ascii)!.trimmingCharacters(in: .controlCharacters)
     }
     
+    static func vissibleViewController() -> UIViewController? {
+        if let nk = UIApplication.shared.topMostViewController() as? UINavigationController {
+            return nk.visibleViewController
+            
+        } else {
+            if let vk = UIApplication.shared.topMostViewController() {
+                return vk
+            }
+        }
+        return nil
+    }
+    
     static func visibleViewControllerName() -> String {
         if let nk = UIApplication.shared.topMostViewController() as? UINavigationController {
             return String(describing: type(of: nk.visibleViewController!))
             
         } else {
-            if let vk = UIApplication.shared.topMostViewController() as? UIViewController {
+            if let vk = UIApplication.shared.topMostViewController() {
                 return String(describing: type(of: vk))
             }
         }
-        return "";
+        return ""
     }
-        
+    
     override func gotSharedMessage(message: ELPClientResponseMessage, data: Data) {
-        print("test")
+        print("gotSharedMessage")
 //        let value = UIInterfaceOrientation.landscapeLeft.rawValue
 //        UIDevice.current.setValue(value, forKey: "orientation")
         
@@ -70,59 +106,59 @@ class IOSAutotestMessageManager: ELPRequestClientMessageManager {
             
             let data = ELTestableViewController.captureScreenshot()
             
-            var testInfo = try! JSONDecoder().decode(TestScreenData.self, from: message.Response!.data(using: .utf8)!)
+            let testInfo = message.testScreenData()
             testInfo.viewControllerName = IOSAutotestMessageManager.visibleViewControllerName()
             testInfo.rotation = UIDevice.current.orientation.rawValue
             testInfo.screenBase64 = data.base64EncodedString()
             testInfo.deviceModel = modelIdentifier()
             testInfo.viewControllerStateDataJson = "{}"
             testInfo.lang = Locale.current.languageCode ?? ""
+            testInfo.hideBackButton = IOSAutotestMessageManager.vissibleViewController()?.navigationController?.navigationBar.backItem == nil
             
-            RootViewController.shared?.manager.sendSharedMessage(message: testInfo.ToJson(), ClientMessageType: "GetTestDataResponse")
+            print("GetTestData")
+            print(testInfo.ToJson())
+            
+            IOSAutotestMessageManager.manager.sendSharedMessage(message: testInfo.ToJson(), ClientMessageType: "GetTestDataResponse", targetClientId: "c#_AutotestBackend_client1")
             
             // send viewController info and image and device data
         } else if message.ClientMessageType == "RunTestCase" {
             // get Data, run test, send message
-           
             
-            var testInfo = try! JSONDecoder().decode(TestScreenData.self, from: message.Response!.data(using: .utf8)!)
-            
-            runTestCaseWithStateJson(testInfo: testInfo)
+            let testInfo = message.testScreenData()
+            testsToRun.append(testInfo)
         }
         
-        
-            
-        func pushTestedViewController(testedViewController: UIViewController) {
-            var currentViewController = UIWindow.key?.rootViewController as? UINavigationController
-//            var nk = currentViewController?.navigationController
-////            currentViewController.po
-//            if currentViewController?.presentingViewController != nil {
-//                currentViewController?.dismiss(animated: false, completion: {
-//                    currentViewController?.navigationController!.popToRootViewController(animated: true)
-//                })
-//            }
-//            else {
-//                currentViewController?.navigationController?.popToRootViewController(animated: true)
-//            }
-            currentViewController?.popToRootViewController(animated: true)
-            currentViewController?.pushViewController(testedViewController, animated: false)
+    }
+    func pushTestedViewController(testedViewController: UIViewController, hideBackButton: Bool) {
+        let currentViewController = UIWindow.key?.rootViewController as? UINavigationController
+        currentViewController?.navigationController?.navigationItem.hidesBackButton = hideBackButton
+        currentViewController?.popToRootViewController(animated: false)
+        currentViewController?.pushViewController(testedViewController, animated: false)
+        if hideBackButton {
+            testedViewController.navigationItem.setHidesBackButton(true, animated: false)
+//            testedViewController.navigationController?.navigationItem.hidesBackButton = true
         }
         
-        func runTestCaseWithStateJson(testInfo: TestScreenData) {
-            var testedViewControllerClass = NSClassFromString("ELIOSAutoTest." + testInfo.viewControllerName!) as! ELTestableViewController.Type
-            var testedViewController = testedViewControllerClass.loadViewControllerFromXib() as! ELTestableViewController
+    }
+    
+    func runTestCaseWithStateJson(testInfo: TestScreenData) {
+        let testedViewControllerClass = NSClassFromString("ELIOSAutoTest." + testInfo.viewControllerName!) as! ELTestableViewController.Type
+        let testedViewController = testedViewControllerClass.loadViewControllerFromXib()
 
-            UIDevice.current.setValue(testInfo.rotation, forKey: "orientation")
+        UIDevice.current.setValue(testInfo.rotation, forKey: "orientation")
+        
+        pushTestedViewController(testedViewController: testedViewController, hideBackButton: testInfo.hideBackButton)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            let data = ELTestableViewController.captureScreenshot()
+            testInfo.screenBase64 = data.base64EncodedString()
             
-            pushTestedViewController(testedViewController: testedViewController)
+            testInfo.rotation = UIDevice.current.orientation.rawValue
+            testInfo.deviceModel = self.modelIdentifier()
+            testInfo.viewControllerStateDataJson = "{}"
+            testInfo.lang = Locale.current.languageCode ?? ""
             
-//            testInfo.lang = Locale.current.languageCode ?? ""
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                let data = ELTestableViewController.captureScreenshot()
-                testInfo.screenBase64 = data.base64EncodedString()
-                RootViewController.shared?.manager.sendSharedMessage(message: testInfo.ToJson(), ClientMessageType: "RunTestCaseResponse")
-            }
+            IOSAutotestMessageManager.manager.sendSharedMessage(message: testInfo.ToJson(), ClientMessageType: "RunTestCaseResponse", targetClientId: "c#_AutotestBackend_client1")
         }
     }
 }

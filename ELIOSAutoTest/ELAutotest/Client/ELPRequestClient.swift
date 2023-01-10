@@ -54,43 +54,45 @@ class ELPRequestClient: NSObject, StreamDelegate {
     var readStream: Unmanaged<CFReadStream>?
     var writeStream: Unmanaged<CFWriteStream>?
     
+    var cachedString = ""
+    
     func stream(_ aStream: Stream, handle eventCode: Stream.Event) {
-        if aStream == inputStream {
-            print("inputStream")
-        }
-        if aStream == outputStream {
-            print("outputStream")
-        }
-        switch eventCode {
-        case .hasBytesAvailable:
-            print("hasBytesAvailable")
+
+        if eventCode == .hasBytesAvailable {
             
             let data = Data(reading2: inputStream)
             let str = String(decoding: data, as: UTF8.self)
             print(str)
-            if str.contains("!") {
-                sendDataAsMessage(stringData: messageManager.respondToMessage(requestObject: ELPClientRequestObject(message: str)))
-            } else {
-                let corrected = str.replacingOccurrences(of: "\n", with: "", options: .literal, range: nil)
-                if let message = try? JSONDecoder().decode(ELPClientResponseMessage.self, from: corrected.base64DecodedBytes!) {
-                    messageManager.gotSharedMessage(message: message, data:corrected.base64DecodedBytes!)
+            print(cachedString)
+            
+            cachedString += str
+            
+            while cachedString.contains("\n") {
+                if let index = cachedString.firstIndex(of: "\n") {
+                    let message = cachedString.substring(to: index)
+                    parseMessage(str: message)
+                    cachedString = cachedString.substring(from: cachedString.index(index, offsetBy: 1))
                 }
             }
-            
-        case .endEncountered:
-            print("end of inputStream")
-        case .errorOccurred:
-            print("error occured")
-        case .hasSpaceAvailable:
-            print("has space available")
-        case .openCompleted:
-            //            isOpen = true
-            print("open completed")
-        default:
-            print("StreamDelegate event")
         }
     }
-    
+    func parseMessage(str: String) {
+        if str.contains("!") {
+            sendDataAsMessage(stringData: messageManager.respondToMessage(requestObject: ELPClientRequestObject(message: str)))
+        } else {
+            let corrected = str.replacingOccurrences(of: "\n", with: "", options: .literal, range: nil)
+//            var bytes = corrected.base64DecodedBytes
+            if let string = String(bytes: corrected.base64DecodedBytes!, encoding: .utf8) {
+                print(string)
+            } else {
+                print("not a valid UTF-8 sequence")
+            }
+            
+            if let message = try? JSONDecoder().decode(ELPClientResponseMessage.self, from: corrected.base64DecodedBytes!) {
+                messageManager.gotSharedMessage(message: message, data: corrected.base64DecodedBytes!)
+            }
+        }
+    }
     private func closeNetworkConnection() {
         inputStream.close()
         outputStream.close()
@@ -99,11 +101,6 @@ class ELPRequestClient: NSObject, StreamDelegate {
     func StartClient(http: Bool, shared: Bool) {
         //http://localhost:5200/iosApi/FAHome
         print("ELPRequestClient start")
-        
-
-//        Stream.getStreamsToHost(withName: messageManager.IP , port: messageManager.port, inputStream: &inputStream, outputStream: &outputStream)
-
-        
         CFStreamCreatePairWithSocketToHost(kCFAllocatorDefault,
                                            messageManager.IP as CFString,
                                            messageManager.port,
@@ -147,7 +144,7 @@ class ELPRequestClient: NSObject, StreamDelegate {
     }
     
     func sendData(data: Data) {
-        _ = data.withUnsafeBytes {
+        data.withUnsafeBytes {
             guard let pointer = $0.baseAddress?.assumingMemoryBound(to: UInt8.self) else {
                 print("Error joining chat")
                 return
