@@ -1,0 +1,28 @@
+//EmployeeCell.xib
+"<?>Lorem Ipsum" = "Lorem Ipsum";
+//EmployeeCell.xib
+"Age:" = "Возраст:";
+//ATListViewController.xib,RootViewController.xib,SecondViewController.xib
+"Button" = "Кнопка";
+//SecondViewController.xib
+"Button 3" = "Кнопка 3";
+//AdditionalKeys.swift
+"Example Key" = "Пример ключа";
+//EmployeeCell.xib
+"ID: " = "ID: ";
+//EmployeeCell.xib
+"Name:" = "Имя:";
+//EmployeeCell.xib
+"Salary:" = "Зарплата:";
+//RootViewController.xib
+"Second vk" = "второй экран";
+//RootViewController.xib
+"modelState" = "modelState";
+//RootViewController.xib
+"passive text field" = "passive text field";
+//SecondViewController.xib
+"second View controller 2" = "второй экран 2";
+//ATListViewController.xib
+"update" = "обновить";
+//RootViewController.xib
+"viewControllerState 1" = "экран 1";

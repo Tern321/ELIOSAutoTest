@@ -7,6 +7,22 @@
 
 import UIKit
 
+// MARK: - Employee
+struct Employee: Codable {
+    let id: String
+    let employeeName: String
+    let employeeSalary: String
+    let employeeAge: String
+
+    enum CodingKeys: String, CodingKey {
+        case id
+        case employeeName = "employee_name"
+        case employeeSalary = "employee_salary"
+        case employeeAge = "employee_age"
+    }
+}
+
+
 protocol EmployeesServiceProtocol {
     func getEmployees(completion: @escaping (_ success: Bool, _ results: [Employee]?, _ error: String?) -> Void)
 }
@@ -15,9 +31,9 @@ class NetworkManager {
     func sendRequest(path: String, duplicate: Bool) {
         // -> String or error
     }
-    
 }
-class EmployeesManager: WMUpdatableDataProvider {
+
+class EmployeesManager: WMUpdatableDataProvider, Codable {
     
     static var shared = EmployeesManager()
     private var employees: [Employee]?
@@ -34,13 +50,6 @@ class EmployeesManager: WMUpdatableDataProvider {
             }
         }
         return self.employees ?? []
-        
-//        if employees == nil {
-//            loadEmployees { success, employees2, error in
-//                self.employees = employees2 ?? []
-//            }
-//        }
-//        return self.employees ?? []
     }
     
     func loadEmployees(completion: @escaping (Bool, [Employee]?, String?) -> Void) {
@@ -58,6 +67,16 @@ class EmployeesManager: WMUpdatableDataProvider {
         }
     }
     
+}
+
+extension EmployeesManager: ELAutotestModelObject {
+    
+    static func getStateModelJson() -> String? {
+        return shared.toJson()
+    }
+    static func loadStateStateObject(json: String?) {
+        self.shared = EmployeesManager.loadFromJson(json: json) ?? EmployeesManager()
+    }
 }
 
 class EmployeesService: EmployeesServiceProtocol {

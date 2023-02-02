@@ -8,13 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		121DAD9A288C77EC004BFA63 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121DAD98288C77EC004BFA63 /* SecondViewController.swift */; };
-		121DAD9B288C77EC004BFA63 /* SecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 121DAD99288C77EC004BFA63 /* SecondViewController.xib */; };
 		121DAD9D288CC64B004BFA63 /* ELTestableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121DAD9C288CC64B004BFA63 /* ELTestableViewController.swift */; };
 		121DADA0288CFCD6004BFA63 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121DAD9F288CFCD6004BFA63 /* Model.swift */; };
 		121DADA2288CFDD3004BFA63 /* TestScreenData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121DADA1288CFDD3004BFA63 /* TestScreenData.swift */; };
-		121DADA4288CFF4E004BFA63 /* ELTestableModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121DADA3288CFF4E004BFA63 /* ELTestableModel.swift */; };
 		121FD614296BED990082C273 /* NSObject+Mutable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121FD613296BED990082C273 /* NSObject+Mutable.swift */; };
-		121FD618296BF9380082C273 /* EmployeeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 121FD616296BF9380082C273 /* EmployeeCell.xib */; };
 		121FD619296BF9380082C273 /* EmployeeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121FD617296BF9380082C273 /* EmployeeCell.swift */; };
 		1246DB22296919CD0038F34F /* UINavigationController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1246DB20296919CD0038F34F /* UINavigationController+Extension.swift */; };
 		1246DB23296919CD0038F34F /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1246DB21296919CD0038F34F /* Data+Extension.swift */; };
@@ -24,17 +21,29 @@
 		1246DB2C29691B0A0038F34F /* WMWeakReferenseContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1246DB2829691B0A0038F34F /* WMWeakReferenseContainer.swift */; };
 		1246DB2E29691D8A0038F34F /* HttpRequestHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1246DB2D29691D8A0038F34F /* HttpRequestHelper.swift */; };
 		1246DB3029691DA90038F34F /* EmployeesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1246DB2F29691DA90038F34F /* EmployeesService.swift */; };
-		1246DB3229691DCD0038F34F /* Employee.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1246DB3129691DCD0038F34F /* Employee.swift */; };
 		1246DB35296925FB0038F34F /* WMUpdatableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1246DB34296925FB0038F34F /* WMUpdatableDataProvider.swift */; };
-		1246DB37296926370038F34F /* WMModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1246DB36296926370038F34F /* WMModelManager.swift */; };
 		1246DB39296A62340038F34F /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1246DB38296A62340038F34F /* NetworkService.swift */; };
+		124D7C61298336F60017F576 /* SignalRService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124D7C60298336F60017F576 /* SignalRService.swift */; };
+		1265BC332972C1A4000D0F2E /* StringsFileParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1265BC2E2972C1A4000D0F2E /* StringsFileParser.swift */; };
+		1265BC342972C1A4000D0F2E /* ShellWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1265BC2F2972C1A4000D0F2E /* ShellWrapper.swift */; };
+		1265BC352972C1A4000D0F2E /* AdditionalKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1265BC302972C1A4000D0F2E /* AdditionalKeys.swift */; };
+		1265BC362972C1A4000D0F2E /* String+LocalizationExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1265BC312972C1A4000D0F2E /* String+LocalizationExtension.swift */; };
+		1265BC372972C1A4000D0F2E /* ProjectParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1265BC322972C1A4000D0F2E /* ProjectParser.swift */; };
+		1265BC392972C25F000D0F2E /* ATListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1265BC3B2972C25F000D0F2E /* ATListViewController.xib */; };
+		1265BC4E2972C2F8000D0F2E /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1265BC502972C2F8000D0F2E /* RootViewController.xib */; };
+		1265BC552972C301000D0F2E /* SecondViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1265BC572972C301000D0F2E /* SecondViewController.xib */; };
+		1265BC5D2972C35C000D0F2E /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1265BC5C2972C35C000D0F2E /* main.swift */; };
+		1265BC5E2972C3C8000D0F2E /* EmployeeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1265BC602972C3C8000D0F2E /* EmployeeCell.xib */; };
+		1265BC672972C435000D0F2E /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1265BC692972C435000D0F2E /* Localizable.strings */; };
+		126C12C0296F9EAC00CB2615 /* ATUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126C12BF296F9EAC00CB2615 /* ATUtils.swift */; };
+		126C12C2296FA32800CB2615 /* ATAppStateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126C12C1296FA32800CB2615 /* ATAppStateModel.swift */; };
+		126C12C42970006000CB2615 /* RuntimeExplorer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126C12C32970006000CB2615 /* RuntimeExplorer.swift */; };
+		126C12C62971991500CB2615 /* ATStringSaver.swift in Sources */ = {isa = PBXBuildFile; fileRef = 126C12C52971991500CB2615 /* ATStringSaver.swift */; };
 		12903206288024900024364C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12903205288024900024364C /* AppDelegate.swift */; };
 		12903208288024900024364C /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12903207288024900024364C /* SceneDelegate.swift */; };
 		1290320F288024920024364C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1290320E288024920024364C /* Assets.xcassets */; };
 		12903212288024920024364C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 12903210288024920024364C /* LaunchScreen.storyboard */; };
 		1290321B288024DE0024364C /* RootViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12903219288024DE0024364C /* RootViewController.swift */; };
-		1290321C288024DE0024364C /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1290321A288024DE0024364C /* RootViewController.xib */; };
-		12903223288065B70024364C /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 12903222288065B70024364C /* .swiftlint.yml */; };
 		12903226288197FB0024364C /* ObjcTestClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 12903225288197FB0024364C /* ObjcTestClass.m */; };
 		1290322A2881B6290024364C /* AVFAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 129032292881B6290024364C /* AVFAudio.framework */; };
 		12AB96AB2884E42D005D3458 /* ELProxyUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AB96A62884E42D005D3458 /* ELProxyUtils.swift */; };
@@ -45,22 +54,31 @@
 		12EDC0572968E16A00328C61 /* ELAutotestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EDC0562968E16A00328C61 /* ELAutotestModel.swift */; };
 		12EDC0592968E18B00328C61 /* ELAutotestModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EDC0582968E18B00328C61 /* ELAutotestModelManager.swift */; };
 		12EDC05D2968E61700328C61 /* ATListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EDC05B2968E61700328C61 /* ATListViewController.swift */; };
-		12EDC05E2968E61700328C61 /* ATListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12EDC05C2968E61700328C61 /* ATListViewController.xib */; };
 		12EDC0602968E62A00328C61 /* ATListViewControllerModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EDC05F2968E62A00328C61 /* ATListViewControllerModel.swift */; };
 		12EDC0622968E6B500328C61 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EDC0612968E6B500328C61 /* UIViewController+Extensions.swift */; };
 		12EDC0642968E70D00328C61 /* ATListViewControllerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EDC0632968E70D00328C61 /* ATListViewControllerManager.swift */; };
 		12EDC0662968E7BE00328C61 /* ATListViewControllerPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EDC0652968E7BE00328C61 /* ATListViewControllerPresenter.swift */; };
+		F9790720CEF4F10D0DEC0BB5 /* Pods_ELIOSAutoTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C771DFAA79B23DBACDB724 /* Pods_ELIOSAutoTest.framework */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1265BC252972C187000D0F2E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		121DAD98288C77EC004BFA63 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
-		121DAD99288C77EC004BFA63 /* SecondViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SecondViewController.xib; sourceTree = "<group>"; };
 		121DAD9C288CC64B004BFA63 /* ELTestableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ELTestableViewController.swift; sourceTree = "<group>"; };
 		121DAD9F288CFCD6004BFA63 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		121DADA1288CFDD3004BFA63 /* TestScreenData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestScreenData.swift; sourceTree = "<group>"; };
-		121DADA3288CFF4E004BFA63 /* ELTestableModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ELTestableModel.swift; sourceTree = "<group>"; };
 		121FD613296BED990082C273 /* NSObject+Mutable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+Mutable.swift"; sourceTree = "<group>"; };
-		121FD616296BF9380082C273 /* EmployeeCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmployeeCell.xib; sourceTree = "<group>"; };
 		121FD617296BF9380082C273 /* EmployeeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmployeeCell.swift; sourceTree = "<group>"; };
 		1246DB20296919CD0038F34F /* UINavigationController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extension.swift"; sourceTree = "<group>"; };
 		1246DB21296919CD0038F34F /* Data+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
@@ -70,10 +88,35 @@
 		1246DB2829691B0A0038F34F /* WMWeakReferenseContainer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMWeakReferenseContainer.swift; sourceTree = "<group>"; };
 		1246DB2D29691D8A0038F34F /* HttpRequestHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpRequestHelper.swift; sourceTree = "<group>"; };
 		1246DB2F29691DA90038F34F /* EmployeesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesService.swift; sourceTree = "<group>"; };
-		1246DB3129691DCD0038F34F /* Employee.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Employee.swift; sourceTree = "<group>"; };
 		1246DB34296925FB0038F34F /* WMUpdatableDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMUpdatableDataProvider.swift; sourceTree = "<group>"; };
-		1246DB36296926370038F34F /* WMModelManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WMModelManager.swift; sourceTree = "<group>"; };
 		1246DB38296A62340038F34F /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		124D7C60298336F60017F576 /* SignalRService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalRService.swift; sourceTree = "<group>"; };
+		1265BC272972C187000D0F2E /* Localizer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Localizer; sourceTree = BUILT_PRODUCTS_DIR; };
+		1265BC2E2972C1A4000D0F2E /* StringsFileParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringsFileParser.swift; sourceTree = "<group>"; };
+		1265BC2F2972C1A4000D0F2E /* ShellWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShellWrapper.swift; sourceTree = "<group>"; };
+		1265BC302972C1A4000D0F2E /* AdditionalKeys.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdditionalKeys.swift; sourceTree = "<group>"; };
+		1265BC312972C1A4000D0F2E /* String+LocalizationExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+LocalizationExtension.swift"; sourceTree = "<group>"; };
+		1265BC322972C1A4000D0F2E /* ProjectParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProjectParser.swift; sourceTree = "<group>"; };
+		1265BC382972C220000D0F2E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		1265BC3A2972C25F000D0F2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/ATListViewController.xib; sourceTree = "<group>"; };
+		1265BC3D2972C261000D0F2E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ATListViewController.strings; sourceTree = "<group>"; };
+		1265BC3F2972C262000D0F2E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/ATListViewController.strings; sourceTree = "<group>"; };
+		1265BC4F2972C2F8000D0F2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/RootViewController.xib; sourceTree = "<group>"; };
+		1265BC522972C2FA000D0F2E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/RootViewController.strings; sourceTree = "<group>"; };
+		1265BC542972C2FC000D0F2E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/RootViewController.strings; sourceTree = "<group>"; };
+		1265BC562972C301000D0F2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/SecondViewController.xib; sourceTree = "<group>"; };
+		1265BC592972C303000D0F2E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/SecondViewController.strings; sourceTree = "<group>"; };
+		1265BC5B2972C303000D0F2E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/SecondViewController.strings; sourceTree = "<group>"; };
+		1265BC5C2972C35C000D0F2E /* main.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		1265BC5F2972C3C8000D0F2E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/EmployeeCell.xib; sourceTree = "<group>"; };
+		1265BC622972C3C9000D0F2E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/EmployeeCell.strings; sourceTree = "<group>"; };
+		1265BC642972C3CB000D0F2E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/EmployeeCell.strings; sourceTree = "<group>"; };
+		1265BC682972C435000D0F2E /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		1265BC6A2972C438000D0F2E /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		126C12BF296F9EAC00CB2615 /* ATUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ATUtils.swift; path = ELIOSAutoTest/ELAutotest/ATUtils.swift; sourceTree = SOURCE_ROOT; };
+		126C12C1296FA32800CB2615 /* ATAppStateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATAppStateModel.swift; sourceTree = "<group>"; };
+		126C12C32970006000CB2615 /* RuntimeExplorer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuntimeExplorer.swift; sourceTree = "<group>"; };
+		126C12C52971991500CB2615 /* ATStringSaver.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATStringSaver.swift; sourceTree = "<group>"; };
 		12903202288024900024364C /* ELIOSAutoTest.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ELIOSAutoTest.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		12903205288024900024364C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		12903207288024900024364C /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,8 +124,6 @@
 		12903211288024920024364C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		12903213288024920024364C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		12903219288024DE0024364C /* RootViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewController.swift; sourceTree = "<group>"; };
-		1290321A288024DE0024364C /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
-		12903222288065B70024364C /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		12903224288197FB0024364C /* ELIOSAutoTest-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ELIOSAutoTest-Bridging-Header.h"; sourceTree = "<group>"; };
 		12903225288197FB0024364C /* ObjcTestClass.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ObjcTestClass.m; sourceTree = "<group>"; };
 		1290322728819A120024364C /* ObjcTestClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjcTestClass.h; sourceTree = "<group>"; };
@@ -95,19 +136,29 @@
 		12EDC0562968E16A00328C61 /* ELAutotestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ELAutotestModel.swift; sourceTree = "<group>"; };
 		12EDC0582968E18B00328C61 /* ELAutotestModelManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ELAutotestModelManager.swift; sourceTree = "<group>"; };
 		12EDC05B2968E61700328C61 /* ATListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATListViewController.swift; sourceTree = "<group>"; };
-		12EDC05C2968E61700328C61 /* ATListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ATListViewController.xib; sourceTree = "<group>"; };
 		12EDC05F2968E62A00328C61 /* ATListViewControllerModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATListViewControllerModel.swift; sourceTree = "<group>"; };
 		12EDC0612968E6B500328C61 /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		12EDC0632968E70D00328C61 /* ATListViewControllerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATListViewControllerManager.swift; sourceTree = "<group>"; };
 		12EDC0652968E7BE00328C61 /* ATListViewControllerPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATListViewControllerPresenter.swift; sourceTree = "<group>"; };
+		78C771DFAA79B23DBACDB724 /* Pods_ELIOSAutoTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ELIOSAutoTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A105B6B13053E61DEC1EA76B /* Pods-ELIOSAutoTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELIOSAutoTest.release.xcconfig"; path = "Target Support Files/Pods-ELIOSAutoTest/Pods-ELIOSAutoTest.release.xcconfig"; sourceTree = "<group>"; };
+		AB43860ABBDDFFB842CE7D63 /* Pods-ELIOSAutoTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ELIOSAutoTest.debug.xcconfig"; path = "Target Support Files/Pods-ELIOSAutoTest/Pods-ELIOSAutoTest.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1265BC242972C187000D0F2E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		129031FF288024900024364C /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				1290322A2881B6290024364C /* AVFAudio.framework in Frameworks */,
+				F9790720CEF4F10D0DEC0BB5 /* Pods_ELIOSAutoTest.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,11 +168,13 @@
 		121DAD9E288CC69A004BFA63 /* ELAutotest */ = {
 			isa = PBXGroup;
 			children = (
+				121DADA1288CFDD3004BFA63 /* TestScreenData.swift */,
+				126C12C32970006000CB2615 /* RuntimeExplorer.swift */,
+				126C12C1296FA32800CB2615 /* ATAppStateModel.swift */,
+				126C12BF296F9EAC00CB2615 /* ATUtils.swift */,
 				121DAD9C288CC64B004BFA63 /* ELTestableViewController.swift */,
 				12AB96A92884E42D005D3458 /* IOSAutotestMessageManager.swift */,
 				12AB96A52884E42D005D3458 /* Client */,
-				121DADA1288CFDD3004BFA63 /* TestScreenData.swift */,
-				121DADA3288CFF4E004BFA63 /* ELTestableModel.swift */,
 			);
 			path = ELAutotest;
 			sourceTree = "<group>";
@@ -129,8 +182,8 @@
 		121FD615296BF9380082C273 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				121FD616296BF9380082C273 /* EmployeeCell.xib */,
 				121FD617296BF9380082C273 /* EmployeeCell.swift */,
+				1265BC602972C3C8000D0F2E /* EmployeeCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -138,7 +191,6 @@
 		1246DB24296919D10038F34F /* extensions */ = {
 			isa = PBXGroup;
 			children = (
-				1246DB36296926370038F34F /* WMModelManager.swift */,
 				1246DB34296925FB0038F34F /* WMUpdatableDataProvider.swift */,
 				1246DB2729691B0A0038F34F /* CollectionUtils.swift */,
 				1246DB2629691B0A0038F34F /* UITableView.swift */,
@@ -156,7 +208,7 @@
 			isa = PBXGroup;
 			children = (
 				1246DB2F29691DA90038F34F /* EmployeesService.swift */,
-				1246DB3129691DCD0038F34F /* Employee.swift */,
+				126C12C52971991500CB2615 /* ATStringSaver.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -170,12 +222,35 @@
 			path = network;
 			sourceTree = "<group>";
 		};
+		124D7C5F298336E30017F576 /* signalR */ = {
+			isa = PBXGroup;
+			children = (
+				124D7C60298336F60017F576 /* SignalRService.swift */,
+			);
+			path = signalR;
+			sourceTree = "<group>";
+		};
+		1265BC282972C187000D0F2E /* Localizer */ = {
+			isa = PBXGroup;
+			children = (
+				1265BC5C2972C35C000D0F2E /* main.swift */,
+				1265BC302972C1A4000D0F2E /* AdditionalKeys.swift */,
+				1265BC322972C1A4000D0F2E /* ProjectParser.swift */,
+				1265BC2F2972C1A4000D0F2E /* ShellWrapper.swift */,
+				1265BC312972C1A4000D0F2E /* String+LocalizationExtension.swift */,
+				1265BC2E2972C1A4000D0F2E /* StringsFileParser.swift */,
+			);
+			path = Localizer;
+			sourceTree = "<group>";
+		};
 		129031F9288024900024364C = {
 			isa = PBXGroup;
 			children = (
 				12903204288024900024364C /* ELIOSAutoTest */,
+				1265BC282972C187000D0F2E /* Localizer */,
 				12903203288024900024364C /* Products */,
 				129032282881B6280024364C /* Frameworks */,
+				6700DDFF7C1E92C4E0E40B80 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -183,6 +258,7 @@
 			isa = PBXGroup;
 			children = (
 				12903202288024900024364C /* ELIOSAutoTest.app */,
+				1265BC272972C187000D0F2E /* Localizer */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -190,6 +266,7 @@
 		12903204288024900024364C /* ELIOSAutoTest */ = {
 			isa = PBXGroup;
 			children = (
+				124D7C5F298336E30017F576 /* signalR */,
 				1246DB3A296A8F710038F34F /* network */,
 				1246DB3329691EA00038F34F /* model */,
 				1246DB24296919D10038F34F /* extensions */,
@@ -197,8 +274,8 @@
 				121DAD9E288CC69A004BFA63 /* ELAutotest */,
 				1290321E288024FA0024364C /* AppDelegate */,
 				1290320E288024920024364C /* Assets.xcassets */,
-				12903222288065B70024364C /* .swiftlint.yml */,
 				12903213288024920024364C /* Info.plist */,
+				1265BC692972C435000D0F2E /* Localizable.strings */,
 			);
 			path = ELIOSAutoTest;
 			sourceTree = "<group>";
@@ -207,9 +284,9 @@
 			isa = PBXGroup;
 			children = (
 				12903219288024DE0024364C /* RootViewController.swift */,
-				1290321A288024DE0024364C /* RootViewController.xib */,
+				1265BC502972C2F8000D0F2E /* RootViewController.xib */,
 				121DAD98288C77EC004BFA63 /* SecondViewController.swift */,
-				121DAD99288C77EC004BFA63 /* SecondViewController.xib */,
+				1265BC572972C301000D0F2E /* SecondViewController.xib */,
 			);
 			path = ViewControllers2;
 			sourceTree = "<group>";
@@ -232,6 +309,7 @@
 			isa = PBXGroup;
 			children = (
 				129032292881B6290024364C /* AVFAudio.framework */,
+				78C771DFAA79B23DBACDB724 /* Pods_ELIOSAutoTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -263,7 +341,7 @@
 			children = (
 				121FD615296BF9380082C273 /* Cell */,
 				12EDC05B2968E61700328C61 /* ATListViewController.swift */,
-				12EDC05C2968E61700328C61 /* ATListViewController.xib */,
+				1265BC3B2972C25F000D0F2E /* ATListViewController.xib */,
 				12EDC05F2968E62A00328C61 /* ATListViewControllerModel.swift */,
 				12EDC0632968E70D00328C61 /* ATListViewControllerManager.swift */,
 				12EDC0652968E7BE00328C61 /* ATListViewControllerPresenter.swift */,
@@ -271,17 +349,45 @@
 			path = ATListViewController;
 			sourceTree = "<group>";
 		};
+		6700DDFF7C1E92C4E0E40B80 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				AB43860ABBDDFFB842CE7D63 /* Pods-ELIOSAutoTest.debug.xcconfig */,
+				A105B6B13053E61DEC1EA76B /* Pods-ELIOSAutoTest.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		1265BC262972C187000D0F2E /* Localizer */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1265BC2D2972C187000D0F2E /* Build configuration list for PBXNativeTarget "Localizer" */;
+			buildPhases = (
+				1265BC232972C187000D0F2E /* Sources */,
+				1265BC242972C187000D0F2E /* Frameworks */,
+				1265BC252972C187000D0F2E /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Localizer;
+			productName = Localizer;
+			productReference = 1265BC272972C187000D0F2E /* Localizer */;
+			productType = "com.apple.product-type.tool";
+		};
 		12903201288024900024364C /* ELIOSAutoTest */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 12903216288024920024364C /* Build configuration list for PBXNativeTarget "ELIOSAutoTest" */;
 			buildPhases = (
+				F52EC329BFB68E4005D15F77 /* [CP] Check Pods Manifest.lock */,
 				129031FE288024900024364C /* Sources */,
 				129031FF288024900024364C /* Frameworks */,
 				12903200288024900024364C /* Resources */,
 				1290321F2880260C0024364C /* ShellScript */,
+				CE0754437F7AAF736F617948 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -302,6 +408,9 @@
 				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
+					1265BC262972C187000D0F2E = {
+						CreatedOnToolsVersion = 13.4.1;
+					};
 					12903201288024900024364C = {
 						CreatedOnToolsVersion = 13.4.1;
 						LastSwiftMigration = 1340;
@@ -315,6 +424,7 @@
 			knownRegions = (
 				en,
 				Base,
+				ru,
 			);
 			mainGroup = 129031F9288024900024364C;
 			productRefGroup = 12903203288024900024364C /* Products */;
@@ -322,6 +432,7 @@
 			projectRoot = "";
 			targets = (
 				12903201288024900024364C /* ELIOSAutoTest */,
+				1265BC262972C187000D0F2E /* Localizer */,
 			);
 		};
 /* End PBXProject section */
@@ -331,13 +442,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				12903223288065B70024364C /* .swiftlint.yml in Resources */,
-				121FD618296BF9380082C273 /* EmployeeCell.xib in Resources */,
-				12EDC05E2968E61700328C61 /* ATListViewController.xib in Resources */,
+				1265BC5E2972C3C8000D0F2E /* EmployeeCell.xib in Resources */,
+				1265BC552972C301000D0F2E /* SecondViewController.xib in Resources */,
+				1265BC392972C25F000D0F2E /* ATListViewController.xib in Resources */,
+				1265BC4E2972C2F8000D0F2E /* RootViewController.xib in Resources */,
+				1265BC672972C435000D0F2E /* Localizable.strings in Resources */,
 				12903212288024920024364C /* LaunchScreen.storyboard in Resources */,
 				1290320F288024920024364C /* Assets.xcassets in Resources */,
-				1290321C288024DE0024364C /* RootViewController.xib in Resources */,
-				121DAD9B288C77EC004BFA63 /* SecondViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,9 +472,61 @@
 			shellPath = /bin/sh;
 			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint\n#else\n  #echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
+		CE0754437F7AAF736F617948 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ELIOSAutoTest/Pods-ELIOSAutoTest-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-ELIOSAutoTest/Pods-ELIOSAutoTest-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-ELIOSAutoTest/Pods-ELIOSAutoTest-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F52EC329BFB68E4005D15F77 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-ELIOSAutoTest-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1265BC232972C187000D0F2E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1265BC372972C1A4000D0F2E /* ProjectParser.swift in Sources */,
+				1265BC352972C1A4000D0F2E /* AdditionalKeys.swift in Sources */,
+				1265BC5D2972C35C000D0F2E /* main.swift in Sources */,
+				1265BC342972C1A4000D0F2E /* ShellWrapper.swift in Sources */,
+				1265BC362972C1A4000D0F2E /* String+LocalizationExtension.swift in Sources */,
+				1265BC332972C1A4000D0F2E /* StringsFileParser.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		129031FE288024900024364C /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -372,6 +535,7 @@
 				12EDC0572968E16A00328C61 /* ELAutotestModel.swift in Sources */,
 				12AB96AD2884E42D005D3458 /* ELPClientRequestMessages.swift in Sources */,
 				1246DB35296925FB0038F34F /* WMUpdatableDataProvider.swift in Sources */,
+				126C12C2296FA32800CB2615 /* ATAppStateModel.swift in Sources */,
 				12EDC0602968E62A00328C61 /* ATListViewControllerModel.swift in Sources */,
 				12EDC0662968E7BE00328C61 /* ATListViewControllerPresenter.swift in Sources */,
 				121DADA2288CFDD3004BFA63 /* TestScreenData.swift in Sources */,
@@ -381,13 +545,15 @@
 				12EDC0622968E6B500328C61 /* UIViewController+Extensions.swift in Sources */,
 				121DADA0288CFCD6004BFA63 /* Model.swift in Sources */,
 				1246DB3029691DA90038F34F /* EmployeesService.swift in Sources */,
+				124D7C61298336F60017F576 /* SignalRService.swift in Sources */,
 				12903208288024900024364C /* SceneDelegate.swift in Sources */,
-				121DADA4288CFF4E004BFA63 /* ELTestableModel.swift in Sources */,
+				126C12C62971991500CB2615 /* ATStringSaver.swift in Sources */,
 				12903226288197FB0024364C /* ObjcTestClass.m in Sources */,
-				1246DB3229691DCD0038F34F /* Employee.swift in Sources */,
+				126C12C42970006000CB2615 /* RuntimeExplorer.swift in Sources */,
 				1246DB2A29691B0A0038F34F /* UITableView.swift in Sources */,
 				1246DB23296919CD0038F34F /* Data+Extension.swift in Sources */,
 				12AB96AF2884E42D005D3458 /* ELPRequestClientMessageManager.swift in Sources */,
+				126C12C0296F9EAC00CB2615 /* ATUtils.swift in Sources */,
 				1246DB22296919CD0038F34F /* UINavigationController+Extension.swift in Sources */,
 				1246DB2929691B0A0038F34F /* WMInterfaceData.swift in Sources */,
 				12EDC05D2968E61700328C61 /* ATListViewController.swift in Sources */,
@@ -402,17 +568,66 @@
 				12EDC0592968E18B00328C61 /* ELAutotestModelManager.swift in Sources */,
 				121DAD9A288C77EC004BFA63 /* SecondViewController.swift in Sources */,
 				1290321B288024DE0024364C /* RootViewController.swift in Sources */,
-				1246DB37296926370038F34F /* WMModelManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		1265BC3B2972C25F000D0F2E /* ATListViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1265BC3A2972C25F000D0F2E /* Base */,
+				1265BC3D2972C261000D0F2E /* en */,
+				1265BC3F2972C262000D0F2E /* ru */,
+			);
+			name = ATListViewController.xib;
+			sourceTree = "<group>";
+		};
+		1265BC502972C2F8000D0F2E /* RootViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1265BC4F2972C2F8000D0F2E /* Base */,
+				1265BC522972C2FA000D0F2E /* en */,
+				1265BC542972C2FC000D0F2E /* ru */,
+			);
+			name = RootViewController.xib;
+			sourceTree = "<group>";
+		};
+		1265BC572972C301000D0F2E /* SecondViewController.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1265BC562972C301000D0F2E /* Base */,
+				1265BC592972C303000D0F2E /* en */,
+				1265BC5B2972C303000D0F2E /* ru */,
+			);
+			name = SecondViewController.xib;
+			sourceTree = "<group>";
+		};
+		1265BC602972C3C8000D0F2E /* EmployeeCell.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1265BC5F2972C3C8000D0F2E /* Base */,
+				1265BC622972C3C9000D0F2E /* en */,
+				1265BC642972C3CB000D0F2E /* ru */,
+			);
+			name = EmployeeCell.xib;
+			sourceTree = "<group>";
+		};
+		1265BC692972C435000D0F2E /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1265BC682972C435000D0F2E /* en */,
+				1265BC6A2972C438000D0F2E /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
 		12903210288024920024364C /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
 				12903211288024920024364C /* Base */,
+				1265BC382972C220000D0F2E /* ru */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -420,10 +635,37 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		1265BC2B2972C187000D0F2E /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B8QMGNX782;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		1265BC2C2972C187000D0F2E /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = B8QMGNX782;
+				ENABLE_HARDENED_RUNTIME = YES;
+				MACOSX_DEPLOYMENT_TARGET = 12.3;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		12903214288024920024364C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -484,6 +726,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++17";
@@ -536,6 +779,7 @@
 		};
 		12903217288024920024364C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = AB43860ABBDDFFB842CE7D63 /* Pods-ELIOSAutoTest.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -566,6 +810,7 @@
 		};
 		12903218288024920024364C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A105B6B13053E61DEC1EA76B /* Pods-ELIOSAutoTest.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -596,6 +841,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1265BC2D2972C187000D0F2E /* Build configuration list for PBXNativeTarget "Localizer" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1265BC2B2972C187000D0F2E /* Debug */,
+				1265BC2C2972C187000D0F2E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		129031FD288024900024364C /* Build configuration list for PBXProject "ELIOSAutoTest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

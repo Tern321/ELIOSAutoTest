@@ -9,7 +9,7 @@ import UIKit
 
 class IOSAutotestMessageManager: ELPRequestClientMessageManager {
     
-    static var manager: IOSAutotestMessageManager = {
+    static let manager: IOSAutotestMessageManager = {
             return  IOSAutotestMessageManager()
         }()
     
@@ -17,16 +17,12 @@ class IOSAutotestMessageManager: ELPRequestClientMessageManager {
     var timer: Timer?
     
     @objc func runTestCycle() {
-//        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
-//            self.runTestCycle()
-//        }
         DispatchQueue.main.async {
             if !self.testsToRun.isEmpty {
                 print("run test case \(self.testsToRun)")
                 self.runTestCaseWithStateJson(testInfo: self.testsToRun.removeFirst())
             }
         }
-        
     }
     
     override init() {
@@ -51,7 +47,6 @@ class IOSAutotestMessageManager: ELPRequestClientMessageManager {
     }
     
     override func respondToMessage(requestObject: ELPClientRequestObject) -> String {
-//        let page = ELPRequestClientMessageManager.page(requestObject)
         let responseMessage = ELPClientResponseMessage(requestObject.requestInfo?.RequestIndex ?? "", HttpApiKey)
         return responseMessage.updateResponse("test ios response 3")
     }
@@ -66,69 +61,65 @@ class IOSAutotestMessageManager: ELPRequestClientMessageManager {
         client.sendDataAsMessage(stringData: responseMessage.ToJson())
     }
     
-    func modelIdentifier() -> String {
-        if let simulatorModelIdentifier = ProcessInfo().environment["SIMULATOR_MODEL_IDENTIFIER"] { return simulatorModelIdentifier }
-        var sysinfo = utsname()
-        uname(&sysinfo) // ignore return value
-        return String(bytes: Data(bytes: &sysinfo.machine, count: Int(_SYS_NAMELEN)), encoding: .ascii)!.trimmingCharacters(in: .controlCharacters)
+    func showTestErrorAlert(className: String) {
+        let alert = UIAlertController(title: "Testing is not supported", message: "getVCModel not implemented for \(className)", preferredStyle: UIAlertController.Style.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+        ATUtils.vissibleViewController()?.present(alert, animated: true, completion: nil)
     }
     
-    static func vissibleViewController() -> UIViewController? {
-        if let nk = UIApplication.shared.topMostViewController() as? UINavigationController {
-            return nk.visibleViewController
-            
-        } else {
-            if let vk = UIApplication.shared.topMostViewController() {
-                return vk
+    func getGlobalAppStateJson() -> String {
+        var globalStateMap = [String: String]()
+        
+        let globalClasses = RuntimeExplorer.classes(conformToProtocol: ELAutotestModelObject.self)
+        for obj in globalClasses {
+            globalStateMap["\(obj)"] = obj.self.getStateModelJson()
+        }
+        return globalStateMap.toJson() ?? ""
+    }
+    
+    func loadGlobalAppStateJson(json: String) {
+        if let dataJson = json.data(using: .utf8) {
+            let globalStateMap: [String: String] = try! JSONDecoder().decode([String: String].self, from: dataJson)
+
+            let globalClasses = RuntimeExplorer.classes(conformToProtocol: ELAutotestModelObject.self)
+            for obj in globalClasses {
+                obj.loadStateStateObject(json: globalStateMap["\(obj)"])
             }
         }
-        return nil
     }
-    
-    static func visibleViewControllerName() -> String {
-        if let nk = UIApplication.shared.topMostViewController() as? UINavigationController {
-            return String(describing: type(of: nk.visibleViewController!))
-            
-        } else {
-            if let vk = UIApplication.shared.topMostViewController() {
-                return String(describing: type(of: vk))
-            }
-        }
-        return ""
-    }
-    
     override func gotSharedMessage(message: ELPClientResponseMessage, data: Data) {
-        print("gotSharedMessage")
-//        let value = UIInterfaceOrientation.landscapeLeft.rawValue
-//        UIDevice.current.setValue(value, forKey: "orientation")
+        print("IOSAutotestMessageManager gotSharedMessage")
         
         if message.ClientMessageType == "GetTestData" {
             
-            let data = ELTestableViewController.captureScreenshot()
+            let data = ELTestableViewController.captureScreenshot()! // let it fall
+            let VCModelJson = (ATUtils.vissibleViewController() as? ELTestableViewControllerModelProtocol)?.getModelJson()
             
+            if VCModelJson == nil {
+//                showTestErrorAlert(className: String(describing: type(of: ATUtils.vissibleViewController())))
+                return
+            }
             let testInfo = message.testScreenData()
-            testInfo.viewControllerName = IOSAutotestMessageManager.visibleViewControllerName()
+            testInfo.viewControllerName = ATUtils.visibleViewControllerName()
             testInfo.rotation = UIDevice.current.orientation.rawValue
             testInfo.screenBase64 = data.base64EncodedString()
-            testInfo.deviceModel = modelIdentifier()
-            testInfo.viewControllerStateDataJson = "{}"
+            testInfo.deviceModel = ATUtils.modelIdentifier()
+            testInfo.viewControllerStateDataJson = VCModelJson?.data(using: .utf8)?.prettyUtf8LogString ?? ""
+            testInfo.applicationStateDataJson = getGlobalAppStateJson().data(using: .utf8)?.prettyUtf8LogString ?? ""
             testInfo.lang = Locale.current.languageCode ?? ""
-            testInfo.hideBackButton = IOSAutotestMessageManager.vissibleViewController()?.navigationController?.navigationBar.backItem == nil
-            
-            print("GetTestData")
-            print(testInfo.ToJson())
+            testInfo.hideBackButton = ATUtils.vissibleViewController()?.navigationController?.navigationBar.backItem == nil
             
             IOSAutotestMessageManager.manager.sendSharedMessage(message: testInfo.ToJson(), ClientMessageType: "GetTestDataResponse", targetClientId: "c#_AutotestBackend_client1")
             
-            // send viewController info and image and device data
         } else if message.ClientMessageType == "RunTestCase" {
-            // get Data, run test, send message
-            
+            ELTestableViewController.testModeDisabled = false
             let testInfo = message.testScreenData()
+            print("gotSharedMessage RunTestCase \(testInfo.testName)")
             testsToRun.append(testInfo)
         }
         
     }
+    
     func pushTestedViewController(testedViewController: UIViewController, hideBackButton: Bool) {
         let currentViewController = UIWindow.key?.rootViewController as? UINavigationController
         currentViewController?.navigationController?.navigationItem.hidesBackButton = hideBackButton
@@ -136,29 +127,39 @@ class IOSAutotestMessageManager: ELPRequestClientMessageManager {
         currentViewController?.pushViewController(testedViewController, animated: false)
         if hideBackButton {
             testedViewController.navigationItem.setHidesBackButton(true, animated: false)
-//            testedViewController.navigationController?.navigationItem.hidesBackButton = true
         }
-        
     }
     
     func runTestCaseWithStateJson(testInfo: TestScreenData) {
+        print("runTestCaseWithStateJson \(testInfo.testName)")
         let testedViewControllerClass = NSClassFromString("ELIOSAutoTest." + testInfo.viewControllerName!) as! ELTestableViewController.Type
         let testedViewController = testedViewControllerClass.loadViewControllerFromXib()
 
+        loadGlobalAppStateJson(json: testInfo.applicationStateDataJson ?? "")
         UIDevice.current.setValue(testInfo.rotation, forKey: "orientation")
-        
+        testedViewController.loadModelJson(json: testInfo.viewControllerStateDataJson ?? "{}")
         pushTestedViewController(testedViewController: testedViewController, hideBackButton: testInfo.hideBackButton)
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            let data = ELTestableViewController.captureScreenshot()
-            testInfo.screenBase64 = data.base64EncodedString()
+            let data = ELTestableViewController.captureScreenshot()! // let it fall
+//            testInfo.screenBase64 = data.base64EncodedString()
+            testInfo.screenBase64 = IOSAutotestMessageManager.str.replacingOccurrences(of: "1", with: "\(IOSAutotestMessageManager.index)")
+            
+           
+            IOSAutotestMessageManager.index += 1
+            print("current index \(IOSAutotestMessageManager.index)")
+            
             
             testInfo.rotation = UIDevice.current.orientation.rawValue
-            testInfo.deviceModel = self.modelIdentifier()
+            testInfo.deviceModel = ATUtils.modelIdentifier()
             testInfo.viewControllerStateDataJson = "{}"
             testInfo.lang = Locale.current.languageCode ?? ""
             
             IOSAutotestMessageManager.manager.sendSharedMessage(message: testInfo.ToJson(), ClientMessageType: "RunTestCaseResponse", targetClientId: "c#_AutotestBackend_client1")
         }
     }
+    static var index = 0
+    static var str = """
+a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1a1
+"""
 }

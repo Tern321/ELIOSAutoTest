@@ -7,6 +7,6 @@
 
 import UIKit
 
-class ATListViewControllerModel: NSObject { // бизнес логика
+class ATListViewControllerModel: NSObject, Codable { // бизнес логика
     var employers: [Employee] = []
 }

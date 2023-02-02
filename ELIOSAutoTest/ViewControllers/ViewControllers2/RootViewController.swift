@@ -19,18 +19,22 @@ class RootViewController: ELTestableViewController {
     
     static var shared: RootViewController?
     var testObjcObj = ObjcTestClass()
-    
-    override func getCurrentStateJson() -> String {
-        return textField.text ?? ""
+
+    override func getModelJson() -> String? {
+        return "{}"
     }
+    override func loadModelJson(json: String) {}
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         RootViewController.shared = self
         
-        let nextVK = ATListViewController.loadViewControllerFromXib()
-        nextVK.model = ATListViewControllerModel()
-        self.navigationController?.pushViewController(nextVK, animated: false)
+        ping()
+//        print(EmployeesManager.self.getStateModelJson())
+//        (myClasses[0].self as? ELAutotestModelObject.Type).Type.getStateModelJson()
+//        var json = (myClasses[0] as? ELAutotestModelObject).getStateModelJson()
+//        print(json)
         
 //        self.textField.observe(\.text, options: .new) { person, change in
 //            print("I'm now called \(person.text)")
@@ -56,6 +60,13 @@ class RootViewController: ELTestableViewController {
 //                             options: [NSValueTransformerNameBindingOption: NSValueTransformerName.negateBooleanTransformerName])
         
     }
+    func ping() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+//            AppDelegate.shared.sr.sendTest()
+//            ping()
+        }
+    }
+    
     
     @IBAction func secondVk() {
         self.navigationController?.pushViewController(SecondViewController.loadViewControllerFromXib(), animated: false)
@@ -63,17 +74,9 @@ class RootViewController: ELTestableViewController {
     }
     
     @IBAction func test() {
-//        var a = IOSAutotestMessageManager.vissibleViewController()?.navigationController?.navigationBar.backItem == nil
-//        print(a)
-//        var data = captureScreenshot()
-//        var testInfo = TestScreenData()
-//        testInfo.rotation = "v"
-        
-//        testInfo.screenBase64 = data.base64EncodedString()
-//        testInfo.testName = "test1"
-        
-//        manager.sendSharedMessage(message: testInfo.ToJson())
-        
+        let nextVK = ATListViewController.loadViewControllerFromXib()
+        nextVK.model = ATListViewControllerModel()
+        self.navigationController?.pushViewController(nextVK, animated: false)
     }
     func showData() {
 //        var a = UIApplication.shared.windows.count

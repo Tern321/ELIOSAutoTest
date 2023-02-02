@@ -80,24 +80,3 @@ class WeakRef<Value> where Value: AnyObject {
         self._value = value
     }
 }
-
-protocol Weakly {
-    associatedtype Value: AnyObject
-    var weak: WeakRef<Value> {
-        get
-    }
-}
-
-extension WeakRef: Weakly {
-    var weak: WeakRef<Value> {
-        return self
-    }
-}
-
-extension Array where Element: Weakly {
-// swiftlint:disable syntactic_sugar
-    func compact() -> Array<Element> {
-// swiftlint:enable syntactic_sugar
-        return self.filter { $0.weak.value != nil }
-    }
-}

@@ -33,8 +33,8 @@ class ELPRequestClientMessageManager: NSObject {
     }
     
     func gotSharedMessage(message: ELPClientResponseMessage, data: Data) {
-        print("gotSharedMessage")
-        print("\(message.Response)")
+//        print("")
+        print("ELPRequestClientMessageManager gotSharedMessage \(message.Response)")
     }
     
     //http://localhost:5300/forumApi/Page/FileName

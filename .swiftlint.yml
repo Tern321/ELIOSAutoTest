@@ -1,11 +1,12 @@
 excluded:
-  - Pods
+  - "*/Pods/*"
   - UnitTests
   - UITests
   - DerivedData
+  - SwiftSignalRClient
 #  temp disabled for refactoring, Loshchenko
   - "Tests/*"
-
+  
 warning_threshold: 100
 
 analyzer_rules:
@@ -20,7 +21,6 @@ disabled_rules:
   - identifier_name
   - unused_setter_value
   - weak_delegate
-#  temp disabled for migration, Loshchenko
   - private_over_fileprivate
   - orphaned_doc_comment
   - force_cast
@@ -32,13 +32,22 @@ disabled_rules:
   - force_unwrapping
   - notification_center_detachment
   - class_delegate_protocol
-  
+  - trailing_whitespace
+  - identifier_name
+  - force_try
+  - force_unwrapping
+  - force_cast
+  - line_length
+  - colon
+  - identifier_name
+  - empty_count
+  - shorthand_operator
 opt_in_rules:
   - overridden_super_call
   - prohibited_super_call
   - empty_count
   - explicit_init
-  - force_unwrapping
+
   - operator_usage_whitespace
   - anyobject_protocol
   - array_init

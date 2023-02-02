@@ -6,7 +6,7 @@ protocol WMDataUpdatable {
     func onDataChanged()
 }
 
-class WMUpdatableDataProvider: WMModelManager {
+class WMUpdatableDataProvider {
     var delegatesContainer = WeakDelegatesContainer<WMDataUpdatable>()
     
     func addDelegate(delegate: WMDataUpdatable) {

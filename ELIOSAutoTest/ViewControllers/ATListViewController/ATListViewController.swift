@@ -34,10 +34,16 @@ extension ATListViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-class ATListViewController: UIViewController, WMDataUpdatable {
+class ATListViewController: ELTestableViewController, WMDataUpdatable {
 
     var model: ATListViewControllerModel!
+    
     @IBOutlet var table: UITableView!
+    @IBOutlet var textField: UITextField!
+    
+    @IBAction func updateModelString() {
+        ATStringSaver.shared.str = self.textField.text ?? ""
+    }
     
     func onDataChanged() { // change to custom method
         refillModel()
@@ -45,10 +51,10 @@ class ATListViewController: UIViewController, WMDataUpdatable {
     
     func refillModel() {
         DispatchQueue.main.async {
-            
-            self.model?.employers = EmployeesManager.shared.getEmployees()
-            print(self.model?.employers)
-            
+            if ELTestableViewController.testModeDisabled {
+                self.model?.employers = EmployeesManager.shared.getEmployees()
+            }
+            self.textField.text = ATStringSaver.shared.str
             self.table.reloadData()
         }
     }
@@ -58,5 +64,12 @@ class ATListViewController: UIViewController, WMDataUpdatable {
         EmployeesManager.shared.addDelegate(delegate: self)
         refillModel()
     }
-
+    
+    override func loadModelJson(json: String) {
+        self.model = ATListViewControllerModel.loadFromJson(json: json)
+    }
+    
+    override func getModelJson() -> String? {
+        return model.toJson()
+    }
 }

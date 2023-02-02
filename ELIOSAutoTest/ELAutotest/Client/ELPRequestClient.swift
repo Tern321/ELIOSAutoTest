@@ -57,21 +57,24 @@ class ELPRequestClient: NSObject, StreamDelegate {
     var cachedString = ""
     
     func stream(_ aStream: Stream, handle eventCode: Stream.Event) {
-
-        if eventCode == .hasBytesAvailable {
-            
-            let data = Data(reading2: inputStream)
-            let str = String(decoding: data, as: UTF8.self)
-            print(str)
-            print(cachedString)
-            
-            cachedString += str
-            
-            while cachedString.contains("\n") {
-                if let index = cachedString.firstIndex(of: "\n") {
-                    let message = cachedString.substring(to: index)
-                    parseMessage(str: message)
-                    cachedString = cachedString.substring(from: cachedString.index(index, offsetBy: 1))
+        DispatchQueue.main.async {
+            if eventCode == .hasBytesAvailable {
+                
+                let data = Data(reading2: self.inputStream)
+                let str = String(decoding: data, as: UTF8.self)
+//                print(str)
+                //            print(cachedString)
+                
+                self.cachedString += str
+                
+                while self.cachedString.contains("\n") {
+                    if let index = self.cachedString.firstIndex(of: "\n") {
+                        let message = self.cachedString.substring(to: index)
+//                        print(message)
+                        
+                        self.parseMessage(str: message)
+                        self.cachedString = self.cachedString.substring(from: self.cachedString.index(index, offsetBy: 1))
+                    }
                 }
             }
         }
@@ -83,7 +86,7 @@ class ELPRequestClient: NSObject, StreamDelegate {
             let corrected = str.replacingOccurrences(of: "\n", with: "", options: .literal, range: nil)
 //            var bytes = corrected.base64DecodedBytes
             if let string = String(bytes: corrected.base64DecodedBytes!, encoding: .utf8) {
-                print(string)
+//                print(string)
             } else {
                 print("not a valid UTF-8 sequence")
             }

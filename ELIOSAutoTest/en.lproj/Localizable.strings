@@ -1,0 +1,28 @@
+//EmployeeCell.xib
+"<?>Lorem Ipsum" = "Lorem Ipsum";
+//EmployeeCell.xib
+"Age:" = "Age:";
+//ATListViewController.xib,RootViewController.xib,SecondViewController.xib
+"Button" = "Button";
+//SecondViewController.xib
+"Button 3" = "Button 3";
+//AdditionalKeys.swift
+"Example Key" = "Example Key";
+//EmployeeCell.xib
+"ID: " = "ID: ";
+//EmployeeCell.xib
+"Name:" = "Name:";
+//EmployeeCell.xib
+"Salary:" = "Salary:";
+//RootViewController.xib
+"Second vk" = "Second vk";
+//RootViewController.xib
+"modelState" = "modelState";
+//RootViewController.xib
+"passive text field" = "passive text field";
+//SecondViewController.xib
+"second View controller 2" = "second View controller 2";
+//ATListViewController.xib
+"update" = "update";
+//RootViewController.xib
+"viewControllerState 1" = "viewControllerState 1";
