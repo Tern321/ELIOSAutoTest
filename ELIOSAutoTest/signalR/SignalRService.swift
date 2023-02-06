@@ -1,85 +1,69 @@
 import Foundation
 import SwiftSignalRClient
 
-class TestData : Codable {
-    var user: String?
-    var string1: String?
-    var string2: String?
+protocol AutotestTransportServiceProtocol {
+    func sendRunTestCaseResponse(testInfo: TestScreenData)
 }
 
-public class SignalRService {
+protocol AutotestTransportServiceDelegate {
+    func runTestCase(testInfo: TestScreenData)
+    func collectTestData( testInfo: TestScreenData) -> TestScreenData
+}
+
+class SignalRService: AutotestTransportServiceProtocol {
     private var connection: HubConnection
+    
+    var delegate: AutotestTransportServiceDelegate?
+    
+    func sendRunTestCaseResponse(testInfo: TestScreenData) {
+        self.connection.send(method: "runTestCaseResponse", testInfo)
+    }
+    
+    func sendGetTestDataResponse(testInfo: TestScreenData) {
+        self.connection.send(method: "getTestDataResponse", testInfo)
+    }
     
     public init(url: URL) {
         connection = HubConnectionBuilder(url: url).withLogging(minLogLevel: .error).build()
-        //        connection.
+        connection.delegate = self
         
-        connection.on(method: "MessageReceived", callback: { (user: String, message: String) in
-            do {
-                self.handleMessage(message, from: user)
-            } catch {
-                print(error)
-            }
-        })
-        connection.on(method: "SendDataMessage", callback: { (data: TestData) in
-            do {
-                print("got SendDataMessage \(data.user) \(data.string1) \(data.string2)")
-                //                self.handleMessage(message, from: user)
-            } catch {
-                print(error)
-            }
+        connection.on(method: "runTestCaseRequest", callback: { (testInfo: TestScreenData) in
+            self.delegate?.runTestCase(testInfo: testInfo)
         })
         
-        connection.on(method: "ShowTime", callback: { (user: String, message: String) in
-            do {
-                self.handleMessage(message, from: user)
-            } catch {
-                print(error)
+        connection.on(method: "getTestDataRequest", callback: { (testInfo: TestScreenData) in
+            if let testInfo = self.delegate?.collectTestData(testInfo: testInfo) {
+                self.sendGetTestDataResponse(testInfo: testInfo)
             }
         })
         
         connection.on(method: "Connected", callback: { (user: String) in
-            //            do {
-            ////                self.handleMessage(message, from: user)
-            //            } catch {
             print(user)
-            //            }
         })
         connection.start()
-        
-        sendTest()
-        
+    }
+}
+extension SignalRService: HubConnectionDelegate {
+    
+    func updateDeviceName() {
+        self.connection.send(method: "updateDeviceName", "ios_forum_client_1")
     }
     
-    private func handleMessage(_ message: String, from user: String) {
-        // Do something with the message.
-        print(user)
-        print(message)
-        
-    }
-    func sendTest() {
-        print("sendTest\(connection.connectionId)")
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            
-            self.connection.send(method: "MyMethod", "test")
-            self.connection.invoke(method: "MyMethod", "test", resultType: String.self) { result, error in
-                if let error = error {
-                    print("error: \(error)")
-                } else {
-                    print("Add result: \(result!)")
-                }
-            }
-//            self.connection.invoke(method: "TestFromClient", "2", "3", resultType: String.self) { result, error in
-//                if let error = error {
-//                    print("error: \(error)")
-//                } else {
-//                    print("Add result: \(result!)")
-//                }
-//            }
+    public func connectionDidOpen(hubConnection: HubConnection) {
+        print("connectionDidOpen")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.updateDeviceName()
         }
-        
-        
-        //        connection.send(method: "ios", "test")
-        //        connection.send(method: "ios test")
     }
+
+    public func connectionDidReconnect() {
+        print("connectionDidReconnect")
+        DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            self.updateDeviceName()
+        }
+    }
+    
+    public func connectionDidFailToOpen(error: Error) {}
+    public func connectionDidClose(error: Error?) {}
+    public func connectionWillReconnect(error: Error) {}
 }

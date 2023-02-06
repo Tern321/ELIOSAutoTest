@@ -10,7 +10,7 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-//    var sr = SignalRService(url: URL(string: "http://localhost:5075/hubs/clock")!)
+
     
     static var shared: AppDelegate!
     

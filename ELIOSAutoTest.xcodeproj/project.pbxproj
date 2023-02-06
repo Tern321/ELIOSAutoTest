@@ -47,10 +47,7 @@
 		12903226288197FB0024364C /* ObjcTestClass.m in Sources */ = {isa = PBXBuildFile; fileRef = 12903225288197FB0024364C /* ObjcTestClass.m */; };
 		1290322A2881B6290024364C /* AVFAudio.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 129032292881B6290024364C /* AVFAudio.framework */; };
 		12AB96AB2884E42D005D3458 /* ELProxyUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AB96A62884E42D005D3458 /* ELProxyUtils.swift */; };
-		12AB96AC2884E42D005D3458 /* ELPRequestClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AB96A72884E42D005D3458 /* ELPRequestClient.swift */; };
-		12AB96AD2884E42D005D3458 /* ELPClientRequestMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AB96A82884E42D005D3458 /* ELPClientRequestMessages.swift */; };
 		12AB96AE2884E42D005D3458 /* IOSAutotestMessageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AB96A92884E42D005D3458 /* IOSAutotestMessageManager.swift */; };
-		12AB96AF2884E42D005D3458 /* ELPRequestClientMessageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12AB96AA2884E42D005D3458 /* ELPRequestClientMessageManager.swift */; };
 		12EDC0572968E16A00328C61 /* ELAutotestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EDC0562968E16A00328C61 /* ELAutotestModel.swift */; };
 		12EDC0592968E18B00328C61 /* ELAutotestModelManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EDC0582968E18B00328C61 /* ELAutotestModelManager.swift */; };
 		12EDC05D2968E61700328C61 /* ATListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EDC05B2968E61700328C61 /* ATListViewController.swift */; };
@@ -129,10 +126,7 @@
 		1290322728819A120024364C /* ObjcTestClass.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ObjcTestClass.h; sourceTree = "<group>"; };
 		129032292881B6290024364C /* AVFAudio.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFAudio.framework; path = System/Library/Frameworks/AVFAudio.framework; sourceTree = SDKROOT; };
 		12AB96A62884E42D005D3458 /* ELProxyUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ELProxyUtils.swift; sourceTree = "<group>"; };
-		12AB96A72884E42D005D3458 /* ELPRequestClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ELPRequestClient.swift; sourceTree = "<group>"; };
-		12AB96A82884E42D005D3458 /* ELPClientRequestMessages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ELPClientRequestMessages.swift; sourceTree = "<group>"; };
 		12AB96A92884E42D005D3458 /* IOSAutotestMessageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IOSAutotestMessageManager.swift; sourceTree = "<group>"; };
-		12AB96AA2884E42D005D3458 /* ELPRequestClientMessageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ELPRequestClientMessageManager.swift; sourceTree = "<group>"; };
 		12EDC0562968E16A00328C61 /* ELAutotestModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ELAutotestModel.swift; sourceTree = "<group>"; };
 		12EDC0582968E18B00328C61 /* ELAutotestModelManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ELAutotestModelManager.swift; sourceTree = "<group>"; };
 		12EDC05B2968E61700328C61 /* ATListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ATListViewController.swift; sourceTree = "<group>"; };
@@ -318,9 +312,6 @@
 			isa = PBXGroup;
 			children = (
 				12AB96A62884E42D005D3458 /* ELProxyUtils.swift */,
-				12AB96A72884E42D005D3458 /* ELPRequestClient.swift */,
-				12AB96A82884E42D005D3458 /* ELPClientRequestMessages.swift */,
-				12AB96AA2884E42D005D3458 /* ELPRequestClientMessageManager.swift */,
 			);
 			path = Client;
 			sourceTree = "<group>";
@@ -533,7 +524,6 @@
 			files = (
 				12903206288024900024364C /* AppDelegate.swift in Sources */,
 				12EDC0572968E16A00328C61 /* ELAutotestModel.swift in Sources */,
-				12AB96AD2884E42D005D3458 /* ELPClientRequestMessages.swift in Sources */,
 				1246DB35296925FB0038F34F /* WMUpdatableDataProvider.swift in Sources */,
 				126C12C2296FA32800CB2615 /* ATAppStateModel.swift in Sources */,
 				12EDC0602968E62A00328C61 /* ATListViewControllerModel.swift in Sources */,
@@ -552,7 +542,6 @@
 				126C12C42970006000CB2615 /* RuntimeExplorer.swift in Sources */,
 				1246DB2A29691B0A0038F34F /* UITableView.swift in Sources */,
 				1246DB23296919CD0038F34F /* Data+Extension.swift in Sources */,
-				12AB96AF2884E42D005D3458 /* ELPRequestClientMessageManager.swift in Sources */,
 				126C12C0296F9EAC00CB2615 /* ATUtils.swift in Sources */,
 				1246DB22296919CD0038F34F /* UINavigationController+Extension.swift in Sources */,
 				1246DB2929691B0A0038F34F /* WMInterfaceData.swift in Sources */,
@@ -564,7 +553,6 @@
 				12AB96AB2884E42D005D3458 /* ELProxyUtils.swift in Sources */,
 				1246DB2C29691B0A0038F34F /* WMWeakReferenseContainer.swift in Sources */,
 				12AB96AE2884E42D005D3458 /* IOSAutotestMessageManager.swift in Sources */,
-				12AB96AC2884E42D005D3458 /* ELPRequestClient.swift in Sources */,
 				12EDC0592968E18B00328C61 /* ELAutotestModelManager.swift in Sources */,
 				121DAD9A288C77EC004BFA63 /* SecondViewController.swift in Sources */,
 				1290321B288024DE0024364C /* RootViewController.swift in Sources */,

@@ -30,7 +30,6 @@ class RootViewController: ELTestableViewController {
         
         RootViewController.shared = self
         
-        ping()
 //        print(EmployeesManager.self.getStateModelJson())
 //        (myClasses[0].self as? ELAutotestModelObject.Type).Type.getStateModelJson()
 //        var json = (myClasses[0] as? ELAutotestModelObject).getStateModelJson()
@@ -60,17 +59,9 @@ class RootViewController: ELTestableViewController {
 //                             options: [NSValueTransformerNameBindingOption: NSValueTransformerName.negateBooleanTransformerName])
         
     }
-    func ping() {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-//            AppDelegate.shared.sr.sendTest()
-//            ping()
-        }
-    }
-    
     
     @IBAction func secondVk() {
         self.navigationController?.pushViewController(SecondViewController.loadViewControllerFromXib(), animated: false)
-        
     }
     
     @IBAction func test() {

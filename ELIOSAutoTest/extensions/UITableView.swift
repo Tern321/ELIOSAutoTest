@@ -66,7 +66,7 @@ extension UITableView {
         
         guard let cell = self.dequeueReusableCell(withIdentifier: identifier) as? T else {
             let logMessage = "Cast dequeueReusableCell with identifier \(identifier) to \(type) failure in DialogController.\(#function)"
-//            WMLogsManager.log(logMessage)
+//            LogsManager.log(logMessage)
             fatalError(logMessage)
         }
         return cell

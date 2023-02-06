@@ -47,8 +47,8 @@ class ELTestableViewController: UIViewController, ELTestableViewControllerModelP
     func getModelJson() -> String? {
         print("getVCModel in class \(String(describing: type(of: self))) not implemented")
 //        fatalError()
-        
-        showTestErrorAlert(className: String(describing: type(of: self)))
+//        print()
+//        showTestErrorAlert(className: String(describing: type(of: self)))
         return nil
     }
 //    func getModelJson() -> String {
@@ -57,7 +57,7 @@ class ELTestableViewController: UIViewController, ELTestableViewControllerModelP
 //    }
     func loadModelJson(json: String) {
         print("loadModelJson in class \(String(describing: type(of: self))) not implemented")
-        fatalError()
+//        fatalError()
     }
     
     static func captureScreenshot() -> Data? {

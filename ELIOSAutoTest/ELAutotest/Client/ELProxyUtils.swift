@@ -31,24 +31,3 @@ public extension String {
     }
     
 }
-
-class ELProxyUtils: NSObject {
-    static var middleOfMessage = "!"
-    static var endOfMessage = "\n"
-    
-    static func pathElement( requestObject: ELPClientRequestObject, index: Int) -> String {
-        // http://localhost:5204/forumApi/?page=home&val2=qwer
-        if let path = requestObject.requestInfo?.Path {
-            
-            let elements = path.components(separatedBy: "/")
-            
-            var splitChars = CharacterSet()
-            splitChars.insert(charactersIn: "?&")
-            
-            if elements.count > index {
-                return elements[index].components(separatedBy: splitChars)[0]
-            }
-        }
-        return ""
-    }
-}

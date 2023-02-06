@@ -22,7 +22,6 @@ struct Employee: Codable {
     }
 }
 
-
 protocol EmployeesServiceProtocol {
     func getEmployees(completion: @escaping (_ success: Bool, _ results: [Employee]?, _ error: String?) -> Void)
 }
