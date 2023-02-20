@@ -1,11 +1,3 @@
-//
-//  CollectionUtils.swift
-//  Webim.Ru
-//
-//  Created by user on 29/08/2018.
-//  Copyright © 2018 _webim_. All rights reserved.
-//
-
 import Foundation
 
 extension Sequence {
