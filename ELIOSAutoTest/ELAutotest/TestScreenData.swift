@@ -25,7 +25,7 @@ class TestScreenData: Codable {
     var viewControllerStateDataJson: String? = ""
     var applicationStateDataJson: String? = ""
     
-    public func ToJson() -> String {
+    public func toJson() -> String {
         let jsonEncoder = JSONEncoder()
         let jsonData = try? jsonEncoder.encode(self)
         return String(data: jsonData ?? Data(), encoding: String.Encoding.utf8) ?? ""

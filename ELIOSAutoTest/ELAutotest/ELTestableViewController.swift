@@ -16,14 +16,14 @@ class ELTestableViewControllerState: Codable {
 
 }
 
-//extension ATListViewController: ELTestableViewControllerProtocol {
+// extension ATListViewController: ELTestableViewControllerProtocol {
 //    func modelForTest() -> Codable {
 //        return model
 //    }
 //    func additionalData() -> Codable {
 //        return model
 //    }
-//}
+// }
 
 class ELTestableViewController: UIViewController, ELTestableViewControllerModelProtocol {
 

@@ -1,4 +1,5 @@
 excluded:
+  - "/Users/evgeniiloshchenko/Documents/code/ELIOSAutoTest.git/Pods"
   - "*/Pods/*"
   - UnitTests
   - UITests
@@ -15,33 +16,31 @@ analyzer_rules:
 
 disabled_rules:
   - trailing_whitespace
-  - todo
-  - cyclomatic_complexity
-  - function_body_length
-  - identifier_name
-  - unused_setter_value
-  - weak_delegate
-  - private_over_fileprivate
-  - orphaned_doc_comment
-  - force_cast
-  - force_try
-  - block_based_kvo
-  - file_length
-  - type_body_length
+  # - todo
+  # - cyclomatic_complexity
+  # - function_body_length
+  # - identifier_name
+  # - unused_setter_value
+  # - weak_delegate
+  # - private_over_fileprivate
+  # - orphaned_doc_comment
+  # - force_cast
+  # - force_try
+  # - block_based_kvo
+  # - file_length
+  # - type_body_length
   - line_length
-  - force_unwrapping
-  - notification_center_detachment
-  - class_delegate_protocol
-  - trailing_whitespace
+  # - force_unwrapping
+  # - notification_center_detachment
+  # - class_delegate_protocol
   - identifier_name
-  - force_try
-  - force_unwrapping
-  - force_cast
-  - line_length
-  - colon
-  - identifier_name
-  - empty_count
-  - shorthand_operator
+  # - line_length
+  # - colon
+  # - identifier_name
+  # - empty_count
+  # - shorthand_operator
+  - empty_enum_arguments
+
 opt_in_rules:
   - overridden_super_call
   - prohibited_super_call
@@ -56,7 +55,6 @@ opt_in_rules:
   - closure_spacing
 
 large_tuple: 4
-#  temp disabled for migration, Loshchenko
 #line_length:
 #  warning: 160
 

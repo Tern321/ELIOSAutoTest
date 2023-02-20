@@ -5,6 +5,6 @@ target 'ELIOSAutoTest' do
   # Comment the next line if you don't want to use dynamic frameworks
   use_frameworks!
   pod 'SwiftSignalRClient'
+  pod 'SwiftGen'
   # Pods for SCTPTest
-
 end

@@ -1,16 +1,20 @@
 PODS:
+  - SwiftGen (6.6.2)
   - SwiftSignalRClient (0.9.1)
 
 DEPENDENCIES:
+  - SwiftGen
   - SwiftSignalRClient
 
 SPEC REPOS:
   trunk:
+    - SwiftGen
     - SwiftSignalRClient
 
 SPEC CHECKSUMS:
+  SwiftGen: 1366a7f71aeef49954ca5a63ba4bef6b0f24138c
   SwiftSignalRClient: df3a307ef99d4c63392e96786e65035da50652bb
 
-PODFILE CHECKSUM: 3922526f1018b50bd7e7786168c88d18024e5133
+PODFILE CHECKSUM: eda2219194a2f420b503786c83a3c71a460ff6ce
 
 COCOAPODS: 1.10.0

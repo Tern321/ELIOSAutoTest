@@ -5,7 +5,7 @@ protocol AutotestTransportServiceProtocol {
     func sendRunTestCaseResponse(testInfo: TestScreenData)
 }
 
-protocol AutotestTransportServiceDelegate {
+protocol AutotestTransportServiceDelegate: AnyObject {
     func runTestCase(testInfo: TestScreenData)
     func collectTestData( testInfo: TestScreenData) -> TestScreenData
 }
@@ -13,7 +13,7 @@ protocol AutotestTransportServiceDelegate {
 class SignalRService: AutotestTransportServiceProtocol {
     private var connection: HubConnection
     
-    var delegate: AutotestTransportServiceDelegate?
+    weak var delegate: AutotestTransportServiceDelegate?
     
     func sendRunTestCaseResponse(testInfo: TestScreenData) {
         self.connection.send(method: "runTestCaseResponse", testInfo)

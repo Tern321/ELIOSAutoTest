@@ -34,11 +34,10 @@ class IOSAutotestMessageManager: AutotestTransportServiceDelegate {
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(runTestCycle), userInfo: nil, repeats: true)
     }
     
-    
     func showTestErrorAlert(className: String) {
         let alert = UIAlertController(title: "Testing is not supported", message: "getVCModel not implemented for \(className)", preferredStyle: UIAlertController.Style.alert)
         alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
-        ATUtils.vissibleViewController()?.present(alert, animated: true, completion: nil)
+        ATUtils.visibleViewController()?.present(alert, animated: true, completion: nil)
     }
     
     func getGlobalAppStateJson() -> String {
@@ -53,8 +52,9 @@ class IOSAutotestMessageManager: AutotestTransportServiceDelegate {
     
     func loadGlobalAppStateJson(json: String) {
         if let dataJson = json.data(using: .utf8) {
+            // swiftlint:disable all
             let globalStateMap: [String: String] = try! JSONDecoder().decode([String: String].self, from: dataJson)
-
+            // swiftlint:enable all
             let globalClasses = RuntimeExplorer.classes(conformToProtocol: ELAutotestModelObject.self)
             for obj in globalClasses {
                 obj.loadStateStateObject(json: globalStateMap["\(obj)"])
@@ -64,13 +64,13 @@ class IOSAutotestMessageManager: AutotestTransportServiceDelegate {
 
     func runTestCase(testInfo: TestScreenData) {
         ELTestableViewController.testModeDisabled = false
-        print("gotSharedMessage RunTestCase \(testInfo.testName)")
+        print("gotSharedMessage RunTestCase \(String(describing: testInfo.testName))")
         testsToRun.append(testInfo)
     }
     
     func collectTestData( testInfo: TestScreenData) -> TestScreenData {
         let data = ELTestableViewController.captureScreenshot()! // let it fall
-        let VCModelJson = (ATUtils.vissibleViewController() as? ELTestableViewControllerModelProtocol)?.getModelJson()
+        let VCModelJson = (ATUtils.visibleViewController() as? ELTestableViewControllerModelProtocol)?.getModelJson()
         
         if VCModelJson == nil {
 //                showTestErrorAlert(className: String(describing: type(of: ATUtils.vissibleViewController())))
@@ -82,7 +82,7 @@ class IOSAutotestMessageManager: AutotestTransportServiceDelegate {
         testInfo.viewControllerStateDataJson = VCModelJson?.data(using: .utf8)?.prettyUtf8LogString ?? ""
         testInfo.applicationStateDataJson = getGlobalAppStateJson().data(using: .utf8)?.prettyUtf8LogString ?? ""
         testInfo.lang = Locale.current.languageCode ?? ""
-        testInfo.hideBackButton = ATUtils.vissibleViewController()?.navigationController?.navigationBar.backItem == nil
+        testInfo.hideBackButton = ATUtils.visibleViewController()?.navigationController?.navigationBar.backItem == nil
 
         return testInfo
     }
@@ -98,8 +98,11 @@ class IOSAutotestMessageManager: AutotestTransportServiceDelegate {
     }
     
     func runTestCaseWithStateJson(testInfo: TestScreenData) {
-        print("runTestCaseWithState \(testInfo.testName)")
+        
+        // swiftlint:disable all
+        print("runTestCaseWithState \(testInfo.testName ?? "no test name")")
         let testedViewControllerClass = NSClassFromString("ELIOSAutoTest." + testInfo.viewControllerName!) as! ELTestableViewController.Type
+        // swiftlint:enable all
         let testedViewController = testedViewControllerClass.loadViewControllerFromXib()
 
         loadGlobalAppStateJson(json: testInfo.applicationStateDataJson ?? "")

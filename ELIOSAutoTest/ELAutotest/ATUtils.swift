@@ -8,7 +8,7 @@
 import UIKit
 
 class ATUtils: NSObject {
-    static func vissibleViewController() -> UIViewController? {
+    static func visibleViewController() -> UIViewController? {
         if let nk = UIApplication.shared.topMostViewController() as? UINavigationController {
             return nk.visibleViewController
             

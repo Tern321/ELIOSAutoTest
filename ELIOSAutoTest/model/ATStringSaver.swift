@@ -20,10 +20,8 @@ extension ATStringSaver: ELAutotestModelObject {
     static func loadStateStateObject(json: String?) {
         if let json = json {
             self.shared = ATStringSaver.loadFromJson(json: json) ?? ATStringSaver()
-        }
-        else {
+        } else {
             self.shared = ATStringSaver()
         }
     }
 }
-

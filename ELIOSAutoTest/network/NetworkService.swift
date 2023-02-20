@@ -7,7 +7,7 @@
 
 import UIKit
 
-protocol HttpRequestManagerDelegate {
+protocol HttpRequestManagerDelegate: AnyObject {
     func requestFinished(requestData: ATRequest)
 }
 
