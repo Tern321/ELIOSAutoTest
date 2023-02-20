@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1211E53C29A2F28B000A58B5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1211E53B29A2F28B000A58B5 /* Images.xcassets */; };
+		1211E54029A2F343000A58B5 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 1211E53F29A2F343000A58B5 /* swiftgen.yml */; };
+		1211E54329A2F464000A58B5 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1211E54229A2F464000A58B5 /* Assets.swift */; };
 		121DAD9A288C77EC004BFA63 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121DAD98288C77EC004BFA63 /* SecondViewController.swift */; };
 		121DAD9D288CC64B004BFA63 /* ELTestableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121DAD9C288CC64B004BFA63 /* ELTestableViewController.swift */; };
 		121DADA0288CFCD6004BFA63 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121DAD9F288CFCD6004BFA63 /* Model.swift */; };
@@ -69,6 +72,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1211E53B29A2F28B000A58B5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		1211E53F29A2F343000A58B5 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = SOURCE_ROOT; };
+		1211E54229A2F464000A58B5 /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
 		121DAD98288C77EC004BFA63 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		121DAD9C288CC64B004BFA63 /* ELTestableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ELTestableViewController.swift; sourceTree = "<group>"; };
 		121DAD9F288CFCD6004BFA63 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
@@ -155,6 +161,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1211E53A29A2F278000A58B5 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1211E53B29A2F28B000A58B5 /* Images.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		1211E54129A2F42B000A58B5 /* Generated */ = {
+			isa = PBXGroup;
+			children = (
+				1211E54229A2F464000A58B5 /* Assets.swift */,
+			);
+			path = Generated;
+			sourceTree = "<group>";
+		};
 		121DAD9E288CC69A004BFA63 /* ELAutotest */ = {
 			isa = PBXGroup;
 			children = (
@@ -254,6 +276,9 @@
 		12903204288024900024364C /* ELIOSAutoTest */ = {
 			isa = PBXGroup;
 			children = (
+				1211E54129A2F42B000A58B5 /* Generated */,
+				1211E53F29A2F343000A58B5 /* swiftgen.yml */,
+				1211E53A29A2F278000A58B5 /* Resources */,
 				124D7C5F298336E30017F576 /* signalR */,
 				1246DB3A296A8F710038F34F /* network */,
 				1246DB3329691EA00038F34F /* model */,
@@ -420,12 +445,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				1265BC5E2972C3C8000D0F2E /* EmployeeCell.xib in Resources */,
+				1211E53C29A2F28B000A58B5 /* Images.xcassets in Resources */,
 				1265BC552972C301000D0F2E /* SecondViewController.xib in Resources */,
 				1265BC392972C25F000D0F2E /* ATListViewController.xib in Resources */,
 				1265BC4E2972C2F8000D0F2E /* RootViewController.xib in Resources */,
 				1265BC672972C435000D0F2E /* Localizable.strings in Resources */,
 				12903212288024920024364C /* LaunchScreen.storyboard in Resources */,
 				1290320F288024920024364C /* Assets.xcassets in Resources */,
+				1211E54029A2F343000A58B5 /* swiftgen.yml in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -531,6 +558,7 @@
 				1246DB22296919CD0038F34F /* UINavigationController+Extension.swift in Sources */,
 				1246DB2929691B0A0038F34F /* WMInterfaceData.swift in Sources */,
 				12EDC05D2968E61700328C61 /* ATListViewController.swift in Sources */,
+				1211E54329A2F464000A58B5 /* Assets.swift in Sources */,
 				12EDC0642968E70D00328C61 /* ATListViewControllerManager.swift in Sources */,
 				1246DB39296A62340038F34F /* NetworkService.swift in Sources */,
 				1246DB2E29691D8A0038F34F /* HttpRequestHelper.swift in Sources */,

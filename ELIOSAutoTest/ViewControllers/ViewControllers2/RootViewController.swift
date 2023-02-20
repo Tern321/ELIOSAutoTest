@@ -14,6 +14,7 @@ class RootViewController: ELTestableViewController {
     @IBOutlet var modelStateLabel: UILabel!
     @IBOutlet var viewControllerStateLabel: UILabel!
     @IBOutlet var textField: UITextField!
+    @IBOutlet var robotPicture: UIImageView!
     
     @objc dynamic var name: String?
     
@@ -29,7 +30,7 @@ class RootViewController: ELTestableViewController {
         super.viewDidLoad()
         
         RootViewController.shared = self
-        
+        self.robotPicture.image = Asset.robot.image
 //        print(EmployeesManager.self.getStateModelJson())
 //        (myClasses[0].self as? ELAutotestModelObject.Type).Type.getStateModelJson()
 //        var json = (myClasses[0] as? ELAutotestModelObject).getStateModelJson()
