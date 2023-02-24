@@ -16,11 +16,4 @@ class SecondViewController: ELTestableViewController {
 
     @IBAction func test() {
     }
-    
-    @MainActor
-    func testCall() {
-        DispatchQueue.main.async {
-            print("testCall")
-        }
-    }
 }

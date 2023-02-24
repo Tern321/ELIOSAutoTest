@@ -26,7 +26,7 @@ class WeakReferenseContainer<T>: Hashable {
 
 extension String {
     public static func memoryAddress(obj: AnyObject) -> String {
-        return "\(obj.self)"
+        return "\(Unmanaged.passUnretained(obj).toOpaque())"
     }
 }
 

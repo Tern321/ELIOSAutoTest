@@ -19,6 +19,7 @@
 		121FD619296BF9380082C273 /* EmployeeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 121FD617296BF9380082C273 /* EmployeeCell.swift */; };
 		12469E1829A6618800274273 /* ELAutotestSettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 12469E1A29A6618800274273 /* ELAutotestSettingsViewController.xib */; };
 		12469E2029A81C0300274273 /* DispatchQueue+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12469E1F29A81C0300274273 /* DispatchQueue+Extensions.swift */; };
+		12469E2929A8C8BA00274273 /* ELIOSAutoTestTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12469E2829A8C8BA00274273 /* ELIOSAutoTestTests.swift */; };
 		1246DB22296919CD0038F34F /* UINavigationController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1246DB20296919CD0038F34F /* UINavigationController+Extension.swift */; };
 		1246DB23296919CD0038F34F /* Data+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1246DB21296919CD0038F34F /* Data+Extension.swift */; };
 		1246DB2929691B0A0038F34F /* InterfaceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1246DB2529691B0A0038F34F /* InterfaceData.swift */; };
@@ -29,6 +30,9 @@
 		1246DB3029691DA90038F34F /* EmployeesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1246DB2F29691DA90038F34F /* EmployeesService.swift */; };
 		1246DB35296925FB0038F34F /* UpdatableDataProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1246DB34296925FB0038F34F /* UpdatableDataProvider.swift */; };
 		1246DB39296A62340038F34F /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1246DB38296A62340038F34F /* NetworkService.swift */; };
+		124B512129A8CBDF009955CE /* ELAutotestModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124B512029A8CBDF009955CE /* ELAutotestModelTests.swift */; };
+		124B512229A8CBF7009955CE /* ELAutotestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EDC0562968E16A00328C61 /* ELAutotestModel.swift */; };
+		124B512329A8D8C5009955CE /* WeakReferenseContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1246DB2829691B0A0038F34F /* WeakReferenseContainer.swift */; };
 		124D7C61298336F60017F576 /* SignalRService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124D7C60298336F60017F576 /* SignalRService.swift */; };
 		1265BC332972C1A4000D0F2E /* StringsFileParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1265BC2E2972C1A4000D0F2E /* StringsFileParser.swift */; };
 		1265BC342972C1A4000D0F2E /* ShellWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1265BC2F2972C1A4000D0F2E /* ShellWrapper.swift */; };
@@ -62,6 +66,16 @@
 		F9790720CEF4F10D0DEC0BB5 /* Pods_ELIOSAutoTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78C771DFAA79B23DBACDB724 /* Pods_ELIOSAutoTest.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		12469E2A29A8C8BA00274273 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 129031FA288024900024364C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 12903201288024900024364C;
+			remoteInfo = ELIOSAutoTest;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		1265BC252972C187000D0F2E /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -89,6 +103,8 @@
 		12469E1C29A6618F00274273 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/ELAutotestSettingsViewController.strings; sourceTree = "<group>"; };
 		12469E1E29A6619100274273 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/ELAutotestSettingsViewController.strings; sourceTree = "<group>"; };
 		12469E1F29A81C0300274273 /* DispatchQueue+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Extensions.swift"; sourceTree = "<group>"; };
+		12469E2629A8C8BA00274273 /* ELIOSAutoTestTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ELIOSAutoTestTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		12469E2829A8C8BA00274273 /* ELIOSAutoTestTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ELIOSAutoTestTests.swift; sourceTree = "<group>"; };
 		1246DB20296919CD0038F34F /* UINavigationController+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Extension.swift"; sourceTree = "<group>"; };
 		1246DB21296919CD0038F34F /* Data+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Data+Extension.swift"; sourceTree = "<group>"; };
 		1246DB2529691B0A0038F34F /* InterfaceData.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InterfaceData.swift; sourceTree = "<group>"; };
@@ -99,6 +115,7 @@
 		1246DB2F29691DA90038F34F /* EmployeesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeesService.swift; sourceTree = "<group>"; };
 		1246DB34296925FB0038F34F /* UpdatableDataProvider.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UpdatableDataProvider.swift; sourceTree = "<group>"; };
 		1246DB38296A62340038F34F /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
+		124B512029A8CBDF009955CE /* ELAutotestModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ELAutotestModelTests.swift; sourceTree = "<group>"; };
 		124D7C60298336F60017F576 /* SignalRService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalRService.swift; sourceTree = "<group>"; };
 		1265BC272972C187000D0F2E /* Localizer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Localizer; sourceTree = BUILT_PRODUCTS_DIR; };
 		1265BC2E2972C1A4000D0F2E /* StringsFileParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringsFileParser.swift; sourceTree = "<group>"; };
@@ -150,6 +167,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		12469E2329A8C8BA00274273 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1265BC242972C187000D0F2E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -206,6 +230,25 @@
 				1265BC602972C3C8000D0F2E /* EmployeeCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		12469E2129A8BEAB00274273 /* objectiveC */ = {
+			isa = PBXGroup;
+			children = (
+				12903225288197FB0024364C /* ObjcTestClass.m */,
+				1290322728819A120024364C /* ObjcTestClass.h */,
+				12903224288197FB0024364C /* ELIOSAutoTest-Bridging-Header.h */,
+			);
+			path = objectiveC;
+			sourceTree = "<group>";
+		};
+		12469E2729A8C8BA00274273 /* ELIOSAutoTestTests */ = {
+			isa = PBXGroup;
+			children = (
+				12469E2829A8C8BA00274273 /* ELIOSAutoTestTests.swift */,
+				124B512029A8CBDF009955CE /* ELAutotestModelTests.swift */,
+			);
+			path = ELIOSAutoTestTests;
 			sourceTree = "<group>";
 		};
 		1246DB24296919D10038F34F /* extensions */ = {
@@ -269,6 +312,7 @@
 			children = (
 				12903204288024900024364C /* ELIOSAutoTest */,
 				1265BC282972C187000D0F2E /* Localizer */,
+				12469E2729A8C8BA00274273 /* ELIOSAutoTestTests */,
 				12903203288024900024364C /* Products */,
 				129032282881B6280024364C /* Frameworks */,
 				6700DDFF7C1E92C4E0E40B80 /* Pods */,
@@ -280,6 +324,7 @@
 			children = (
 				12903202288024900024364C /* ELIOSAutoTest.app */,
 				1265BC272972C187000D0F2E /* Localizer */,
+				12469E2629A8C8BA00274273 /* ELIOSAutoTestTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -287,6 +332,7 @@
 		12903204288024900024364C /* ELIOSAutoTest */ = {
 			isa = PBXGroup;
 			children = (
+				12469E2129A8BEAB00274273 /* objectiveC */,
 				1211E54129A2F42B000A58B5 /* Generated */,
 				1211E53F29A2F343000A58B5 /* swiftgen.yml */,
 				1211E53A29A2F278000A58B5 /* Resources */,
@@ -321,9 +367,6 @@
 				12903205288024900024364C /* AppDelegate.swift */,
 				12903207288024900024364C /* SceneDelegate.swift */,
 				12903210288024920024364C /* LaunchScreen.storyboard */,
-				12903225288197FB0024364C /* ObjcTestClass.m */,
-				1290322728819A120024364C /* ObjcTestClass.h */,
-				12903224288197FB0024364C /* ELIOSAutoTest-Bridging-Header.h */,
 				121DAD9F288CFCD6004BFA63 /* Model.swift */,
 			);
 			path = AppDelegate;
@@ -374,6 +417,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		12469E2529A8C8BA00274273 /* ELIOSAutoTestTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 12469E2C29A8C8BA00274273 /* Build configuration list for PBXNativeTarget "ELIOSAutoTestTests" */;
+			buildPhases = (
+				12469E2229A8C8BA00274273 /* Sources */,
+				12469E2329A8C8BA00274273 /* Frameworks */,
+				12469E2429A8C8BA00274273 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				12469E2B29A8C8BA00274273 /* PBXTargetDependency */,
+			);
+			name = ELIOSAutoTestTests;
+			productName = ELIOSAutoTestTests;
+			productReference = 12469E2629A8C8BA00274273 /* ELIOSAutoTestTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		1265BC262972C187000D0F2E /* Localizer */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1265BC2D2972C187000D0F2E /* Build configuration list for PBXNativeTarget "Localizer" */;
@@ -421,6 +482,10 @@
 				LastSwiftUpdateCheck = 1340;
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
+					12469E2529A8C8BA00274273 = {
+						CreatedOnToolsVersion = 13.4.1;
+						TestTargetID = 12903201288024900024364C;
+					};
 					1265BC262972C187000D0F2E = {
 						CreatedOnToolsVersion = 13.4.1;
 					};
@@ -446,11 +511,19 @@
 			targets = (
 				12903201288024900024364C /* ELIOSAutoTest */,
 				1265BC262972C187000D0F2E /* Localizer */,
+				12469E2529A8C8BA00274273 /* ELIOSAutoTestTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		12469E2429A8C8BA00274273 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		12903200288024900024364C /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -530,6 +603,17 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		12469E2229A8C8BA00274273 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				124B512129A8CBDF009955CE /* ELAutotestModelTests.swift in Sources */,
+				124B512329A8D8C5009955CE /* WeakReferenseContainer.swift in Sources */,
+				124B512229A8CBF7009955CE /* ELAutotestModel.swift in Sources */,
+				12469E2929A8C8BA00274273 /* ELIOSAutoTestTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		1265BC232972C187000D0F2E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -586,6 +670,14 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		12469E2B29A8C8BA00274273 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 12903201288024900024364C /* ELIOSAutoTest */;
+			targetProxy = 12469E2A29A8C8BA00274273 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		12469E1A29A6618800274273 /* ELAutotestSettingsViewController.xib */ = {
@@ -659,6 +751,42 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		12469E2D29A8C8BA00274273 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B8QMGNX782;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = abc.ELIOSAutoTestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ELIOSAutoTest.app/ELIOSAutoTest";
+			};
+			name = Debug;
+		};
+		12469E2E29A8C8BA00274273 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = B8QMGNX782;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = abc.ELIOSAutoTestTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ELIOSAutoTest.app/ELIOSAutoTest";
+			};
+			name = Release;
+		};
 		1265BC2B2972C187000D0F2E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -825,7 +953,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = abc.ELIOSAutoTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "ELIOSAutoTest/AppDelegate/ELIOSAutoTest-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "ELIOSAutoTest/objectiveC/ELIOSAutoTest-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -856,7 +984,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = abc.ELIOSAutoTest;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "ELIOSAutoTest/AppDelegate/ELIOSAutoTest-Bridging-Header.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "ELIOSAutoTest/objectiveC/ELIOSAutoTest-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -865,6 +993,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		12469E2C29A8C8BA00274273 /* Build configuration list for PBXNativeTarget "ELIOSAutoTestTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				12469E2D29A8C8BA00274273 /* Debug */,
+				12469E2E29A8C8BA00274273 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		1265BC2D2972C187000D0F2E /* Build configuration list for PBXNativeTarget "Localizer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

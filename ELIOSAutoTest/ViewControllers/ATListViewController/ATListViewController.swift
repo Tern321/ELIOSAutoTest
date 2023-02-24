@@ -7,33 +7,6 @@
 
 import UIKit
 
-extension ATListViewController: EmployeeCellDelegate {
-    
-    func actionA(employee: Employee, indexPath: IndexPath) {
-        print("actionA")
-    }
-    
-    func actionB(employee: Employee, indexPath: IndexPath) {
-        print("actionB")
-    }
-}
-
-extension ATListViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = self.table.dequeueReusableCellWithType(EmployeeCell.self)
-        cell.setup(employee: self.model.employers[indexPath.row], indexPath: indexPath, delegate: self)
-        return cell
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.model?.employers.count ?? 0
-    }
-}
-
 class ATListViewController: ELTestableViewController, DataUpdatable {
 
     var model: ATListViewControllerModel!
@@ -71,5 +44,32 @@ class ATListViewController: ELTestableViewController, DataUpdatable {
     
     override func getModelJson() -> String? {
         return model.toJson()
+    }
+}
+
+extension ATListViewController: EmployeeCellDelegate {
+    
+    func actionA(employee: Employee, indexPath: IndexPath) {
+        print("actionA")
+    }
+    
+    func actionB(employee: Employee, indexPath: IndexPath) {
+        print("actionB")
+    }
+}
+
+extension ATListViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = self.table.dequeueReusableCellWithType(EmployeeCell.self)
+        cell.setup(employee: self.model.employers[indexPath.row], indexPath: indexPath, delegate: self)
+        return cell
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.model?.employers.count ?? 0
     }
 }

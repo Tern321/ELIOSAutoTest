@@ -7,6 +7,8 @@
 
 import UIKit
 
-// class ELAutotestModel: NSObject {
-//
-// }
+ class ELAutotestModel: NSObject {
+     static func customFunction() -> Int {
+         return 42
+     }
+ }
