@@ -34,7 +34,7 @@ extension ATListViewController: UITableViewDelegate, UITableViewDataSource {
     }
 }
 
-class ATListViewController: ELTestableViewController, WMDataUpdatable {
+class ATListViewController: ELTestableViewController, DataUpdatable {
 
     var model: ATListViewControllerModel!
     

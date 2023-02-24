@@ -7,16 +7,20 @@
 
 import UIKit
 
+@MainActor
 class SecondViewController: ELTestableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-//        self.navigationController?.navigationItem.hidesBackButton = false
     }
 
     @IBAction func test() {
-//        var vk = IOSAutotestMessageManager.vissibleViewController()
-//        var a = IOSAutotestMessageManager.vissibleViewController()?.navigationController?.navigationBar.backItem == nil
-//        print(a)
+    }
+    
+    @MainActor
+    func testCall() {
+        DispatchQueue.main.async {
+            print("testCall")
+        }
     }
 }

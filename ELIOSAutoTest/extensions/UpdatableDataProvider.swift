@@ -2,19 +2,19 @@
 
 import UIKit
 
-protocol WMDataUpdatable {
+protocol DataUpdatable {
     func onDataChanged()
 }
 
-class WMUpdatableDataProvider {
-    var delegatesContainer = WeakDelegatesContainer<WMDataUpdatable>()
+class UpdatableDataProvider {
+    var delegatesContainer = WeakDelegatesContainer<DataUpdatable>()
     
-    func addDelegate(delegate: WMDataUpdatable) {
+    func addDelegate(delegate: DataUpdatable) {
         delegatesContainer.filterDelegates()
         delegatesContainer.addDelegate(delegate: delegate)
     }
     
-    func removeDelegate(delegate: WMDataUpdatable) {
+    func removeDelegate(delegate: DataUpdatable) {
         delegatesContainer.removeDelegate(delegate: delegate as AnyObject)
         delegatesContainer.filterDelegates()
     }
@@ -24,6 +24,4 @@ class WMUpdatableDataProvider {
             container.getValue()?.onDataChanged()
         }
     }
-    
-//    func reloadData() { }
 }

@@ -1,7 +1,7 @@
 import UIKit
 
-class WMInterfaceData {
-    static var shared = WMInterfaceData()
+class InterfaceData {
+    static var shared = InterfaceData()
     private var _keyboardHeight: CGFloat = 346
     init() {
         NotificationCenter.default.addObserver(

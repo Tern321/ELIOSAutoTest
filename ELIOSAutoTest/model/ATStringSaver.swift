@@ -12,6 +12,7 @@ class ATStringSaver: Codable {
     
     var str = "someString"
 }
+
 extension ATStringSaver: ELAutotestModelObject {
     
     static func getStateModelJson() -> String? {

@@ -1,6 +1,6 @@
 import UIKit
 
-class WMWeakReferenseContainer<T>: Hashable {
+class WeakReferenseContainer<T>: Hashable {
     private weak var value: AnyObject?
 
     init(_ value: T) {
@@ -15,7 +15,7 @@ class WMWeakReferenseContainer<T>: Hashable {
         return value as? T
     }
     
-    static func == (lhs: WMWeakReferenseContainer, rhs: WMWeakReferenseContainer) -> Bool {
+    static func == (lhs: WeakReferenseContainer, rhs: WeakReferenseContainer) -> Bool {
         return ObjectIdentifier(lhs.value ?? lhs) == ObjectIdentifier(rhs.value ?? rhs)
     }
     
@@ -31,17 +31,17 @@ extension String {
 }
 
 class WeakDelegatesContainer<T> {
-    var delegates = [String: WMWeakReferenseContainer<T>]()
+    var delegates = [String: WeakReferenseContainer<T>]()
     
     func dropDelegates() {
 //        AppDelegate.checkMainThread()
-        delegates = [String: WMWeakReferenseContainer<T>]()
+        delegates = [String: WeakReferenseContainer<T>]()
     }
     
     func addDelegate(delegate: T) {
 //        AppDelegate.checkMainThread()
         let memAddress = String.memoryAddress(obj: delegate as AnyObject)
-        delegates[memAddress] = WMWeakReferenseContainer(delegate)
+        delegates[memAddress] = WeakReferenseContainer(delegate)
     }
     
     func removeDelegate(delegate: AnyObject) {

@@ -2,10 +2,14 @@
 "<?>Lorem Ipsum" = "Lorem Ipsum";
 //EmployeeCell.xib
 "Age:" = "Возраст:";
-//ATListViewController.xib,RootViewController.xib,SecondViewController.xib
+//ELAutotestSettingsViewController.xib
+"Autotest enabled" = "Autotest enabled";
+//ATListViewController.xib,ELAutotestSettingsViewController.xib,RootViewController.xib,SecondViewController.xib
 "Button" = "Кнопка";
 //SecondViewController.xib
 "Button 3" = "Кнопка 3";
+//ELAutotestSettingsViewController.xib
+"DeviceId" = "DeviceId";
 //AdditionalKeys.swift
 "Example Key" = "Пример ключа";
 //EmployeeCell.xib

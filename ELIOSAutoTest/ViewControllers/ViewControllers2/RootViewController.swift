@@ -10,69 +10,66 @@ import MediaPlayer
 import AudioToolbox
 
 class RootViewController: ELTestableViewController {
-
+    
     @IBOutlet var modelStateLabel: UILabel!
     @IBOutlet var viewControllerStateLabel: UILabel!
     @IBOutlet var textField: UITextField!
     @IBOutlet var robotPicture: UIImageView!
     
+    @IBOutlet weak var testLabel: UILabel!
     @objc dynamic var name: String?
+    
+    @objc dynamic var someTestString: String = "someText"
     
     static var shared: RootViewController?
     var testObjcObj = ObjcTestClass()
-
+    
     override func getModelJson() -> String? {
         return "{}"
     }
     override func loadModelJson(json: String) {}
-    
+    var observer: AnyObject?
     override func viewDidLoad() {
         super.viewDidLoad()
         
         RootViewController.shared = self
         self.robotPicture.image = Asset.robot.image
-//        print(EmployeesManager.self.getStateModelJson())
-//        (myClasses[0].self as? ELAutotestModelObject.Type).Type.getStateModelJson()
-//        var json = (myClasses[0] as? ELAutotestModelObject).getStateModelJson()
-//        print(json)
         
-//        self.textField.observe(\.text, options: .new) { person, change in
-//            print("I'm now called \(person.text)")
-//        }
-        
-//        var testedViewControllerClass = NSClassFromString("ELIOSAutoTest.SecondViewController")
-        
-//        self.bind(NSBindingName(rawValue: #keyPath(self.textField.text)), to: firstCounter, withKeyPath: #keyPath(self.name), options: nil)
-        
-//        secondCounter.bind(NSBindingName(rawValue: #keyPath(Counter.number)), to: firstCounter, withKeyPath: #keyPath(Counter.number), options: nil)
+        let delay = 1.0
 
-//        textField.text
-//        let person: Person
-//        let nameLabel: UILabel
-
-//        name.bindTo
-//        textField.rValueForKeyPath("firstName").bindTo(nameLabel)
         
-//        textField.bind
-//        textField.bind(NSHiddenBinding,
-//                             to: self,
-//                             withKeyPath: #keyPath(enabledCheckbox),
-//                             options: [NSValueTransformerNameBindingOption: NSValueTransformerName.negateBooleanTransformerName])
+        DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: {
+            print("main.asyncAfter")
+            self.someTestString = "abc new string"
+//            self.testLabel.text = "1"
+        })
         
+        DispatchQueue.background.asyncAfter(deadline: .now() + delay, execute: {
+            print("background.asyncAfter")
+        })
+        
+        observer = self.textField.observe(\.text, options: [.new]) { (foo, change) in
+           print(change.newValue)
+        }
+        
+//        addObserver(self, forKeyPath: #keyPath(someTestString), options: [.new, .old, .initial], context: nil)
     }
     
+//    override func observeValue(forKeyPath keyPath: String?, of object: Any?, change: [NSKeyValueChangeKey : Any]?, context: UnsafeMutableRawPointer?) {
+//        if keyPath == #keyPath(someTestString) {
+//            self.testLabel.text = self.someTestString
+//       }
+//    }
+    
     @IBAction func secondVk() {
-        self.navigationController?.pushViewController(SecondViewController.loadViewControllerFromXib(), animated: false)
+        let vk = SecondViewController.loadViewControllerFromXib()
+        self.navigationController?.pushViewController(vk, animated: false)
     }
     
     @IBAction func test() {
         let nextVK = ATListViewController.loadViewControllerFromXib()
         nextVK.model = ATListViewControllerModel()
         self.navigationController?.pushViewController(nextVK, animated: false)
-    }
-    func showData() {
-//        var a = UIApplication.shared.windows.count
-//        print(a)
     }
     
     override func viewWillAppear(_ animated: Bool) {

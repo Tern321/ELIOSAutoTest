@@ -32,7 +32,7 @@ class NetworkManager {
     }
 }
 
-class EmployeesManager: WMUpdatableDataProvider, Codable {
+class EmployeesManager: UpdatableDataProvider, Codable {
     
     static var shared = EmployeesManager()
     private var employees: [Employee]?
