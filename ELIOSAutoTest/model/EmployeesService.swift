@@ -13,17 +13,13 @@ struct Employee: Codable {
     let employeeName: String
     let employeeSalary: String
     let employeeAge: String
-
+    
     enum CodingKeys: String, CodingKey {
         case id
         case employeeName = "employee_name"
         case employeeSalary = "employee_salary"
         case employeeAge = "employee_age"
     }
-}
-
-protocol EmployeesServiceProtocol {
-    func getEmployees(completion: @escaping (_ success: Bool, _ results: [Employee]?, _ error: String?) -> Void)
 }
 
 class NetworkManager {
@@ -36,36 +32,35 @@ class EmployeesManager: UpdatableDataProvider, Codable {
     
     static var shared = EmployeesManager()
     private var employees: [Employee]?
-
+    
     func getEmployees() -> [Employee] {
         
         if self.employees == nil {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                self.loadEmployees { success, employees2, error in
-                    self.sendDataChangedEvent()
-                    self.employees = employees2 ?? []
-                    print("getEmployees update")
-                }
-            }
+            self.loadEmployees()
+            self.loadEmployees()
+            self.loadEmployees()
+//            return self.employees ?? []
         }
         return self.employees ?? []
     }
     
-    func loadEmployees(completion: @escaping (Bool, [Employee]?, String?) -> Void) {
-        HttpRequestHelper().GET(url: "https://raw.githubusercontent.com/johncodeos-blog/MVVMiOSExample/main/demo.json", params: ["": ""], httpHeader: .application_json) { success, data in
-            if success {
-                do {
-                    let model = try JSONDecoder().decode([Employee].self, from: data!)
-                    completion(true, model, nil)
-                } catch {
-                    completion(false, nil, "Error: Trying to parse Employees to model")
+    func loadEmployees() {
+        ATRequestHelper.shared.requestGet(url: "https://raw.githubusercontent.com/johncodeos-blog/MVVMiOSExample/main/demo.json", params: ["": ""], contentType: .application_json, target: self) { request in // // к чему он относится?
+            DispatchQueue.main.async {
+                if let data = request.getData() {
+                    do {
+                        print("loadEmployees response")
+                        let employees = try JSONDecoder().decode([Employee].self, from: data)
+                        EmployeesManager.shared.employees = employees
+                        EmployeesManager.shared.sendDataChangedEvent()
+                        
+                    } catch {
+                        print(request.getError())
+                    }
                 }
-            } else {
-                completion(false, nil, "Error: Employees GET Request failed")
             }
         }
     }
-    
 }
 
 extension EmployeesManager: ELAutotestModelObject {
@@ -75,23 +70,5 @@ extension EmployeesManager: ELAutotestModelObject {
     }
     static func loadStateStateObject(json: String?) {
         self.shared = EmployeesManager.loadFromJson(json: json) ?? EmployeesManager()
-    }
-}
-
-class EmployeesService: EmployeesServiceProtocol {
-    
-    func getEmployees(completion: @escaping (Bool, [Employee]?, String?) -> Void) {
-        HttpRequestHelper().GET(url: "https://raw.githubusercontent.com/johncodeos-blog/MVVMiOSExample/main/demo.json", params: ["": ""], httpHeader: .application_json) { success, data in
-            if success {
-                do {
-                    let model = try JSONDecoder().decode([Employee].self, from: data!)
-                    completion(true, model, nil)
-                } catch {
-                    completion(false, nil, "Error: Trying to parse Employees to model")
-                }
-            } else {
-                completion(false, nil, "Error: Employees GET Request failed")
-            }
-        }
     }
 }

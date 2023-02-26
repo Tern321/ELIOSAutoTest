@@ -28,10 +28,8 @@ class RootViewController: ELTestableViewController {
     }
     override func loadModelJson(json: String) {}
 
-    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         
         RootViewController.shared = self
         self.robotPicture.image = Asset.robot.image

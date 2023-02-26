@@ -19,7 +19,7 @@ class ATListViewController: ELTestableViewController, DataUpdatable {
     }
     
     func onDataChanged() { // change to custom method
-        refillModel()
+        self.refillModel()
     }
     
     func refillModel() {
