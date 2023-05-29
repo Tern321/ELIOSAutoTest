@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		046CC5ED29ADB75700BB342E /* UITestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046CC5EC29ADB75700BB342E /* UITestViewController.swift */; };
+		046CC5EF29ADB76800BB342E /* UITestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046CC5EE29ADB76800BB342E /* UITestView.swift */; };
+		04A26EAD29ADBBE900E741BA /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A26EAC29ADBBE900E741BA /* String+Extension.swift */; };
 		1211E53C29A2F28B000A58B5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1211E53B29A2F28B000A58B5 /* Images.xcassets */; };
 		1211E54029A2F343000A58B5 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 1211E53F29A2F343000A58B5 /* swiftgen.yml */; };
 		1211E54329A2F464000A58B5 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1211E54229A2F464000A58B5 /* Assets.swift */; };
@@ -34,6 +37,7 @@
 		124B512229A8CBF7009955CE /* ELAutotestModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 12EDC0562968E16A00328C61 /* ELAutotestModel.swift */; };
 		124B512329A8D8C5009955CE /* WeakDelegatesContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1246DB2829691B0A0038F34F /* WeakDelegatesContainer.swift */; };
 		124D7C61298336F60017F576 /* SignalRService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124D7C60298336F60017F576 /* SignalRService.swift */; };
+		124DB6C429AB1B41008FBE75 /* DispatchQueue+extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 124DB6C329AB1B41008FBE75 /* DispatchQueue+extension.swift */; };
 		1265BC332972C1A4000D0F2E /* StringsFileParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1265BC2E2972C1A4000D0F2E /* StringsFileParser.swift */; };
 		1265BC342972C1A4000D0F2E /* ShellWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1265BC2F2972C1A4000D0F2E /* ShellWrapper.swift */; };
 		1265BC352972C1A4000D0F2E /* AdditionalKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1265BC302972C1A4000D0F2E /* AdditionalKeys.swift */; };
@@ -89,6 +93,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		046CC5EC29ADB75700BB342E /* UITestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestViewController.swift; sourceTree = "<group>"; };
+		046CC5EE29ADB76800BB342E /* UITestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestView.swift; sourceTree = "<group>"; };
+		04A26EAC29ADBBE900E741BA /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
 		1211E53B29A2F28B000A58B5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1211E53F29A2F343000A58B5 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = SOURCE_ROOT; };
 		1211E54229A2F464000A58B5 /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
@@ -117,6 +124,7 @@
 		1246DB38296A62340038F34F /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
 		124B512029A8CBDF009955CE /* ELAutotestModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ELAutotestModelTests.swift; sourceTree = "<group>"; };
 		124D7C60298336F60017F576 /* SignalRService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignalRService.swift; sourceTree = "<group>"; };
+		124DB6C329AB1B41008FBE75 /* DispatchQueue+extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+extension.swift"; sourceTree = "<group>"; };
 		1265BC272972C187000D0F2E /* Localizer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Localizer; sourceTree = BUILT_PRODUCTS_DIR; };
 		1265BC2E2972C1A4000D0F2E /* StringsFileParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringsFileParser.swift; sourceTree = "<group>"; };
 		1265BC2F2972C1A4000D0F2E /* ShellWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShellWrapper.swift; sourceTree = "<group>"; };
@@ -193,6 +201,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0499C87529FFA076001DFCCA /* Application */ = {
+			isa = PBXGroup;
+			children = (
+				12EDC0552968E14300328C61 /* ViewControllers */,
+				1246DB3329691EA00038F34F /* model */,
+				1246DB3A296A8F710038F34F /* network */,
+			);
+			path = Application;
+			sourceTree = "<group>";
+		};
 		1211E53A29A2F278000A58B5 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -212,6 +230,7 @@
 		121DAD9E288CC69A004BFA63 /* ELAutotest */ = {
 			isa = PBXGroup;
 			children = (
+				124D7C5F298336E30017F576 /* signalR */,
 				121DADA1288CFDD3004BFA63 /* TestScreenData.swift */,
 				126C12C32970006000CB2615 /* RuntimeExplorer.swift */,
 				126C12BF296F9EAC00CB2615 /* ATUtils.swift */,
@@ -235,8 +254,8 @@
 		12469E2129A8BEAB00274273 /* objectiveC */ = {
 			isa = PBXGroup;
 			children = (
-				12903225288197FB0024364C /* ObjcTestClass.m */,
 				1290322728819A120024364C /* ObjcTestClass.h */,
+				12903225288197FB0024364C /* ObjcTestClass.m */,
 				12903224288197FB0024364C /* ELIOSAutoTest-Bridging-Header.h */,
 			);
 			path = objectiveC;
@@ -264,6 +283,8 @@
 				12EDC0612968E6B500328C61 /* UIViewController+Extensions.swift */,
 				121FD613296BED990082C273 /* NSObject+Mutable.swift */,
 				12469E1F29A81C0300274273 /* DispatchQueue+Extensions.swift */,
+				124DB6C329AB1B41008FBE75 /* DispatchQueue+extension.swift */,
+				04A26EAC29ADBBE900E741BA /* String+Extension.swift */,
 			);
 			path = extensions;
 			sourceTree = "<group>";
@@ -271,6 +292,7 @@
 		1246DB3329691EA00038F34F /* model */ = {
 			isa = PBXGroup;
 			children = (
+				121DAD9F288CFCD6004BFA63 /* Model.swift */,
 				1246DB2F29691DA90038F34F /* EmployeesService.swift */,
 				126C12C52971991500CB2615 /* ATStringSaver.swift */,
 			);
@@ -332,15 +354,12 @@
 		12903204288024900024364C /* ELIOSAutoTest */ = {
 			isa = PBXGroup;
 			children = (
+				0499C87529FFA076001DFCCA /* Application */,
 				12469E2129A8BEAB00274273 /* objectiveC */,
 				1211E54129A2F42B000A58B5 /* Generated */,
 				1211E53F29A2F343000A58B5 /* swiftgen.yml */,
 				1211E53A29A2F278000A58B5 /* Resources */,
-				124D7C5F298336E30017F576 /* signalR */,
-				1246DB3A296A8F710038F34F /* network */,
-				1246DB3329691EA00038F34F /* model */,
 				1246DB24296919D10038F34F /* extensions */,
-				12EDC0552968E14300328C61 /* ViewControllers */,
 				121DAD9E288CC69A004BFA63 /* ELAutotest */,
 				1290321E288024FA0024364C /* AppDelegate */,
 				1290320E288024920024364C /* Assets.xcassets */,
@@ -350,24 +369,12 @@
 			path = ELIOSAutoTest;
 			sourceTree = "<group>";
 		};
-		1290321D288024EB0024364C /* ViewControllers2 */ = {
-			isa = PBXGroup;
-			children = (
-				12903219288024DE0024364C /* RootViewController.swift */,
-				1265BC502972C2F8000D0F2E /* RootViewController.xib */,
-				121DAD98288C77EC004BFA63 /* SecondViewController.swift */,
-				1265BC572972C301000D0F2E /* SecondViewController.xib */,
-			);
-			path = ViewControllers2;
-			sourceTree = "<group>";
-		};
 		1290321E288024FA0024364C /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
 				12903205288024900024364C /* AppDelegate.swift */,
 				12903207288024900024364C /* SceneDelegate.swift */,
 				12903210288024920024364C /* LaunchScreen.storyboard */,
-				121DAD9F288CFCD6004BFA63 /* Model.swift */,
 			);
 			path = AppDelegate;
 			sourceTree = "<group>";
@@ -384,10 +391,15 @@
 		12EDC0552968E14300328C61 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				1290321D288024EB0024364C /* ViewControllers2 */,
+				12903219288024DE0024364C /* RootViewController.swift */,
+				1265BC502972C2F8000D0F2E /* RootViewController.xib */,
+				121DAD98288C77EC004BFA63 /* SecondViewController.swift */,
+				1265BC572972C301000D0F2E /* SecondViewController.xib */,
 				12EDC05A2968E5DC00328C61 /* ATListViewController */,
 				12EDC0562968E16A00328C61 /* ELAutotestModel.swift */,
 				12EDC0582968E18B00328C61 /* ELAutotestModelManager.swift */,
+				046CC5EC29ADB75700BB342E /* UITestViewController.swift */,
+				046CC5EE29ADB76800BB342E /* UITestView.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -631,6 +643,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				046CC5EF29ADB76800BB342E /* UITestView.swift in Sources */,
 				12903206288024900024364C /* AppDelegate.swift in Sources */,
 				12EDC0572968E16A00328C61 /* ELAutotestModel.swift in Sources */,
 				1246DB35296925FB0038F34F /* UpdatableDataProvider.swift in Sources */,
@@ -649,6 +662,7 @@
 				126C12C62971991500CB2615 /* ATStringSaver.swift in Sources */,
 				12903226288197FB0024364C /* ObjcTestClass.m in Sources */,
 				126C12C42970006000CB2615 /* RuntimeExplorer.swift in Sources */,
+				04A26EAD29ADBBE900E741BA /* String+Extension.swift in Sources */,
 				1246DB2A29691B0A0038F34F /* UITableView.swift in Sources */,
 				1246DB23296919CD0038F34F /* Data+Extension.swift in Sources */,
 				126C12C0296F9EAC00CB2615 /* ATUtils.swift in Sources */,
@@ -664,6 +678,8 @@
 				1246DB2C29691B0A0038F34F /* WeakDelegatesContainer.swift in Sources */,
 				12AB96AE2884E42D005D3458 /* IOSAutotestMessageManager.swift in Sources */,
 				12EDC0592968E18B00328C61 /* ELAutotestModelManager.swift in Sources */,
+				124DB6C429AB1B41008FBE75 /* DispatchQueue+extension.swift in Sources */,
+				046CC5ED29ADB75700BB342E /* UITestViewController.swift in Sources */,
 				121DAD9A288C77EC004BFA63 /* SecondViewController.swift in Sources */,
 				1290321B288024DE0024364C /* RootViewController.swift in Sources */,
 			);

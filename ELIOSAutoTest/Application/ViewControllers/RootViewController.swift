@@ -8,6 +8,16 @@
 import UIKit
 import MediaPlayer
 import AudioToolbox
+import SwiftUI
+
+
+class CustomView: UIView {
+    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
+        
+        print("hitTest \(point)")
+        return super.hitTest(point, with: event)
+    }
+}
 
 class RootViewController: ELTestableViewController {
     
@@ -23,6 +33,14 @@ class RootViewController: ELTestableViewController {
     
     static var shared: RootViewController?
     
+    @IBAction func ShowUITestView(_ sender: Any) {
+        
+        let swiftUIView = UITestView() // swiftUIView is View
+        let viewCtrl = UIHostingController(rootView: swiftUIView)
+
+        self.navigationController?.pushViewController(viewCtrl, animated: true)
+    }
+    
     override func getModelJson() -> String? {
         return "{}"
     }
@@ -30,6 +48,8 @@ class RootViewController: ELTestableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        ObjcTestClass.start(self)
+        
         
         RootViewController.shared = self
         self.robotPicture.image = Asset.robot.image
@@ -38,15 +58,12 @@ class RootViewController: ELTestableViewController {
 
         DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: {
             print("main.asyncAfter")
+            print(self.robotPicture.image?.size)
         })
         
         DispatchQueue.background.asyncAfter(deadline: .now() + 1.5, execute: {
             print("background.asyncAfter")
         })
-        
-//        observer = self.observe(\.someTestString, options: [.new]) { (foo, change) in
-//           print(change.newValue)
-//        }
     }
     
     @MainActor

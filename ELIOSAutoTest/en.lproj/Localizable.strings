@@ -12,14 +12,20 @@
 "DeviceId" = "DeviceId";
 //AdditionalKeys.swift
 "Example Key" = "Example Key";
+//UITestView.swift
+"Hello World" = "Hello World en";
 //EmployeeCell.xib
 "ID: " = "ID: ";
+//RootViewController.xib
+"Label" = "Label";
 //EmployeeCell.xib
 "Name:" = "Name:";
 //EmployeeCell.xib
 "Salary:" = "Salary:";
 //RootViewController.xib
 "Second vk" = "Second vk";
+//RootViewController.xib
+"UI view" = "UI view";
 //RootViewController.xib
 "modelState" = "modelState";
 //RootViewController.xib

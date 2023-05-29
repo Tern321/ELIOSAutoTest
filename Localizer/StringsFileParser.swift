@@ -14,6 +14,7 @@ class StringsFileParser: NSObject {
 
         let lines = text.split(whereSeparator: \.isNewline)
 
+//        readLine()
         var dict = [String: String]()
         for line in lines {
             if line.starts(with: "\"") {

@@ -15,13 +15,15 @@ protocol ATRequestDelegate: AnyObject {
 }
 
 class RequestCallbackContainer {
-    init(target: AnyObject?, callback: @escaping (ATRequest) -> Void) {
+    init(target: AnyObject?, callback: @escaping (ATRequest) -> Void, queue: DispatchQueue) {
         self.target = target
         self.callback = callback
+        self.targetQueue = queue
     }
     
     weak var target: AnyObject?
     var callback: (ATRequest) -> Void // сделать weak?
+    var targetQueue: DispatchQueue
 }
 
 class ATRequestHelper: ATRequestDelegate {
@@ -61,12 +63,24 @@ class ATRequestHelper: ATRequestDelegate {
             print("duplicated request")
         }
         var targetsDictionary = submitedForRequest[request.requestHash]!
-        targetsDictionary[targetMemAddress] = RequestCallbackContainer(target: target, callback: callback)
+//        targetsDictionary[targetMemAddress] = RequestCallbackContainer(target: target, callback: callback, queue: DispatchQueue.current )
         submitedForRequest[request.requestHash] = targetsDictionary
         return activeRequests[request.requestHash] ?? request
     }
 }
 
+class ATRequestDescription {
+    
+    
+//    let requestHash: RequestHash
+//    let url: String
+//    var params: [String: String]
+//    let contentType: HTTPHeaderContentType?
+//
+//    internal init(url: String) {
+//        self.url = url
+//    }
+}
 class ATRequest {
     
     let requestId: String = NSUUID().uuidString

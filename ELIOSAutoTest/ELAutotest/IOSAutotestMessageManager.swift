@@ -96,7 +96,9 @@ class IOSAutotestMessageManager: AutotestTransportServiceDelegate {
             testedViewController.navigationItem.setHidesBackButton(true, animated: false)
         }
     }
-    
+    func runTestCaseWithStateJsonSwiftUI() {
+        
+    }
     func runTestCaseWithStateJson(testInfo: TestScreenData) {
         
         // swiftlint:disable all

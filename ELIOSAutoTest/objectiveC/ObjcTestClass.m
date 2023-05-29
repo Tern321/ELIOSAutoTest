@@ -20,8 +20,7 @@
 
 @implementation ObjcTestClass
  
-
-- (void)start:(id)obj {
++ (void)start:(id)obj {
     NSLog(@"Static method in ObjectiveC");
 }
 
@@ -29,7 +28,6 @@
 {
     NSLog(@"observeValueForKeyPath2");
 }
-
 
 //
 //public override void ObserveValue (NSString keyPath, NSObject ofObject, NSDictionary change, IntPtr context)
