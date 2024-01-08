@@ -16,156 +16,183 @@
 			);
 			name = SwiftGen;
 		};
+		52B60EC2A583F24ACBB69C113F5488B9 /* SwiftLint */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = AE7B4FB01588B9E6DF09CB79FC7CE7BD /* Build configuration list for PBXAggregateTarget "SwiftLint" */;
+			buildPhases = (
+			);
+			dependencies = (
+			);
+			name = SwiftLint;
+		};
 /* End PBXAggregateTarget section */
 
 /* Begin PBXBuildFile section */
-		009E1A77FB9F13C5BC3468DF28E78709 /* LongPollingTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 101393A6ECF03F88ADF3EE15923BA771 /* LongPollingTransport.swift */; };
-		05E21E5A4892507788FB351C83C6BAEE /* HubProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2C5C674C28AB35C1ABBB93692EB4CE2 /* HubProtocol.swift */; };
-		0F5BD8BEC402F27C791A9D816253C115 /* SwiftSignalRClient-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = D24870F49B2694F2427CDA5D5A37965A /* SwiftSignalRClient-dummy.m */; };
-		11C87D6B51B636701FE1D81E75DBFE61 /* SwiftSignalRClient-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 43670809262A31BCD66E206BC3D1FC0D /* SwiftSignalRClient-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		209306D3751BF3E84E75472516FD9D31 /* ConnectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7D8D8FB293007D0CCE52943458DB31E6 /* ConnectionDelegate.swift */; };
-		240095CFDBD18CD06818F56853537D06 /* HubConnectionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 928865A1D883E2C540FC5D7463EA4DD7 /* HubConnectionExtensions.swift */; };
-		27BDC15C3EB0DE44B119FA9D461E6018 /* CodableHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D79DAFA88F7A54886AD8214FCDA53ED /* CodableHelpers.swift */; };
-		2E337B3EBE92AC40E79DD866BCBB4B3C /* ReconnectableConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0237730EE235E66D7A5B919AFE272580 /* ReconnectableConnection.swift */; };
-		3400EA498224B568BC642FB136EC58E2 /* TransferFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 514A9554EB293DAC371DC8E0BC47A46D /* TransferFormat.swift */; };
-		373FDF1F021DA703D1B2D245FCD5A511 /* HubConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 666710111F6D4C40D20BD37BFC3A0CF5 /* HubConnection.swift */; };
-		3CAB96DA5B7A3C21986B5DD57B9EA97F /* HubConnectionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D484BE41762F8E72C94829C1AA4DAF9 /* HubConnectionBuilder.swift */; };
-		3CE5D9E0533A9949827FC0B1039BE77C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		40EA471A2677138AE2E99FA5CEB90C65 /* DefaultTransportFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDB3568955C17337051E515249866FAF /* DefaultTransportFactory.swift */; };
-		45E6B003B1DC036D16541CB596284306 /* HttpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89C38263B5FBB5FA5BC82B884DBC6D96 /* HttpResponse.swift */; };
-		46F400E3802920F5AD7BED928E52E36A /* NegotiationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 13BA885A17ABAC0A4C3376DEFE2EBC42 /* NegotiationResponse.swift */; };
-		524E23E87CFD636FA8BFD0234C590C3D /* HubConnectionOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6D19AC68BBF8F749AF9F2D64E7D8CCFC /* HubConnectionOptions.swift */; };
-		588961B97CB95655FDB2DD8E4A8E5E99 /* WebsocketsTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = C39F84C6C6A1E7ED43DAE7BAA672BDD3 /* WebsocketsTransport.swift */; };
-		5B685C1F64EB4C163C68DD148C191D46 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 341B8458538E16AEA8BA4BFACD68AC63 /* Logger.swift */; };
-		8B20FB3623D710E808BD118209D93B2A /* TransportDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D2475B9817C0C896D906C9C2158BAE61 /* TransportDelegate.swift */; };
-		964726CA513A7D9E5465972A2C25A8DA /* Pods-ELIOSAutoTest-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = ACD704617150698352711D3AC7E6C261 /* Pods-ELIOSAutoTest-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		96B56125D63E8CC56EDC6F1B289C88B4 /* HandshakeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33CC5AFD49A237C195ADFAC08F89492 /* HandshakeProtocol.swift */; };
-		9BCE4056E07C04CADF0BC378ECE71AF5 /* TransportType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE4998D2206790A09985B2296F3BCF93 /* TransportType.swift */; };
-		A2BAEBB05A4A02D32FB102BD845D2340 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
-		A68ED786678D8372F05711934632C49D /* HttpClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8EDB11C0FF82434186EC42E9D42D4DF /* HttpClientProtocol.swift */; };
-		B6EFEA01D75E8F22436D18995EB72ADB /* ServerInvocationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9608C2A8CD6F3C6F7889A5B6EB92EC30 /* ServerInvocationHandler.swift */; };
-		B78DD62383B42A1507F4813933D2C562 /* JSONHubProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D3C01F87CB7A56F715C0685178C12A0 /* JSONHubProtocol.swift */; };
-		B81119392BD18516301BE661102AA0A0 /* HttpConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47C3D0A2A165C1488B433D5536563659 /* HttpConnection.swift */; };
-		B81A4D39EA0FBDF1005F325CE0F6E0CD /* ReconnectPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = CABEDBC7CDF5A3FA6519A34ACCADF1F4 /* ReconnectPolicy.swift */; };
-		BC2FD1F8E7386CBB2C0519DDC7A406A1 /* StreamHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F5BED7C5C72EA647A66B47538E4DC28F /* StreamHandle.swift */; };
-		C176278FE036B8001273A31A89930DF7 /* HttpConnectionOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9A9755C21F6344AB26B707F99D5DA2E /* HttpConnectionOptions.swift */; };
-		CBE3FA118CB046951F5ECF0CC4B4BD89 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA3A557D2DAD07FAE368705CFBBA9355 /* Connection.swift */; };
-		CE0AF8D2230FFE625C2CF0E0034898F9 /* SignalRError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BE3E19BCBBF3B9D11F5DB947B4E49A6 /* SignalRError.swift */; };
-		CE558CEEA7EBEED50CFA181FF94D2C22 /* Transport.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA762C4E88D9D80FB534836159268E66 /* Transport.swift */; };
-		CE5CB6F17FC3FE9E528915D5794599AA /* DefaultHttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3952D413092013FE2791FC4454B5FF9B /* DefaultHttpClient.swift */; };
-		EC86984FEC120E9EAF28433CBB187C96 /* Pods-ELIOSAutoTest-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E419C2B354B16230D3D4408FAB6AEAD6 /* Pods-ELIOSAutoTest-dummy.m */; };
-		FB9D39E0DA3686B9D8526F2BC18063F5 /* HubConnectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB3CD64DBB0E5BA532CB20ED0F494FD7 /* HubConnectionDelegate.swift */; };
+		0421C3AC6198795C25183A8B4D1776C9 /* HubConnectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEB9E5C9EB17247549D1FCBBC30F71E3 /* HubConnectionDelegate.swift */; };
+		0C079C29DD499F4FD2F0DEDF2DFAD281 /* StreamHandle.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF739F5E9644F0DFA4A5F085C0BAF737 /* StreamHandle.swift */; };
+		13663751683E0E3DB2F4D39DF93C03DE /* TransportType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6A0BF6A572C1036B7A4596EDFEF7B6D0 /* TransportType.swift */; };
+		1665A9395C61E647D9F64C0C436F0281 /* HubConnectionExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A149E548A6249BE7A55D65EF7C34F2E /* HubConnectionExtensions.swift */; };
+		2A04AD140141FE7F6A2DF7C4A7474B31 /* HubConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4DA3523065DC8FC6D8F55A69488DB8C4 /* HubConnection.swift */; };
+		2B89A90774CE946A3CDECD4F2680A06F /* Pods-ELIOSAutoTest-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = E419C2B354B16230D3D4408FAB6AEAD6 /* Pods-ELIOSAutoTest-dummy.m */; };
+		2B9A4E6154F21CA9E878AB401D7C2802 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		32DC2CB144011FC5953744124A5B3579 /* HttpResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD14385FC1D0E22A822D7529D38B3EB /* HttpResponse.swift */; };
+		34D6F8836DCAC6EE733E3FB7940EC40C /* JSONHubProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B23C68D8B8C47DD035E44DA44FC457F /* JSONHubProtocol.swift */; };
+		42ECF68DBE821129D94A3C8E0E8F816D /* ConnectionDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB1B47EBB62F43A15B284EC582B2A840 /* ConnectionDelegate.swift */; };
+		449620A011D4E95E508B36B68FF80C59 /* Transport.swift in Sources */ = {isa = PBXBuildFile; fileRef = D88F39AE0A5B08004911278C604E0C9C /* Transport.swift */; };
+		4A181C92E9191CCB01DC052D3C7EC1FC /* SignalRError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 595C167E140B654339A2CE4E6F7622CC /* SignalRError.swift */; };
+		563BF89165C2840EDC4588BE42118177 /* DefaultTransportFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 93766E2D5AAA88506828A3D6E5488340 /* DefaultTransportFactory.swift */; };
+		69153567051DAC54546193359AF1ED24 /* SwiftSignalRClient-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F5F5D6649A81CAC8373F3E07C88F1536 /* SwiftSignalRClient-dummy.m */; };
+		6DDA349155339DED117306075DE96FBD /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA716356677530702928ED018B786F15 /* Logger.swift */; };
+		87B512B8471DD5E848F67D363C905CC1 /* DefaultHttpClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7076D1715279167BB6895F3EDBEE7472 /* DefaultHttpClient.swift */; };
+		8A7B6FE621513A29B877ACA643011F92 /* LongPollingTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7BFF6AF1A37430117F24D0CA53E70270 /* LongPollingTransport.swift */; };
+		8DA179FBE981F9231E7BF125CE350F2B /* HttpConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = E473AD1ABCB2577240C59D4D18A6D7BC /* HttpConnection.swift */; };
+		8FCC65DB5D2A915A95BB598FBB665973 /* Connection.swift in Sources */ = {isa = PBXBuildFile; fileRef = F658DDA345DAB2EF2466A486DB3CE42D /* Connection.swift */; };
+		91591C04B2AFBB03BF43DD7897537F2C /* Pods-ELIOSAutoTest-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = ACD704617150698352711D3AC7E6C261 /* Pods-ELIOSAutoTest-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		916B5B4A34DA1DBB40F8FC173B98866E /* NegotiationResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FEEFC7DE4D307A430E52A14B1E4F3C /* NegotiationResponse.swift */; };
+		94AFE704E64BB1A3B4EC16F9B146AFC0 /* HandshakeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D9BCFA8FF7678146A55625968C20D7D /* HandshakeProtocol.swift */; };
+		9670246F6422DFF3E476FC3ED0D73410 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		97E3368B54D18230FBBC68F25D99A61A /* ServerInvocationHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7DF1A1E51287BE69E5FA202B9622B3D3 /* ServerInvocationHandler.swift */; };
+		ADD1552E3987F6DB6EBE2C7F727DCEA8 /* HubConnectionOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5B1BDEA3A6C11C873900E93530B59ACD /* HubConnectionOptions.swift */; };
+		AF055D404C2CC92E73747D1F514B208E /* HttpClientProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74F81EC85B8D1F25E611FBC63600793C /* HttpClientProtocol.swift */; };
+		B2415F9A5A3BEEB50FA7C2847932A38A /* HubConnectionBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96FD9346F07710F33D1362CEF7A3718A /* HubConnectionBuilder.swift */; };
+		B6DDF026F073B5A50CF465B6E4C25991 /* TransferFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = E19279810AF82533A564C8B40F0080CE /* TransferFormat.swift */; };
+		BC9E3ADFC2F851CD1075F5DE0855E1FC /* ReconnectableConnection.swift in Sources */ = {isa = PBXBuildFile; fileRef = B77E61C3E51ADD427D535DFF11A2E8C2 /* ReconnectableConnection.swift */; };
+		C3319908A9E2E7C974F9A70653C4CCE6 /* HubProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3E14C74FA6FE5118D77390415EA57F3 /* HubProtocol.swift */; };
+		DDEA2B1F2F17B2565276D1129BA5DAD1 /* CodableHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64AC8231EF9636212FE7946135103164 /* CodableHelpers.swift */; };
+		E13CCCFCA38CB51B76D8AB5ECCFADAEC /* TransportDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD6C9ECC98C44A8AB44E0D20F031886B /* TransportDelegate.swift */; };
+		E89DAC42CB9D900368060ED466DCC4B2 /* ReconnectPolicy.swift in Sources */ = {isa = PBXBuildFile; fileRef = C026BB24D4A58626323532CF657CA1CE /* ReconnectPolicy.swift */; };
+		EC4A16C9C76F8BC21A6579572FE1AE9C /* SwiftSignalRClient-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 3BBD0432BE89CF00D272DD051A98D197 /* SwiftSignalRClient-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		EC8E5AA010AC48C6DEC748295E5A30F7 /* WebsocketsTransport.swift in Sources */ = {isa = PBXBuildFile; fileRef = 394D1A815E880522561F656749D84BBC /* WebsocketsTransport.swift */; };
+		FB2F3019F0E43C2D4328E20B2AC99C5A /* HttpConnectionOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A97E5E44C0B4CC876B1768C02C711DA1 /* HttpConnectionOptions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		1DB5856BE9AC57A5B912DFAC791121E6 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 1E798429DCFA7906F6625CCFC1088744;
-			remoteInfo = SwiftGen;
-		};
-		D370899997CE388586D40A05CBF0ED62 /* PBXContainerItemProxy */ = {
+		139631BE051C7C12A2EE351819D8FBE4 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = C70018130D2F6BA4895F572DAC2308A0;
 			remoteInfo = SwiftSignalRClient;
 		};
+		2B93EE013797C39DD77B0F8DE8601E5D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52B60EC2A583F24ACBB69C113F5488B9;
+			remoteInfo = SwiftLint;
+		};
+		59E6265FEF7F20F2D2DB9C8BFD8AE119 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1E798429DCFA7906F6625CCFC1088744;
+			remoteInfo = SwiftGen;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		001A703FB92C6B5C7FA5BBDCCA7489E9 /* Pods-ELIOSAutoTest.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ELIOSAutoTest.release.xcconfig"; sourceTree = "<group>"; };
-		0237730EE235E66D7A5B919AFE272580 /* ReconnectableConnection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReconnectableConnection.swift; path = Sources/SignalRClient/ReconnectableConnection.swift; sourceTree = "<group>"; };
-		0D3C01F87CB7A56F715C0685178C12A0 /* JSONHubProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JSONHubProtocol.swift; path = Sources/SignalRClient/JSONHubProtocol.swift; sourceTree = "<group>"; };
-		101393A6ECF03F88ADF3EE15923BA771 /* LongPollingTransport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LongPollingTransport.swift; path = Sources/SignalRClient/LongPollingTransport.swift; sourceTree = "<group>"; };
-		13BA885A17ABAC0A4C3376DEFE2EBC42 /* NegotiationResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NegotiationResponse.swift; path = Sources/SignalRClient/NegotiationResponse.swift; sourceTree = "<group>"; };
-		17B00B4CCA9F2C26AC6CEAD34F01E6C4 /* SwiftSignalRClient-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftSignalRClient-prefix.pch"; sourceTree = "<group>"; };
 		1A5031D8E1C3CA61E287D04472821A96 /* Pods-ELIOSAutoTest.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-ELIOSAutoTest.debug.xcconfig"; sourceTree = "<group>"; };
 		226F6408D33B3EDA8982AD38D76E69D8 /* Pods-ELIOSAutoTest-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ELIOSAutoTest-acknowledgements.plist"; sourceTree = "<group>"; };
-		341B8458538E16AEA8BA4BFACD68AC63 /* Logger.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Logger.swift; path = Sources/SignalRClient/Logger.swift; sourceTree = "<group>"; };
-		3952D413092013FE2791FC4454B5FF9B /* DefaultHttpClient.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DefaultHttpClient.swift; path = Sources/SignalRClient/DefaultHttpClient.swift; sourceTree = "<group>"; };
-		43670809262A31BCD66E206BC3D1FC0D /* SwiftSignalRClient-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftSignalRClient-umbrella.h"; sourceTree = "<group>"; };
-		47C3D0A2A165C1488B433D5536563659 /* HttpConnection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HttpConnection.swift; path = Sources/SignalRClient/HttpConnection.swift; sourceTree = "<group>"; };
-		4D79DAFA88F7A54886AD8214FCDA53ED /* CodableHelpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CodableHelpers.swift; path = Sources/SignalRClient/CodableHelpers.swift; sourceTree = "<group>"; };
+		22C34854AD4CCF603A3466244AE52171 /* SwiftLint.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftLint.debug.xcconfig; sourceTree = "<group>"; };
+		280C78D52B8D2D8AED99C061EF1B81A2 /* SwiftSignalRClient-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftSignalRClient-prefix.pch"; sourceTree = "<group>"; };
+		2A149E548A6249BE7A55D65EF7C34F2E /* HubConnectionExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HubConnectionExtensions.swift; path = Sources/SignalRClient/HubConnectionExtensions.swift; sourceTree = "<group>"; };
+		2E2916319BEA11F16A3E75C4C5F2DA85 /* SwiftLint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftLint.release.xcconfig; sourceTree = "<group>"; };
+		394D1A815E880522561F656749D84BBC /* WebsocketsTransport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WebsocketsTransport.swift; path = Sources/SignalRClient/WebsocketsTransport.swift; sourceTree = "<group>"; };
+		3BBD0432BE89CF00D272DD051A98D197 /* SwiftSignalRClient-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftSignalRClient-umbrella.h"; sourceTree = "<group>"; };
+		4DA3523065DC8FC6D8F55A69488DB8C4 /* HubConnection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HubConnection.swift; path = Sources/SignalRClient/HubConnection.swift; sourceTree = "<group>"; };
 		4FAC8788ABAFA3EFD237EBAB21B437E9 /* Pods-ELIOSAutoTest-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-ELIOSAutoTest-frameworks.sh"; sourceTree = "<group>"; };
-		514A9554EB293DAC371DC8E0BC47A46D /* TransferFormat.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransferFormat.swift; path = Sources/SignalRClient/TransferFormat.swift; sourceTree = "<group>"; };
-		5D484BE41762F8E72C94829C1AA4DAF9 /* HubConnectionBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HubConnectionBuilder.swift; path = Sources/SignalRClient/HubConnectionBuilder.swift; sourceTree = "<group>"; };
-		666710111F6D4C40D20BD37BFC3A0CF5 /* HubConnection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HubConnection.swift; path = Sources/SignalRClient/HubConnection.swift; sourceTree = "<group>"; };
-		6D19AC68BBF8F749AF9F2D64E7D8CCFC /* HubConnectionOptions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HubConnectionOptions.swift; path = Sources/SignalRClient/HubConnectionOptions.swift; sourceTree = "<group>"; };
+		595C167E140B654339A2CE4E6F7622CC /* SignalRError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SignalRError.swift; path = Sources/SignalRClient/SignalRError.swift; sourceTree = "<group>"; };
+		5B1BDEA3A6C11C873900E93530B59ACD /* HubConnectionOptions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HubConnectionOptions.swift; path = Sources/SignalRClient/HubConnectionOptions.swift; sourceTree = "<group>"; };
+		5D9BCFA8FF7678146A55625968C20D7D /* HandshakeProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HandshakeProtocol.swift; path = Sources/SignalRClient/HandshakeProtocol.swift; sourceTree = "<group>"; };
+		62A10B30DAF885EC85FC6DF67DC132B9 /* SwiftSignalRClient.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftSignalRClient.modulemap; sourceTree = "<group>"; };
+		64AC8231EF9636212FE7946135103164 /* CodableHelpers.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = CodableHelpers.swift; path = Sources/SignalRClient/CodableHelpers.swift; sourceTree = "<group>"; };
+		673A3499F2CAB2014A666BE16474EDF3 /* SwiftSignalRClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftSignalRClient.debug.xcconfig; sourceTree = "<group>"; };
+		6A0BF6A572C1036B7A4596EDFEF7B6D0 /* TransportType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransportType.swift; path = Sources/SignalRClient/TransportType.swift; sourceTree = "<group>"; };
+		7076D1715279167BB6895F3EDBEE7472 /* DefaultHttpClient.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DefaultHttpClient.swift; path = Sources/SignalRClient/DefaultHttpClient.swift; sourceTree = "<group>"; };
 		724D7661814415B2EAD88BF88DB272A1 /* Pods-ELIOSAutoTest-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-ELIOSAutoTest-acknowledgements.markdown"; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		7816DF55995C8B9658FC7C072ADDD28B /* SwiftGen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftGen.release.xcconfig; sourceTree = "<group>"; };
-		7BE3E19BCBBF3B9D11F5DB947B4E49A6 /* SignalRError.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SignalRError.swift; path = Sources/SignalRClient/SignalRError.swift; sourceTree = "<group>"; };
-		7C14257E44A0740428FC88A5403C8F3A /* SwiftSignalRClient.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = SwiftSignalRClient.modulemap; sourceTree = "<group>"; };
-		7D8D8FB293007D0CCE52943458DB31E6 /* ConnectionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConnectionDelegate.swift; path = Sources/SignalRClient/ConnectionDelegate.swift; sourceTree = "<group>"; };
-		8536CF44FADBE5125DE53A20B3066FCB /* Pods_ELIOSAutoTest.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_ELIOSAutoTest.framework; path = "Pods-ELIOSAutoTest.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
-		89C38263B5FBB5FA5BC82B884DBC6D96 /* HttpResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HttpResponse.swift; path = Sources/SignalRClient/HttpResponse.swift; sourceTree = "<group>"; };
-		928865A1D883E2C540FC5D7463EA4DD7 /* HubConnectionExtensions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HubConnectionExtensions.swift; path = Sources/SignalRClient/HubConnectionExtensions.swift; sourceTree = "<group>"; };
-		9608C2A8CD6F3C6F7889A5B6EB92EC30 /* ServerInvocationHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerInvocationHandler.swift; path = Sources/SignalRClient/ServerInvocationHandler.swift; sourceTree = "<group>"; };
+		74F81EC85B8D1F25E611FBC63600793C /* HttpClientProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HttpClientProtocol.swift; path = Sources/SignalRClient/HttpClientProtocol.swift; sourceTree = "<group>"; };
+		7B23C68D8B8C47DD035E44DA44FC457F /* JSONHubProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = JSONHubProtocol.swift; path = Sources/SignalRClient/JSONHubProtocol.swift; sourceTree = "<group>"; };
+		7BFF6AF1A37430117F24D0CA53E70270 /* LongPollingTransport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = LongPollingTransport.swift; path = Sources/SignalRClient/LongPollingTransport.swift; sourceTree = "<group>"; };
+		7DF1A1E51287BE69E5FA202B9622B3D3 /* ServerInvocationHandler.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ServerInvocationHandler.swift; path = Sources/SignalRClient/ServerInvocationHandler.swift; sourceTree = "<group>"; };
+		8536CF44FADBE5125DE53A20B3066FCB /* Pods-ELIOSAutoTest */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = "Pods-ELIOSAutoTest"; path = Pods_ELIOSAutoTest.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		881847974615F39066E2766F56D040D5 /* SwiftSignalRClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftSignalRClient.release.xcconfig; sourceTree = "<group>"; };
+		93766E2D5AAA88506828A3D6E5488340 /* DefaultTransportFactory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DefaultTransportFactory.swift; path = Sources/SignalRClient/DefaultTransportFactory.swift; sourceTree = "<group>"; };
+		96FD9346F07710F33D1362CEF7A3718A /* HubConnectionBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HubConnectionBuilder.swift; path = Sources/SignalRClient/HubConnectionBuilder.swift; sourceTree = "<group>"; };
 		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9F7F7BC2E4201F4ABFC72A08DFCB2649 /* SwiftSignalRClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftSignalRClient.release.xcconfig; sourceTree = "<group>"; };
-		AB3CD64DBB0E5BA532CB20ED0F494FD7 /* HubConnectionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HubConnectionDelegate.swift; path = Sources/SignalRClient/HubConnectionDelegate.swift; sourceTree = "<group>"; };
+		A50042239616222910A00196E1F2EACE /* SwiftGen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftGen.debug.xcconfig; sourceTree = "<group>"; };
+		A97E5E44C0B4CC876B1768C02C711DA1 /* HttpConnectionOptions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HttpConnectionOptions.swift; path = Sources/SignalRClient/HttpConnectionOptions.swift; sourceTree = "<group>"; };
+		AB1B47EBB62F43A15B284EC582B2A840 /* ConnectionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ConnectionDelegate.swift; path = Sources/SignalRClient/ConnectionDelegate.swift; sourceTree = "<group>"; };
+		ACD14385FC1D0E22A822D7529D38B3EB /* HttpResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HttpResponse.swift; path = Sources/SignalRClient/HttpResponse.swift; sourceTree = "<group>"; };
 		ACD704617150698352711D3AC7E6C261 /* Pods-ELIOSAutoTest-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-ELIOSAutoTest-umbrella.h"; sourceTree = "<group>"; };
-		BA762C4E88D9D80FB534836159268E66 /* Transport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Transport.swift; path = Sources/SignalRClient/Transport.swift; sourceTree = "<group>"; };
-		C39F84C6C6A1E7ED43DAE7BAA672BDD3 /* WebsocketsTransport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = WebsocketsTransport.swift; path = Sources/SignalRClient/WebsocketsTransport.swift; sourceTree = "<group>"; };
-		CABEDBC7CDF5A3FA6519A34ACCADF1F4 /* ReconnectPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReconnectPolicy.swift; path = Sources/SignalRClient/ReconnectPolicy.swift; sourceTree = "<group>"; };
+		B2FEEFC7DE4D307A430E52A14B1E4F3C /* NegotiationResponse.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = NegotiationResponse.swift; path = Sources/SignalRClient/NegotiationResponse.swift; sourceTree = "<group>"; };
+		B77E61C3E51ADD427D535DFF11A2E8C2 /* ReconnectableConnection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReconnectableConnection.swift; path = Sources/SignalRClient/ReconnectableConnection.swift; sourceTree = "<group>"; };
+		B77F11DEE5F1A4F687972FF010C40F24 /* SwiftSignalRClient-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftSignalRClient-Info.plist"; sourceTree = "<group>"; };
+		BA716356677530702928ED018B786F15 /* Logger.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Logger.swift; path = Sources/SignalRClient/Logger.swift; sourceTree = "<group>"; };
+		BEB9E5C9EB17247549D1FCBBC30F71E3 /* HubConnectionDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HubConnectionDelegate.swift; path = Sources/SignalRClient/HubConnectionDelegate.swift; sourceTree = "<group>"; };
+		BFA51ED98D7F15FFE0255A7230CBB624 /* SwiftGen.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftGen.release.xcconfig; sourceTree = "<group>"; };
+		C026BB24D4A58626323532CF657CA1CE /* ReconnectPolicy.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ReconnectPolicy.swift; path = Sources/SignalRClient/ReconnectPolicy.swift; sourceTree = "<group>"; };
 		CFAB809EB125DD182D3CCF8169B58CB5 /* Pods-ELIOSAutoTest.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-ELIOSAutoTest.modulemap"; sourceTree = "<group>"; };
-		D100C09EB2BB15664FA3431E8C300649 /* SwiftSignalRClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftSignalRClient.debug.xcconfig; sourceTree = "<group>"; };
-		D2475B9817C0C896D906C9C2158BAE61 /* TransportDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransportDelegate.swift; path = Sources/SignalRClient/TransportDelegate.swift; sourceTree = "<group>"; };
-		D24870F49B2694F2427CDA5D5A37965A /* SwiftSignalRClient-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftSignalRClient-dummy.m"; sourceTree = "<group>"; };
-		D2C5C674C28AB35C1ABBB93692EB4CE2 /* HubProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HubProtocol.swift; path = Sources/SignalRClient/HubProtocol.swift; sourceTree = "<group>"; };
 		D7D2981D4F121B3D8C724740D14170E5 /* Pods-ELIOSAutoTest-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-ELIOSAutoTest-Info.plist"; sourceTree = "<group>"; };
-		D8EDB11C0FF82434186EC42E9D42D4DF /* HttpClientProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HttpClientProtocol.swift; path = Sources/SignalRClient/HttpClientProtocol.swift; sourceTree = "<group>"; };
-		DA3A557D2DAD07FAE368705CFBBA9355 /* Connection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Connection.swift; path = Sources/SignalRClient/Connection.swift; sourceTree = "<group>"; };
-		DA44D88743F3B8076866A0CF3D65506C /* SwiftGen.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftGen.debug.xcconfig; sourceTree = "<group>"; };
-		DFA04AC9C93ACEF5CFC918FE7A9F7D03 /* SwiftSignalRClient-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "SwiftSignalRClient-Info.plist"; sourceTree = "<group>"; };
+		D88F39AE0A5B08004911278C604E0C9C /* Transport.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Transport.swift; path = Sources/SignalRClient/Transport.swift; sourceTree = "<group>"; };
+		DF739F5E9644F0DFA4A5F085C0BAF737 /* StreamHandle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StreamHandle.swift; path = Sources/SignalRClient/StreamHandle.swift; sourceTree = "<group>"; };
+		E19279810AF82533A564C8B40F0080CE /* TransferFormat.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransferFormat.swift; path = Sources/SignalRClient/TransferFormat.swift; sourceTree = "<group>"; };
 		E419C2B354B16230D3D4408FAB6AEAD6 /* Pods-ELIOSAutoTest-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-ELIOSAutoTest-dummy.m"; sourceTree = "<group>"; };
-		E7AFB048F72A32D1AB967A9164E20741 /* SwiftSignalRClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftSignalRClient.framework; path = SwiftSignalRClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		E9A9755C21F6344AB26B707F99D5DA2E /* HttpConnectionOptions.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HttpConnectionOptions.swift; path = Sources/SignalRClient/HttpConnectionOptions.swift; sourceTree = "<group>"; };
-		EDB3568955C17337051E515249866FAF /* DefaultTransportFactory.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DefaultTransportFactory.swift; path = Sources/SignalRClient/DefaultTransportFactory.swift; sourceTree = "<group>"; };
-		F33CC5AFD49A237C195ADFAC08F89492 /* HandshakeProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HandshakeProtocol.swift; path = Sources/SignalRClient/HandshakeProtocol.swift; sourceTree = "<group>"; };
-		F5BED7C5C72EA647A66B47538E4DC28F /* StreamHandle.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = StreamHandle.swift; path = Sources/SignalRClient/StreamHandle.swift; sourceTree = "<group>"; };
-		FE4998D2206790A09985B2296F3BCF93 /* TransportType.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransportType.swift; path = Sources/SignalRClient/TransportType.swift; sourceTree = "<group>"; };
+		E473AD1ABCB2577240C59D4D18A6D7BC /* HttpConnection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HttpConnection.swift; path = Sources/SignalRClient/HttpConnection.swift; sourceTree = "<group>"; };
+		E7AFB048F72A32D1AB967A9164E20741 /* SwiftSignalRClient */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftSignalRClient; path = SwiftSignalRClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F3E14C74FA6FE5118D77390415EA57F3 /* HubProtocol.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = HubProtocol.swift; path = Sources/SignalRClient/HubProtocol.swift; sourceTree = "<group>"; };
+		F5F5D6649A81CAC8373F3E07C88F1536 /* SwiftSignalRClient-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftSignalRClient-dummy.m"; sourceTree = "<group>"; };
+		F658DDA345DAB2EF2466A486DB3CE42D /* Connection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Connection.swift; path = Sources/SignalRClient/Connection.swift; sourceTree = "<group>"; };
+		FD6C9ECC98C44A8AB44E0D20F031886B /* TransportDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = TransportDelegate.swift; path = Sources/SignalRClient/TransportDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		129C457CA4CFA2E319FD30706354AD45 /* Frameworks */ = {
+		3DEB8DEE5377A5A4D7B6D82AF53405B8 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3CE5D9E0533A9949827FC0B1039BE77C /* Foundation.framework in Frameworks */,
+				2B9A4E6154F21CA9E878AB401D7C2802 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		60760A8C7340CAF18B83F69E2270F5E8 /* Frameworks */ = {
+		6B914903331C45608428B8207CFE72AA /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A2BAEBB05A4A02D32FB102BD845D2340 /* Foundation.framework in Frameworks */,
+				9670246F6422DFF3E476FC3ED0D73410 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0595DC2D5C990ED99C203104EBD8A1D6 /* SwiftGen */ = {
+		1766FBE8FFAFB64672966BD95363D083 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3E85FCD923193A858CB4CBE50E5CA25D /* Support Files */,
+				1E8502D87E6722D553747C73BD1A1A64 /* SwiftGen */,
+				62369EA49B7DD605E6263B5BE435CD2A /* SwiftLint */,
+				D8B7C6B82069CC61D3F437D57C2EC3A4 /* SwiftSignalRClient */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		1E8502D87E6722D553747C73BD1A1A64 /* SwiftGen */ = {
+			isa = PBXGroup;
+			children = (
+				EFBA532A4C0A7415480848B0947B0B01 /* Support Files */,
 			);
 			name = SwiftGen;
 			path = SwiftGen;
 			sourceTree = "<group>";
 		};
-		3E85FCD923193A858CB4CBE50E5CA25D /* Support Files */ = {
+		42E2EC06D1E48589323329CC3AA59C98 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				DA44D88743F3B8076866A0CF3D65506C /* SwiftGen.debug.xcconfig */,
-				7816DF55995C8B9658FC7C072ADDD28B /* SwiftGen.release.xcconfig */,
+				8536CF44FADBE5125DE53A20B3066FCB /* Pods-ELIOSAutoTest */,
+				E7AFB048F72A32D1AB967A9164E20741 /* SwiftSignalRClient */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/SwiftGen";
+			name = Products;
 			sourceTree = "<group>";
 		};
 		544B8870635A4F659A9F70CAB65E2F85 /* Targets Support Files */ = {
@@ -184,76 +211,23 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		5C5AC83734B4F59BA49F8AFB98526148 /* Products */ = {
+		62369EA49B7DD605E6263B5BE435CD2A /* SwiftLint */ = {
 			isa = PBXGroup;
 			children = (
-				8536CF44FADBE5125DE53A20B3066FCB /* Pods_ELIOSAutoTest.framework */,
-				E7AFB048F72A32D1AB967A9164E20741 /* SwiftSignalRClient.framework */,
+				80CF8475C1A1A80D5045F72FDB4C0C79 /* Support Files */,
 			);
-			name = Products;
+			name = SwiftLint;
+			path = SwiftLint;
 			sourceTree = "<group>";
 		};
-		75A5CEB6CF50959567EB91359DAC6000 /* Support Files */ = {
+		80CF8475C1A1A80D5045F72FDB4C0C79 /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				7C14257E44A0740428FC88A5403C8F3A /* SwiftSignalRClient.modulemap */,
-				D24870F49B2694F2427CDA5D5A37965A /* SwiftSignalRClient-dummy.m */,
-				DFA04AC9C93ACEF5CFC918FE7A9F7D03 /* SwiftSignalRClient-Info.plist */,
-				17B00B4CCA9F2C26AC6CEAD34F01E6C4 /* SwiftSignalRClient-prefix.pch */,
-				43670809262A31BCD66E206BC3D1FC0D /* SwiftSignalRClient-umbrella.h */,
-				D100C09EB2BB15664FA3431E8C300649 /* SwiftSignalRClient.debug.xcconfig */,
-				9F7F7BC2E4201F4ABFC72A08DFCB2649 /* SwiftSignalRClient.release.xcconfig */,
+				22C34854AD4CCF603A3466244AE52171 /* SwiftLint.debug.xcconfig */,
+				2E2916319BEA11F16A3E75C4C5F2DA85 /* SwiftLint.release.xcconfig */,
 			);
 			name = "Support Files";
-			path = "../Target Support Files/SwiftSignalRClient";
-			sourceTree = "<group>";
-		};
-		8D3809E9EC980DEF4D558EF14520C89C /* SwiftSignalRClient */ = {
-			isa = PBXGroup;
-			children = (
-				4D79DAFA88F7A54886AD8214FCDA53ED /* CodableHelpers.swift */,
-				DA3A557D2DAD07FAE368705CFBBA9355 /* Connection.swift */,
-				7D8D8FB293007D0CCE52943458DB31E6 /* ConnectionDelegate.swift */,
-				3952D413092013FE2791FC4454B5FF9B /* DefaultHttpClient.swift */,
-				EDB3568955C17337051E515249866FAF /* DefaultTransportFactory.swift */,
-				F33CC5AFD49A237C195ADFAC08F89492 /* HandshakeProtocol.swift */,
-				D8EDB11C0FF82434186EC42E9D42D4DF /* HttpClientProtocol.swift */,
-				47C3D0A2A165C1488B433D5536563659 /* HttpConnection.swift */,
-				E9A9755C21F6344AB26B707F99D5DA2E /* HttpConnectionOptions.swift */,
-				89C38263B5FBB5FA5BC82B884DBC6D96 /* HttpResponse.swift */,
-				666710111F6D4C40D20BD37BFC3A0CF5 /* HubConnection.swift */,
-				5D484BE41762F8E72C94829C1AA4DAF9 /* HubConnectionBuilder.swift */,
-				AB3CD64DBB0E5BA532CB20ED0F494FD7 /* HubConnectionDelegate.swift */,
-				928865A1D883E2C540FC5D7463EA4DD7 /* HubConnectionExtensions.swift */,
-				6D19AC68BBF8F749AF9F2D64E7D8CCFC /* HubConnectionOptions.swift */,
-				D2C5C674C28AB35C1ABBB93692EB4CE2 /* HubProtocol.swift */,
-				0D3C01F87CB7A56F715C0685178C12A0 /* JSONHubProtocol.swift */,
-				341B8458538E16AEA8BA4BFACD68AC63 /* Logger.swift */,
-				101393A6ECF03F88ADF3EE15923BA771 /* LongPollingTransport.swift */,
-				13BA885A17ABAC0A4C3376DEFE2EBC42 /* NegotiationResponse.swift */,
-				0237730EE235E66D7A5B919AFE272580 /* ReconnectableConnection.swift */,
-				CABEDBC7CDF5A3FA6519A34ACCADF1F4 /* ReconnectPolicy.swift */,
-				9608C2A8CD6F3C6F7889A5B6EB92EC30 /* ServerInvocationHandler.swift */,
-				7BE3E19BCBBF3B9D11F5DB947B4E49A6 /* SignalRError.swift */,
-				F5BED7C5C72EA647A66B47538E4DC28F /* StreamHandle.swift */,
-				514A9554EB293DAC371DC8E0BC47A46D /* TransferFormat.swift */,
-				BA762C4E88D9D80FB534836159268E66 /* Transport.swift */,
-				D2475B9817C0C896D906C9C2158BAE61 /* TransportDelegate.swift */,
-				FE4998D2206790A09985B2296F3BCF93 /* TransportType.swift */,
-				C39F84C6C6A1E7ED43DAE7BAA672BDD3 /* WebsocketsTransport.swift */,
-				75A5CEB6CF50959567EB91359DAC6000 /* Support Files */,
-			);
-			name = SwiftSignalRClient;
-			path = SwiftSignalRClient;
-			sourceTree = "<group>";
-		};
-		9C9D311EB9045399740CA58A310D4036 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				0595DC2D5C990ED99C203104EBD8A1D6 /* SwiftGen */,
-				8D3809E9EC980DEF4D558EF14520C89C /* SwiftSignalRClient */,
-			);
-			name = Pods;
+			path = "../Target Support Files/SwiftLint";
 			sourceTree = "<group>";
 		};
 		A57970B7169B15BEA630EDAA162E191B /* Pods-ELIOSAutoTest */ = {
@@ -273,13 +247,28 @@
 			path = "Target Support Files/Pods-ELIOSAutoTest";
 			sourceTree = "<group>";
 		};
+		C3AA440C06DC2777B59B8B970C1A1B8A /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				62A10B30DAF885EC85FC6DF67DC132B9 /* SwiftSignalRClient.modulemap */,
+				F5F5D6649A81CAC8373F3E07C88F1536 /* SwiftSignalRClient-dummy.m */,
+				B77F11DEE5F1A4F687972FF010C40F24 /* SwiftSignalRClient-Info.plist */,
+				280C78D52B8D2D8AED99C061EF1B81A2 /* SwiftSignalRClient-prefix.pch */,
+				3BBD0432BE89CF00D272DD051A98D197 /* SwiftSignalRClient-umbrella.h */,
+				673A3499F2CAB2014A666BE16474EDF3 /* SwiftSignalRClient.debug.xcconfig */,
+				881847974615F39066E2766F56D040D5 /* SwiftSignalRClient.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwiftSignalRClient";
+			sourceTree = "<group>";
+		};
 		CF1408CF629C7361332E53B88F7BD30C = {
 			isa = PBXGroup;
 			children = (
 				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
 				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
-				9C9D311EB9045399740CA58A310D4036 /* Pods */,
-				5C5AC83734B4F59BA49F8AFB98526148 /* Products */,
+				1766FBE8FFAFB64672966BD95363D083 /* Pods */,
+				42E2EC06D1E48589323329CC3AA59C98 /* Products */,
 				544B8870635A4F659A9F70CAB65E2F85 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
@@ -292,22 +281,71 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		D8B7C6B82069CC61D3F437D57C2EC3A4 /* SwiftSignalRClient */ = {
+			isa = PBXGroup;
+			children = (
+				64AC8231EF9636212FE7946135103164 /* CodableHelpers.swift */,
+				F658DDA345DAB2EF2466A486DB3CE42D /* Connection.swift */,
+				AB1B47EBB62F43A15B284EC582B2A840 /* ConnectionDelegate.swift */,
+				7076D1715279167BB6895F3EDBEE7472 /* DefaultHttpClient.swift */,
+				93766E2D5AAA88506828A3D6E5488340 /* DefaultTransportFactory.swift */,
+				5D9BCFA8FF7678146A55625968C20D7D /* HandshakeProtocol.swift */,
+				74F81EC85B8D1F25E611FBC63600793C /* HttpClientProtocol.swift */,
+				E473AD1ABCB2577240C59D4D18A6D7BC /* HttpConnection.swift */,
+				A97E5E44C0B4CC876B1768C02C711DA1 /* HttpConnectionOptions.swift */,
+				ACD14385FC1D0E22A822D7529D38B3EB /* HttpResponse.swift */,
+				4DA3523065DC8FC6D8F55A69488DB8C4 /* HubConnection.swift */,
+				96FD9346F07710F33D1362CEF7A3718A /* HubConnectionBuilder.swift */,
+				BEB9E5C9EB17247549D1FCBBC30F71E3 /* HubConnectionDelegate.swift */,
+				2A149E548A6249BE7A55D65EF7C34F2E /* HubConnectionExtensions.swift */,
+				5B1BDEA3A6C11C873900E93530B59ACD /* HubConnectionOptions.swift */,
+				F3E14C74FA6FE5118D77390415EA57F3 /* HubProtocol.swift */,
+				7B23C68D8B8C47DD035E44DA44FC457F /* JSONHubProtocol.swift */,
+				BA716356677530702928ED018B786F15 /* Logger.swift */,
+				7BFF6AF1A37430117F24D0CA53E70270 /* LongPollingTransport.swift */,
+				B2FEEFC7DE4D307A430E52A14B1E4F3C /* NegotiationResponse.swift */,
+				B77E61C3E51ADD427D535DFF11A2E8C2 /* ReconnectableConnection.swift */,
+				C026BB24D4A58626323532CF657CA1CE /* ReconnectPolicy.swift */,
+				7DF1A1E51287BE69E5FA202B9622B3D3 /* ServerInvocationHandler.swift */,
+				595C167E140B654339A2CE4E6F7622CC /* SignalRError.swift */,
+				DF739F5E9644F0DFA4A5F085C0BAF737 /* StreamHandle.swift */,
+				E19279810AF82533A564C8B40F0080CE /* TransferFormat.swift */,
+				D88F39AE0A5B08004911278C604E0C9C /* Transport.swift */,
+				FD6C9ECC98C44A8AB44E0D20F031886B /* TransportDelegate.swift */,
+				6A0BF6A572C1036B7A4596EDFEF7B6D0 /* TransportType.swift */,
+				394D1A815E880522561F656749D84BBC /* WebsocketsTransport.swift */,
+				C3AA440C06DC2777B59B8B970C1A1B8A /* Support Files */,
+			);
+			name = SwiftSignalRClient;
+			path = SwiftSignalRClient;
+			sourceTree = "<group>";
+		};
+		EFBA532A4C0A7415480848B0947B0B01 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				A50042239616222910A00196E1F2EACE /* SwiftGen.debug.xcconfig */,
+				BFA51ED98D7F15FFE0255A7230CBB624 /* SwiftGen.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwiftGen";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		82D564EB3BCA9FD4A945AB3ECA3B28F8 /* Headers */ = {
+		0E4478315D2160F002EE43F3AC3D6761 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				11C87D6B51B636701FE1D81E75DBFE61 /* SwiftSignalRClient-umbrella.h in Headers */,
+				EC4A16C9C76F8BC21A6579572FE1AE9C /* SwiftSignalRClient-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A7321209FA36B7DBF3AB2983EF6326D6 /* Headers */ = {
+		4B0F647FFF390223480BC57C6BD3CE75 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				964726CA513A7D9E5465972A2C25A8DA /* Pods-ELIOSAutoTest-umbrella.h in Headers */,
+				91591C04B2AFBB03BF43DD7897537F2C /* Pods-ELIOSAutoTest-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -316,12 +354,12 @@
 /* Begin PBXNativeTarget section */
 		C70018130D2F6BA4895F572DAC2308A0 /* SwiftSignalRClient */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A2701690640030339B8755E5A2D0A6BD /* Build configuration list for PBXNativeTarget "SwiftSignalRClient" */;
+			buildConfigurationList = 25F66423154A2F832D50D7D0B9BE4286 /* Build configuration list for PBXNativeTarget "SwiftSignalRClient" */;
 			buildPhases = (
-				82D564EB3BCA9FD4A945AB3ECA3B28F8 /* Headers */,
-				076B76D963703B34168572CDE23535A6 /* Sources */,
-				60760A8C7340CAF18B83F69E2270F5E8 /* Frameworks */,
-				B1692119574FFEAE12AB610A62D76AD5 /* Resources */,
+				0E4478315D2160F002EE43F3AC3D6761 /* Headers */,
+				B5D1161AF4D71CB8065CD5DB5FE716D1 /* Sources */,
+				6B914903331C45608428B8207CFE72AA /* Frameworks */,
+				72B2C38A8496669E0C9761DA86464FB3 /* Resources */,
 			);
 			buildRules = (
 			);
@@ -329,27 +367,28 @@
 			);
 			name = SwiftSignalRClient;
 			productName = SwiftSignalRClient;
-			productReference = E7AFB048F72A32D1AB967A9164E20741 /* SwiftSignalRClient.framework */;
+			productReference = E7AFB048F72A32D1AB967A9164E20741 /* SwiftSignalRClient */;
 			productType = "com.apple.product-type.framework";
 		};
 		DBB1F29EDE28E8E8F24D7CD6CB1E69B5 /* Pods-ELIOSAutoTest */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 53ADF98757D9FA14B36EF32706694A1A /* Build configuration list for PBXNativeTarget "Pods-ELIOSAutoTest" */;
+			buildConfigurationList = 426C6EAD2CBE2A4CAD09D0DE52ACB031 /* Build configuration list for PBXNativeTarget "Pods-ELIOSAutoTest" */;
 			buildPhases = (
-				A7321209FA36B7DBF3AB2983EF6326D6 /* Headers */,
-				FE30DC1F93E47F560E5F02205113B7E6 /* Sources */,
-				129C457CA4CFA2E319FD30706354AD45 /* Frameworks */,
-				3DA7E0B4103EB25EA79E00F3084B5F9A /* Resources */,
+				4B0F647FFF390223480BC57C6BD3CE75 /* Headers */,
+				A9CBC217244264F38BAEBD04C988828D /* Sources */,
+				3DEB8DEE5377A5A4D7B6D82AF53405B8 /* Frameworks */,
+				2A09F29E9A6EE52B0A88D3F1294404F2 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				C7DC47E4CB1F2C07E58D86FE6BC940AC /* PBXTargetDependency */,
-				56076E201FF66036720E7B3DA136E88A /* PBXTargetDependency */,
+				BE31DC54A64109BA02D25383B0C92CB5 /* PBXTargetDependency */,
+				279091BC2AF3800CF266BC0542FEE763 /* PBXTargetDependency */,
+				7606CA7BC605CB67B9C8D573C0517AE9 /* PBXTargetDependency */,
 			);
 			name = "Pods-ELIOSAutoTest";
-			productName = "Pods-ELIOSAutoTest";
-			productReference = 8536CF44FADBE5125DE53A20B3066FCB /* Pods_ELIOSAutoTest.framework */;
+			productName = Pods_ELIOSAutoTest;
+			productReference = 8536CF44FADBE5125DE53A20B3066FCB /* Pods-ELIOSAutoTest */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -366,30 +405,31 @@
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
+				en,
 			);
 			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
-			productRefGroup = 5C5AC83734B4F59BA49F8AFB98526148 /* Products */;
+			productRefGroup = 42E2EC06D1E48589323329CC3AA59C98 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				DBB1F29EDE28E8E8F24D7CD6CB1E69B5 /* Pods-ELIOSAutoTest */,
 				1E798429DCFA7906F6625CCFC1088744 /* SwiftGen */,
+				52B60EC2A583F24ACBB69C113F5488B9 /* SwiftLint */,
 				C70018130D2F6BA4895F572DAC2308A0 /* SwiftSignalRClient */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		3DA7E0B4103EB25EA79E00F3084B5F9A /* Resources */ = {
+		2A09F29E9A6EE52B0A88D3F1294404F2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		B1692119574FFEAE12AB610A62D76AD5 /* Resources */ = {
+		72B2C38A8496669E0C9761DA86464FB3 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -399,107 +439,76 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		076B76D963703B34168572CDE23535A6 /* Sources */ = {
+		A9CBC217244264F38BAEBD04C988828D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				27BDC15C3EB0DE44B119FA9D461E6018 /* CodableHelpers.swift in Sources */,
-				CBE3FA118CB046951F5ECF0CC4B4BD89 /* Connection.swift in Sources */,
-				209306D3751BF3E84E75472516FD9D31 /* ConnectionDelegate.swift in Sources */,
-				CE5CB6F17FC3FE9E528915D5794599AA /* DefaultHttpClient.swift in Sources */,
-				40EA471A2677138AE2E99FA5CEB90C65 /* DefaultTransportFactory.swift in Sources */,
-				96B56125D63E8CC56EDC6F1B289C88B4 /* HandshakeProtocol.swift in Sources */,
-				A68ED786678D8372F05711934632C49D /* HttpClientProtocol.swift in Sources */,
-				B81119392BD18516301BE661102AA0A0 /* HttpConnection.swift in Sources */,
-				C176278FE036B8001273A31A89930DF7 /* HttpConnectionOptions.swift in Sources */,
-				45E6B003B1DC036D16541CB596284306 /* HttpResponse.swift in Sources */,
-				373FDF1F021DA703D1B2D245FCD5A511 /* HubConnection.swift in Sources */,
-				3CAB96DA5B7A3C21986B5DD57B9EA97F /* HubConnectionBuilder.swift in Sources */,
-				FB9D39E0DA3686B9D8526F2BC18063F5 /* HubConnectionDelegate.swift in Sources */,
-				240095CFDBD18CD06818F56853537D06 /* HubConnectionExtensions.swift in Sources */,
-				524E23E87CFD636FA8BFD0234C590C3D /* HubConnectionOptions.swift in Sources */,
-				05E21E5A4892507788FB351C83C6BAEE /* HubProtocol.swift in Sources */,
-				B78DD62383B42A1507F4813933D2C562 /* JSONHubProtocol.swift in Sources */,
-				5B685C1F64EB4C163C68DD148C191D46 /* Logger.swift in Sources */,
-				009E1A77FB9F13C5BC3468DF28E78709 /* LongPollingTransport.swift in Sources */,
-				46F400E3802920F5AD7BED928E52E36A /* NegotiationResponse.swift in Sources */,
-				2E337B3EBE92AC40E79DD866BCBB4B3C /* ReconnectableConnection.swift in Sources */,
-				B81A4D39EA0FBDF1005F325CE0F6E0CD /* ReconnectPolicy.swift in Sources */,
-				B6EFEA01D75E8F22436D18995EB72ADB /* ServerInvocationHandler.swift in Sources */,
-				CE0AF8D2230FFE625C2CF0E0034898F9 /* SignalRError.swift in Sources */,
-				BC2FD1F8E7386CBB2C0519DDC7A406A1 /* StreamHandle.swift in Sources */,
-				0F5BD8BEC402F27C791A9D816253C115 /* SwiftSignalRClient-dummy.m in Sources */,
-				3400EA498224B568BC642FB136EC58E2 /* TransferFormat.swift in Sources */,
-				CE558CEEA7EBEED50CFA181FF94D2C22 /* Transport.swift in Sources */,
-				8B20FB3623D710E808BD118209D93B2A /* TransportDelegate.swift in Sources */,
-				9BCE4056E07C04CADF0BC378ECE71AF5 /* TransportType.swift in Sources */,
-				588961B97CB95655FDB2DD8E4A8E5E99 /* WebsocketsTransport.swift in Sources */,
+				2B89A90774CE946A3CDECD4F2680A06F /* Pods-ELIOSAutoTest-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		FE30DC1F93E47F560E5F02205113B7E6 /* Sources */ = {
+		B5D1161AF4D71CB8065CD5DB5FE716D1 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EC86984FEC120E9EAF28433CBB187C96 /* Pods-ELIOSAutoTest-dummy.m in Sources */,
+				DDEA2B1F2F17B2565276D1129BA5DAD1 /* CodableHelpers.swift in Sources */,
+				8FCC65DB5D2A915A95BB598FBB665973 /* Connection.swift in Sources */,
+				42ECF68DBE821129D94A3C8E0E8F816D /* ConnectionDelegate.swift in Sources */,
+				87B512B8471DD5E848F67D363C905CC1 /* DefaultHttpClient.swift in Sources */,
+				563BF89165C2840EDC4588BE42118177 /* DefaultTransportFactory.swift in Sources */,
+				94AFE704E64BB1A3B4EC16F9B146AFC0 /* HandshakeProtocol.swift in Sources */,
+				AF055D404C2CC92E73747D1F514B208E /* HttpClientProtocol.swift in Sources */,
+				8DA179FBE981F9231E7BF125CE350F2B /* HttpConnection.swift in Sources */,
+				FB2F3019F0E43C2D4328E20B2AC99C5A /* HttpConnectionOptions.swift in Sources */,
+				32DC2CB144011FC5953744124A5B3579 /* HttpResponse.swift in Sources */,
+				2A04AD140141FE7F6A2DF7C4A7474B31 /* HubConnection.swift in Sources */,
+				B2415F9A5A3BEEB50FA7C2847932A38A /* HubConnectionBuilder.swift in Sources */,
+				0421C3AC6198795C25183A8B4D1776C9 /* HubConnectionDelegate.swift in Sources */,
+				1665A9395C61E647D9F64C0C436F0281 /* HubConnectionExtensions.swift in Sources */,
+				ADD1552E3987F6DB6EBE2C7F727DCEA8 /* HubConnectionOptions.swift in Sources */,
+				C3319908A9E2E7C974F9A70653C4CCE6 /* HubProtocol.swift in Sources */,
+				34D6F8836DCAC6EE733E3FB7940EC40C /* JSONHubProtocol.swift in Sources */,
+				6DDA349155339DED117306075DE96FBD /* Logger.swift in Sources */,
+				8A7B6FE621513A29B877ACA643011F92 /* LongPollingTransport.swift in Sources */,
+				916B5B4A34DA1DBB40F8FC173B98866E /* NegotiationResponse.swift in Sources */,
+				BC9E3ADFC2F851CD1075F5DE0855E1FC /* ReconnectableConnection.swift in Sources */,
+				E89DAC42CB9D900368060ED466DCC4B2 /* ReconnectPolicy.swift in Sources */,
+				97E3368B54D18230FBBC68F25D99A61A /* ServerInvocationHandler.swift in Sources */,
+				4A181C92E9191CCB01DC052D3C7EC1FC /* SignalRError.swift in Sources */,
+				0C079C29DD499F4FD2F0DEDF2DFAD281 /* StreamHandle.swift in Sources */,
+				69153567051DAC54546193359AF1ED24 /* SwiftSignalRClient-dummy.m in Sources */,
+				B6DDF026F073B5A50CF465B6E4C25991 /* TransferFormat.swift in Sources */,
+				449620A011D4E95E508B36B68FF80C59 /* Transport.swift in Sources */,
+				E13CCCFCA38CB51B76D8AB5ECCFADAEC /* TransportDelegate.swift in Sources */,
+				13663751683E0E3DB2F4D39DF93C03DE /* TransportType.swift in Sources */,
+				EC8E5AA010AC48C6DEC748295E5A30F7 /* WebsocketsTransport.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		56076E201FF66036720E7B3DA136E88A /* PBXTargetDependency */ = {
+		279091BC2AF3800CF266BC0542FEE763 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftLint;
+			target = 52B60EC2A583F24ACBB69C113F5488B9 /* SwiftLint */;
+			targetProxy = 2B93EE013797C39DD77B0F8DE8601E5D /* PBXContainerItemProxy */;
+		};
+		7606CA7BC605CB67B9C8D573C0517AE9 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SwiftSignalRClient;
 			target = C70018130D2F6BA4895F572DAC2308A0 /* SwiftSignalRClient */;
-			targetProxy = D370899997CE388586D40A05CBF0ED62 /* PBXContainerItemProxy */;
+			targetProxy = 139631BE051C7C12A2EE351819D8FBE4 /* PBXContainerItemProxy */;
 		};
-		C7DC47E4CB1F2C07E58D86FE6BC940AC /* PBXTargetDependency */ = {
+		BE31DC54A64109BA02D25383B0C92CB5 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = SwiftGen;
 			target = 1E798429DCFA7906F6625CCFC1088744 /* SwiftGen */;
-			targetProxy = 1DB5856BE9AC57A5B912DFAC791121E6 /* PBXContainerItemProxy */;
+			targetProxy = 59E6265FEF7F20F2D2DB9C8BFD8AE119 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		040C17E5720ABB7E4843118A9738F24E /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1A5031D8E1C3CA61E287D04472821A96 /* Pods-ELIOSAutoTest.debug.xcconfig */;
-			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "Target Support Files/Pods-ELIOSAutoTest/Pods-ELIOSAutoTest-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-ELIOSAutoTest/Pods-ELIOSAutoTest.modulemap";
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		09909ECBA13E8F70A928465E7F7A9A92 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -568,7 +577,7 @@
 		};
 		2202230BF25CAB2FDC609A71D79055BB /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = DA44D88743F3B8076866A0CF3D65506C /* SwiftGen.debug.xcconfig */;
+			baseConfigurationReference = A50042239616222910A00196E1F2EACE /* SwiftGen.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -581,6 +590,62 @@
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
+		};
+		23BCB08D42C6714814FB286642BF4A5B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 001A703FB92C6B5C7FA5BBDCCA7489E9 /* Pods-ELIOSAutoTest.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-ELIOSAutoTest/Pods-ELIOSAutoTest-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-ELIOSAutoTest/Pods-ELIOSAutoTest.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		26EA5A9600226D2B7D8D25152A304F3B /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2E2916319BEA11F16A3E75C4C5F2DA85 /* SwiftLint.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
 		};
 		2DE0D8898245310716431F92FA4989FF /* Release */ = {
 			isa = XCBuildConfiguration;
@@ -644,9 +709,9 @@
 			};
 			name = Release;
 		};
-		514C5846F2C9B2E7301B3067B3AF7641 /* Release */ = {
+		A6AEE8281D734B9A507461E568F17DD1 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 9F7F7BC2E4201F4ABFC72A08DFCB2649 /* SwiftSignalRClient.release.xcconfig */;
+			baseConfigurationReference = 881847974615F39066E2766F56D040D5 /* SwiftSignalRClient.release.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -679,9 +744,26 @@
 			};
 			name = Release;
 		};
-		C54D0800F69859ACD392032044ABB481 /* Release */ = {
+		CF3B4AB84D0F77E437676BAFB9C2086C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 001A703FB92C6B5C7FA5BBDCCA7489E9 /* Pods-ELIOSAutoTest.release.xcconfig */;
+			baseConfigurationReference = BFA51ED98D7F15FFE0255A7230CBB624 /* SwiftGen.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E6E84F0D8A4984BB930FC5E166DA7F78 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1A5031D8E1C3CA61E287D04472821A96 /* Pods-ELIOSAutoTest.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CLANG_ENABLE_OBJC_WEAK = NO;
@@ -711,15 +793,31 @@
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
+			name = Debug;
 		};
-		CEF28CC2F9CA93E0C4147CEA446DC6BF /* Debug */ = {
+		E9E1A48A750B946DE9877594C6E735E4 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D100C09EB2BB15664FA3431E8C300649 /* SwiftSignalRClient.debug.xcconfig */;
+			baseConfigurationReference = 22C34854AD4CCF603A3466244AE52171 /* SwiftLint.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F0660E71D47A0E06977DC6D27FD8CFBA /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 673A3499F2CAB2014A666BE16474EDF3 /* SwiftSignalRClient.debug.xcconfig */;
 			buildSettings = {
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
@@ -751,26 +849,27 @@
 			};
 			name = Debug;
 		};
-		CF3B4AB84D0F77E437676BAFB9C2086C /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7816DF55995C8B9658FC7C072ADDD28B /* SwiftGen.release.xcconfig */;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		25F66423154A2F832D50D7D0B9BE4286 /* Build configuration list for PBXNativeTarget "SwiftSignalRClient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F0660E71D47A0E06977DC6D27FD8CFBA /* Debug */,
+				A6AEE8281D734B9A507461E568F17DD1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		426C6EAD2CBE2A4CAD09D0DE52ACB031 /* Build configuration list for PBXNativeTarget "Pods-ELIOSAutoTest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E6E84F0D8A4984BB930FC5E166DA7F78 /* Debug */,
+				23BCB08D42C6714814FB286642BF4A5B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -780,20 +879,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		53ADF98757D9FA14B36EF32706694A1A /* Build configuration list for PBXNativeTarget "Pods-ELIOSAutoTest" */ = {
+		AE7B4FB01588B9E6DF09CB79FC7CE7BD /* Build configuration list for PBXAggregateTarget "SwiftLint" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				040C17E5720ABB7E4843118A9738F24E /* Debug */,
-				C54D0800F69859ACD392032044ABB481 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		A2701690640030339B8755E5A2D0A6BD /* Build configuration list for PBXNativeTarget "SwiftSignalRClient" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				CEF28CC2F9CA93E0C4147CEA446DC6BF /* Debug */,
-				514C5846F2C9B2E7301B3067B3AF7641 /* Release */,
+				E9E1A48A750B946DE9877594C6E735E4 /* Debug */,
+				26EA5A9600226D2B7D8D25152A304F3B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

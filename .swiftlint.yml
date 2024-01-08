@@ -1,10 +1,11 @@
 excluded:
   - "/Users/evgeniiloshchenko/Documents/code/ELIOSAutoTest.git/Pods"
-  - "*/Pods/*"
+  - "/Pods/*"
   - UnitTests
   - UITests
   - DerivedData
   - SwiftSignalRClient
+  - Pods
 #  temp disabled for refactoring, Loshchenko
   - "Tests/*"
   

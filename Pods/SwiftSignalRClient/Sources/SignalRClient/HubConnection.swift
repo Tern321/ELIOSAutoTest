@@ -351,8 +351,9 @@ public class HubConnection {
 
     fileprivate func connectionDidReceiveData(data: Data) {
         logger.log(logLevel: .debug, message: "Data received")
-
+        print("connectionDidReceiveData")
         var data = data
+        print(String(decoding: data, as: UTF8.self))
         if !handshakeStatus.isHandled {
             logger.log(logLevel: .debug, message: "Processing handshake response: \(String(data: data, encoding: .utf8) ?? "(invalid)")")
             let (error, remainingData) = HandshakeProtocol.parseHandshakeResponse(data: data)
@@ -446,6 +447,7 @@ public class HubConnection {
         if callback != nil {
             callbackQueue.async {
                 do {
+                   // print(message.test())
                     try callback!(ArgumentExtractor(clientInvocationMessage: message))
                 } catch {
                     self.logger.log(logLevel: .error, message: "Invoking client hub method \(message.target) failed due to: \(error)")

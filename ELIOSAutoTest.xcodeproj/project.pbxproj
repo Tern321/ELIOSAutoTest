@@ -7,9 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0401EF642B0631F100FF9B47 /* ELButtonPressDetector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0401EF632B0631F100FF9B47 /* ELButtonPressDetector.swift */; };
+		0433F50F2B4B328A008FD6C0 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0433F50E2B4B328A008FD6C0 /* main.swift */; };
+		043E8F0B2B208F4E0063580C /* ELTestRun.swift in Sources */ = {isa = PBXBuildFile; fileRef = 043E8F0A2B208F4E0063580C /* ELTestRun.swift */; };
+		045E9EA62B2444C40094849D /* TestConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045E9EA52B2444C30094849D /* TestConstants.swift */; };
 		046CC5ED29ADB75700BB342E /* UITestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046CC5EC29ADB75700BB342E /* UITestViewController.swift */; };
 		046CC5EF29ADB76800BB342E /* UITestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 046CC5EE29ADB76800BB342E /* UITestView.swift */; };
+		048966D82AA3054E00AF7C83 /* AutotestEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 048966D72AA3054E00AF7C83 /* AutotestEvent.swift */; };
 		04A26EAD29ADBBE900E741BA /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04A26EAC29ADBBE900E741BA /* String+Extension.swift */; };
+		04DAAF4E2B3D404900B8EF2E /* ServiceLocator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04DAAF4D2B3D404900B8EF2E /* ServiceLocator.swift */; };
 		1211E53C29A2F28B000A58B5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1211E53B29A2F28B000A58B5 /* Images.xcassets */; };
 		1211E54029A2F343000A58B5 /* swiftgen.yml in Resources */ = {isa = PBXBuildFile; fileRef = 1211E53F29A2F343000A58B5 /* swiftgen.yml */; };
 		1211E54329A2F464000A58B5 /* Assets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1211E54229A2F464000A58B5 /* Assets.swift */; };
@@ -81,6 +87,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		0433F50A2B4B3289008FD6C0 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 		1265BC252972C187000D0F2E /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -93,9 +108,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		0401EF632B0631F100FF9B47 /* ELButtonPressDetector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ELButtonPressDetector.swift; sourceTree = "<group>"; };
+		0433F50C2B4B3289008FD6C0 /* ELXibEditor */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = ELXibEditor; sourceTree = BUILT_PRODUCTS_DIR; };
+		0433F50E2B4B328A008FD6C0 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		043E8F0A2B208F4E0063580C /* ELTestRun.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ELTestRun.swift; sourceTree = "<group>"; };
+		045E9EA52B2444C30094849D /* TestConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestConstants.swift; sourceTree = "<group>"; };
 		046CC5EC29ADB75700BB342E /* UITestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestViewController.swift; sourceTree = "<group>"; };
 		046CC5EE29ADB76800BB342E /* UITestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITestView.swift; sourceTree = "<group>"; };
+		048966D72AA3054E00AF7C83 /* AutotestEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AutotestEvent.swift; sourceTree = "<group>"; };
 		04A26EAC29ADBBE900E741BA /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		04DAAF4D2B3D404900B8EF2E /* ServiceLocator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServiceLocator.swift; sourceTree = "<group>"; };
 		1211E53B29A2F28B000A58B5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		1211E53F29A2F343000A58B5 /* swiftgen.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = swiftgen.yml; sourceTree = SOURCE_ROOT; };
 		1211E54229A2F464000A58B5 /* Assets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Assets.swift; sourceTree = "<group>"; };
@@ -175,6 +197,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		0433F5092B4B3289008FD6C0 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		12469E2329A8C8BA00274273 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -201,6 +230,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0433F50D2B4B328A008FD6C0 /* ELXibEditor */ = {
+			isa = PBXGroup;
+			children = (
+				0433F50E2B4B328A008FD6C0 /* main.swift */,
+			);
+			path = ELXibEditor;
+			sourceTree = "<group>";
+		};
+		043E8F0C2B208FC80063580C /* model */ = {
+			isa = PBXGroup;
+			children = (
+				048966D72AA3054E00AF7C83 /* AutotestEvent.swift */,
+				043E8F0A2B208F4E0063580C /* ELTestRun.swift */,
+				121DADA1288CFDD3004BFA63 /* TestScreenData.swift */,
+				045E9EA52B2444C30094849D /* TestConstants.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
 		0499C87529FFA076001DFCCA /* Application */ = {
 			isa = PBXGroup;
 			children = (
@@ -230,14 +278,15 @@
 		121DAD9E288CC69A004BFA63 /* ELAutotest */ = {
 			isa = PBXGroup;
 			children = (
+				043E8F0C2B208FC80063580C /* model */,
 				124D7C5F298336E30017F576 /* signalR */,
-				121DADA1288CFDD3004BFA63 /* TestScreenData.swift */,
 				126C12C32970006000CB2615 /* RuntimeExplorer.swift */,
 				126C12BF296F9EAC00CB2615 /* ATUtils.swift */,
 				121DAD9C288CC64B004BFA63 /* ELTestableViewController.swift */,
 				12AB96A92884E42D005D3458 /* IOSAutotestMessageManager.swift */,
 				1211E54429A2FD5C000A58B5 /* ELAutotestSettingsViewController.swift */,
 				12469E1A29A6618800274273 /* ELAutotestSettingsViewController.xib */,
+				0401EF632B0631F100FF9B47 /* ELButtonPressDetector.swift */,
 			);
 			path = ELAutotest;
 			sourceTree = "<group>";
@@ -295,6 +344,7 @@
 				121DAD9F288CFCD6004BFA63 /* Model.swift */,
 				1246DB2F29691DA90038F34F /* EmployeesService.swift */,
 				126C12C52971991500CB2615 /* ATStringSaver.swift */,
+				04DAAF4D2B3D404900B8EF2E /* ServiceLocator.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -335,6 +385,7 @@
 				12903204288024900024364C /* ELIOSAutoTest */,
 				1265BC282972C187000D0F2E /* Localizer */,
 				12469E2729A8C8BA00274273 /* ELIOSAutoTestTests */,
+				0433F50D2B4B328A008FD6C0 /* ELXibEditor */,
 				12903203288024900024364C /* Products */,
 				129032282881B6280024364C /* Frameworks */,
 				6700DDFF7C1E92C4E0E40B80 /* Pods */,
@@ -347,6 +398,7 @@
 				12903202288024900024364C /* ELIOSAutoTest.app */,
 				1265BC272972C187000D0F2E /* Localizer */,
 				12469E2629A8C8BA00274273 /* ELIOSAutoTestTests.xctest */,
+				0433F50C2B4B3289008FD6C0 /* ELXibEditor */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -429,6 +481,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		0433F50B2B4B3289008FD6C0 /* ELXibEditor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 0433F5122B4B328A008FD6C0 /* Build configuration list for PBXNativeTarget "ELXibEditor" */;
+			buildPhases = (
+				0433F5082B4B3289008FD6C0 /* Sources */,
+				0433F5092B4B3289008FD6C0 /* Frameworks */,
+				0433F50A2B4B3289008FD6C0 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ELXibEditor;
+			productName = ELXibEditor;
+			productReference = 0433F50C2B4B3289008FD6C0 /* ELXibEditor */;
+			productType = "com.apple.product-type.tool";
+		};
 		12469E2529A8C8BA00274273 /* ELIOSAutoTestTests */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 12469E2C29A8C8BA00274273 /* Build configuration list for PBXNativeTarget "ELIOSAutoTestTests" */;
@@ -491,9 +560,12 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1340;
+				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1340;
 				TargetAttributes = {
+					0433F50B2B4B3289008FD6C0 = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
 					12469E2529A8C8BA00274273 = {
 						CreatedOnToolsVersion = 13.4.1;
 						TestTargetID = 12903201288024900024364C;
@@ -524,6 +596,7 @@
 				12903201288024900024364C /* ELIOSAutoTest */,
 				1265BC262972C187000D0F2E /* Localizer */,
 				12469E2529A8C8BA00274273 /* ELIOSAutoTestTests */,
+				0433F50B2B4B3289008FD6C0 /* ELXibEditor */,
 			);
 		};
 /* End PBXProject section */
@@ -571,7 +644,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nif which swiftlint >/dev/null; then\n  swiftlint\n#else\n  #echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\necho pwd\n/Users/jack/Documents/code/swift/ELIOSAutoTest.git/Pods/SwiftLint/swiftlint\n\n";
 		};
 		CE0754437F7AAF736F617948 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -615,6 +688,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		0433F5082B4B3289008FD6C0 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0433F50F2B4B328A008FD6C0 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		12469E2229A8C8BA00274273 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -645,6 +726,7 @@
 			files = (
 				046CC5EF29ADB76800BB342E /* UITestView.swift in Sources */,
 				12903206288024900024364C /* AppDelegate.swift in Sources */,
+				043E8F0B2B208F4E0063580C /* ELTestRun.swift in Sources */,
 				12EDC0572968E16A00328C61 /* ELAutotestModel.swift in Sources */,
 				1246DB35296925FB0038F34F /* UpdatableDataProvider.swift in Sources */,
 				12EDC0602968E62A00328C61 /* ATListViewControllerModel.swift in Sources */,
@@ -655,11 +737,13 @@
 				121FD619296BF9380082C273 /* EmployeeCell.swift in Sources */,
 				12EDC0622968E6B500328C61 /* UIViewController+Extensions.swift in Sources */,
 				121DADA0288CFCD6004BFA63 /* Model.swift in Sources */,
+				045E9EA62B2444C40094849D /* TestConstants.swift in Sources */,
 				1211E54629A2FD5C000A58B5 /* ELAutotestSettingsViewController.swift in Sources */,
 				1246DB3029691DA90038F34F /* EmployeesService.swift in Sources */,
 				124D7C61298336F60017F576 /* SignalRService.swift in Sources */,
 				12903208288024900024364C /* SceneDelegate.swift in Sources */,
 				126C12C62971991500CB2615 /* ATStringSaver.swift in Sources */,
+				0401EF642B0631F100FF9B47 /* ELButtonPressDetector.swift in Sources */,
 				12903226288197FB0024364C /* ObjcTestClass.m in Sources */,
 				126C12C42970006000CB2615 /* RuntimeExplorer.swift in Sources */,
 				04A26EAD29ADBBE900E741BA /* String+Extension.swift in Sources */,
@@ -676,12 +760,14 @@
 				1246DB2E29691D8A0038F34F /* HttpRequestHelper.swift in Sources */,
 				1246DB2B29691B0A0038F34F /* CollectionUtils.swift in Sources */,
 				1246DB2C29691B0A0038F34F /* WeakDelegatesContainer.swift in Sources */,
+				04DAAF4E2B3D404900B8EF2E /* ServiceLocator.swift in Sources */,
 				12AB96AE2884E42D005D3458 /* IOSAutotestMessageManager.swift in Sources */,
 				12EDC0592968E18B00328C61 /* ELAutotestModelManager.swift in Sources */,
 				124DB6C429AB1B41008FBE75 /* DispatchQueue+extension.swift in Sources */,
 				046CC5ED29ADB75700BB342E /* UITestViewController.swift in Sources */,
 				121DAD9A288C77EC004BFA63 /* SecondViewController.swift in Sources */,
 				1290321B288024DE0024364C /* RootViewController.swift in Sources */,
+				048966D82AA3054E00AF7C83 /* AutotestEvent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -767,6 +853,39 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		0433F5102B4B328A008FD6C0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		0433F5112B4B328A008FD6C0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CODE_SIGN_STYLE = Automatic;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		12469E2D29A8C8BA00274273 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1009,6 +1128,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		0433F5122B4B328A008FD6C0 /* Build configuration list for PBXNativeTarget "ELXibEditor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				0433F5102B4B328A008FD6C0 /* Debug */,
+				0433F5112B4B328A008FD6C0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		12469E2C29A8C8BA00274273 /* Build configuration list for PBXNativeTarget "ELIOSAutoTestTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

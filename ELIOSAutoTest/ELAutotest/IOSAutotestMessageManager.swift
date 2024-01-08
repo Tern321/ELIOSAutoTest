@@ -7,24 +7,105 @@
 
 import UIKit
 
-class IOSAutotestMessageManager: AutotestTransportServiceDelegate {
+
+class IOSAutotestMessageManager: AutotestTransportServiceDelegate, TestableWindowDelegate, ELButtonPressDetectorDelegage {
+    
+    var window: UIWindow?
+    
+    var recordTestData: TestCaseData?
+    
+    func hitEvent(_ point: CGPoint, view: UIView?) {
+        print("TestableWindow hitTest \(point)")
+        print("hitObject \(view)")
+        let event = AutotestEvent()
+        event.setPoint(point)
+        event.eventType = IOSAutotestEventType.click.rawValue
+        self.recordTestData?.autotestEvents?.append(event)
+    }
     
     var sr = SignalRService(url: URL(string: "http://localhost:5091/hubs/clock")!)
     
     static let manager: IOSAutotestMessageManager = {
-            return  IOSAutotestMessageManager()
-        }()
+        return  IOSAutotestMessageManager()
+    }()
     
-    var testsToRun: [TestScreenData] = []
+    var currentTestCase: StandardTestCaseData?
+    var testRunData: ELTestRun?
+    //    var testCasesToRun: [StandardTestCaseData] = []
+    
     var timer: Timer?
+    
+    func runEvent(_ event: AutotestEvent) {
+        
+        if event.eventType == IOSAutotestEventType.click.rawValue {
+            var hitTestView = UIWindow.key?.hitTest(event.getCGPoint()!, with: nil)
+            
+            print(hitTestView)
+            if let hutButton = hitTestView as? UIButton {
+                hutButton.sendActions(for: .touchUpInside)
+            }
+        }
+        if event.eventType == IOSAutotestEventType.screenshot.rawValue {
+            
+            var responseData = TestRunEventResult()
+            responseData.autotestEventId = event.autotestEventId
+            responseData.screenBase64 = ELTestableViewController.captureScreenshot()!.base64EncodedString()
+            responseData.rotation = UIDevice.current.orientation.rawValue
+            responseData.deviceModel = ATUtils.modelIdentifier()
+            responseData.lang = Locale.current.languageCode ?? ""
+            
+            responseData.testId = testRunData?.testId
+            responseData.testRunId = testRunData?.testRunId
+            responseData.standardTestCaseDataId = currentTestCase?.standardTestCaseDataId
+            
+            responseData.OS = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
+            responseData.deviceId = SignalRService.deviceId
+            
+            sr.testRunEventResponse(responseData)
+        }
+    }
     
     @objc func runTestCycle() {
         DispatchQueue.main.async {
-            if !self.testsToRun.isEmpty {
-                print("run test case \(self.testsToRun)")
-                self.runTestCaseWithStateJson(testInfo: self.testsToRun.removeFirst())
+            if self.currentTestCase == nil {
+                self.currentTestCase = self.testRunData?.testCases?.popLast()
+                self.currentTestCase?.autotestEvents.reverse()
+                // load test case state
+                if self.currentTestCase != nil {
+                    self.runTestCaseWithStateJson()
+                }
+            }
+            
+            if self.currentTestCase != nil {
+                //                var
+                if let event = self.currentTestCase?.autotestEvents.popLast() {
+                    self.runEvent(event)
+                }
+                
             }
         }
+    }
+    
+    func volumeChanged(_ value: Float) {
+        print("volumeChanged")
+        //        if self.testModeDisabled
+        var customView = UIView()
+        
+        customView.frame = CGRect.init(x: 0, y: 0, width: 100, height: 200)
+        customView.backgroundColor = UIColor.black     //give color to the view
+        //           customView.center = self.view.center
+        
+        
+        let currentViewController = UIWindow.key?.rootViewController as? UINavigationController
+        currentViewController?.view.addSubview(customView)
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            customView.removeFromSuperview()
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                self.addRecordingScreenshot()
+            }
+        }
+        
     }
     
     init() {
@@ -61,29 +142,31 @@ class IOSAutotestMessageManager: AutotestTransportServiceDelegate {
             }
         }
     }
-
-    func runTestCase(testInfo: TestScreenData) {
-        ELTestableViewController.testModeDisabled = false
-        print("gotSharedMessage RunTestCase \(String(describing: testInfo.testName))")
-        testsToRun.append(testInfo)
-    }
     
-    func collectTestData( testInfo: TestScreenData) -> TestScreenData {
-        let data = ELTestableViewController.captureScreenshot()! // let it fall
+    func runTestCase(_ testRunData: ELTestRun) {
+        ELTestableViewController.testModeDisabled = false
+        testRunData.testCases?.reverse()
+        self.testRunData = testRunData
+    }
+    //
+    func collectTestData(_ testInfo: TestCaseData) -> TestCaseData {
+        //        testInfo.setupData = TestSetupData()
+        
         let VCModelJson = (ATUtils.visibleViewController() as? ELTestableViewControllerModelProtocol)?.getModelJson()
         
         if VCModelJson == nil {
-//                showTestErrorAlert(className: String(describing: type(of: ATUtils.vissibleViewController())))
+            //                showTestErrorAlert(className: String(describing: type(of: ATUtils.vissibleViewController())))
         }
+        //        testInfo
         testInfo.viewControllerName = ATUtils.visibleViewControllerName()
-        testInfo.rotation = UIDevice.current.orientation.rawValue
-        testInfo.screenBase64 = data.base64EncodedString()
+        
+        //        testInfo.screenBase64 = data.base64EncodedString()
         testInfo.deviceModel = ATUtils.modelIdentifier()
+        testInfo.OS = UIDevice.current.systemVersion
         testInfo.viewControllerStateDataJson = VCModelJson?.data(using: .utf8)?.prettyUtf8LogString ?? ""
         testInfo.applicationStateDataJson = getGlobalAppStateJson().data(using: .utf8)?.prettyUtf8LogString ?? ""
         testInfo.lang = Locale.current.languageCode ?? ""
         testInfo.hideBackButton = ATUtils.visibleViewController()?.navigationController?.navigationBar.backItem == nil
-
         return testInfo
     }
     
@@ -96,31 +179,86 @@ class IOSAutotestMessageManager: AutotestTransportServiceDelegate {
             testedViewController.navigationItem.setHidesBackButton(true, animated: false)
         }
     }
-    func runTestCaseWithStateJsonSwiftUI() {
+    func runTestCaseWithStateJson() {
+        //        // swiftlint:disable all
         
-    }
-    func runTestCaseWithStateJson(testInfo: TestScreenData) {
-        
-        // swiftlint:disable all
-        print("runTestCaseWithState \(testInfo.testName ?? "no test name")")
-        let testedViewControllerClass = NSClassFromString("ELIOSAutoTest." + testInfo.viewControllerName!) as! ELTestableViewController.Type
+        print("runTestCaseWithState \(self.currentTestCase?.testCaseName ?? "no test name")")
+        let testedViewControllerClass = NSClassFromString("ELIOSAutoTest." + (self.currentTestCase?.viewControllerName ?? "")) as! ELTestableViewController.Type
         // swiftlint:enable all
         let testedViewController = testedViewControllerClass.loadViewControllerFromXib()
-
-        loadGlobalAppStateJson(json: testInfo.applicationStateDataJson ?? "")
-        UIDevice.current.setValue(testInfo.rotation, forKey: "orientation")
-        testedViewController.loadModelJson(json: testInfo.viewControllerStateDataJson ?? "{}")
-        pushTestedViewController(testedViewController: testedViewController, hideBackButton: testInfo.hideBackButton)
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-            let data = ELTestableViewController.captureScreenshot()! // let it fall
-            testInfo.screenBase64 = data.base64EncodedString()
-            testInfo.rotation = UIDevice.current.orientation.rawValue
-            testInfo.deviceModel = ATUtils.modelIdentifier()
-            testInfo.viewControllerStateDataJson = "{}"
-            testInfo.lang = Locale.current.languageCode ?? ""
-            
-            self.sr.sendRunTestCaseResponse(testInfo: testInfo)
-        }
+        loadGlobalAppStateJson(json: self.currentTestCase?.applicationStateDataJson ?? "")
+        UIDevice.current.setValue(self.currentTestCase?.rotation, forKey: "orientation")
+        testedViewController.loadModelJson(json: self.currentTestCase?.viewControllerStateDataJson ?? "{}")
+        pushTestedViewController(testedViewController: testedViewController, hideBackButton: self.recordTestData?.hideBackButton ?? true)
     }
+    //
+    //        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+    //            let data = ELTestableViewController.captureScreenshot()! // let it fall
+    //            testInfo.screenBase64 = data.base64EncodedString()
+    //            testInfo.rotation = UIDevice.current.orientation.rawValue
+    //            testInfo.deviceModel = ATUtils.modelIdentifier()
+    //            testInfo.viewControllerStateDataJson = "{}"
+    //            testInfo.lang = Locale.current.languageCode ?? ""
+    //
+    //            self.sr.sendRunTestCaseResponse(testInfo: testInfo)
+    //        }
+    //}
+    
+    //    func runTestCaseWithStateJson(testInfo: AutotestSetupData) {
+    //
+    //            // swiftlint:disable all
+    //            print("runTestCaseWithState \(testInfo.testName ?? "no test name")")
+    //            let testedViewControllerClass = NSClassFromString("ELIOSAutoTest." + testInfo.viewControllerName!) as! ELTestableViewController.Type
+    //            // swiftlint:enable all
+    //            let testedViewController = testedViewControllerClass.loadViewControllerFromXib()
+    //
+    //            loadGlobalAppStateJson(json: testInfo.applicationStateDataJson ?? "")
+    //            UIDevice.current.setValue(testInfo.rotation, forKey: "orientation")
+    //            testedViewController.loadModelJson(json: testInfo.viewControllerStateDataJson ?? "{}")
+    //            pushTestedViewController(testedViewController: testedViewController, hideBackButton: testInfo.hideBackButton)
+    //
+    //            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+    //                let data = ELTestableViewController.captureScreenshot()! // let it fall
+    //                testInfo.screenBase64 = data.base64EncodedString()
+    //                testInfo.rotation = UIDevice.current.orientation.rawValue
+    //                testInfo.deviceModel = ATUtils.modelIdentifier()
+    //                testInfo.viewControllerStateDataJson = "{}"
+    //                testInfo.lang = Locale.current.languageCode ?? ""
+    //
+    //                self.sr.sendRunTestCaseResponse(testInfo: testInfo)
+    //            }
+    //    }
+    
+    func startRecording(_ setupData: TestCaseData) {
+        self.recordTestData = self.collectTestData(setupData)
+        
+        print("\(self.recordTestData?.toJson())")
+        self.recordTestData?.autotestEvents = []
+        ELButtonPressDetector.addRetainedListener(self)
+        
+    }
+    
+    func createScreenshotData() -> TestScreenshotData {
+        let screenshotData = TestScreenshotData()
+        screenshotData.screenBase64 = ELTestableViewController.captureScreenshot()!.base64EncodedString()
+        screenshotData.rotation = UIDevice.current.orientation.rawValue
+        return screenshotData
+    }
+    
+    func addRecordingScreenshot() {
+        let event = AutotestEvent()
+        event.eventType = IOSAutotestEventType.screenshot.rawValue
+        var screenshot = createScreenshotData()
+        event.screenBase64 = screenshot.screenBase64
+        event.rotation = screenshot.rotation
+        self.recordTestData?.autotestEvents?.append(event)
+    }
+    
+    func endRecording() -> TestCaseData {
+        ELButtonPressDetector.removeListener(self)
+        return self.recordTestData ?? TestCaseData()
+    }
+    
 }
+

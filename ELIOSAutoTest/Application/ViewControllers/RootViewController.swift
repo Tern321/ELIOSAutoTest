@@ -9,14 +9,13 @@ import UIKit
 import MediaPlayer
 import AudioToolbox
 import SwiftUI
+//import "ObjcTestClass.h"
 
-
-class CustomView: UIView {
-    override func hitTest(_ point: CGPoint, with event: UIEvent?) -> UIView? {
-        
-        print("hitTest \(point)")
-        return super.hitTest(point, with: event)
-    }
+class PropertyTestContainer: NSObject { // view objects container
+    @IBOutlet var button1: UIButton!
+    // <outlet property="textField" destination="emp-yC-9Ze_xib_id" id="T2t-XX-mkW_connectionId"/>
+    //
+    @IBOutlet var textField: UITextField! = UITextField() // id="T2t-XX-mkW_connectionId" // на каждый обьект генерируется этот id, и далее xib обновляется, при сборке
 }
 
 class RootViewController: ELTestableViewController {
@@ -26,12 +25,16 @@ class RootViewController: ELTestableViewController {
     @IBOutlet var textField: UITextField!
     @IBOutlet var robotPicture: UIImageView!
     
+    @IBOutlet var button1: UIButton!
+    
     @IBOutlet weak var testLabel: UILabel!
     @objc dynamic var name: String?
     
     @objc dynamic var someTestString: String = "someText"
     
     static var shared: RootViewController?
+    
+    @IBOutlet var pc: PropertyTestContainer! = PropertyTestContainer()
     
     @IBAction func ShowUITestView(_ sender: Any) {
         
@@ -49,21 +52,43 @@ class RootViewController: ELTestableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         ObjcTestClass.start(self)
+//        print(pc.button1)
         
         
-        RootViewController.shared = self
-        self.robotPicture.image = Asset.robot.image
+//        do {
+//            let data = Data(base64Encoded: TestConstants.runTestBase64Json)!
+//            let testRun = try? JSONDecoder().decode(ELTestRun.self, from: data)
+//            print(testRun)
+//            
+//            IOSAutotestMessageManager.manager.runTestCase(testRun!)
+//        } catch {
+//            
+//        }
+        print("test")
         
-        let delay = 1.0
-
-        DispatchQueue.main.asyncAfter(deadline: .now() + delay, execute: {
-            print("main.asyncAfter")
-            print(self.robotPicture.image?.size)
-        })
+//        RootViewController.shared = self
+//        self.robotPicture.image = Asset.robot.image
+//
+//        let delay = 1.0
+//
+//        DispatchQueue.main.asyncAfter(deadline: .now() + 1, execute: {
+//            print("main.asyncAfter")
+//
+//            self.view.gestureRecognizers?.first!.state = .ended
+//
+//            print(self.robotPicture.image?.size)
+////            self.button1.sendActions(for: .touchUpInside)
+//
+//            self.textField.sendActions(for: .touchUpInside)
+            
+            // for bottun working
+//            self.button1.sendActions(for: .touchUpInside)
+//        })
         
-        DispatchQueue.background.asyncAfter(deadline: .now() + 1.5, execute: {
-            print("background.asyncAfter")
-        })
+//        DispatchQueue.background.asyncAfter(deadline: .now() + 1.5, execute: {
+//            print("background.asyncAfter")
+//
+//        })
     }
     
     @MainActor

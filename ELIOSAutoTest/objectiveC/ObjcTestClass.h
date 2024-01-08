@@ -15,7 +15,7 @@
 
 @property(nonatomic, strong) NSString *string;
 
-+ (void)start:(id)obj;
++ (NSArray *)start:(id)obj;
 
 @end
 

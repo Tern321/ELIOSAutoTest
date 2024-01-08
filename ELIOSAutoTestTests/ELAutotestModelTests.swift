@@ -7,8 +7,6 @@
 
 import XCTest
 
-
-
 class LinkedListElement: LLI, Hashable {
     
     var nextElement: LLI?

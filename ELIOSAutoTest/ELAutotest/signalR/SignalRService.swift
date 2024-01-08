@@ -2,41 +2,91 @@ import Foundation
 import SwiftSignalRClient
 
 protocol AutotestTransportServiceProtocol {
-    func sendRunTestCaseResponse(testInfo: TestScreenData)
+    func sendRunTestCaseResponse(_ testInfo: TestCaseData)
 }
 
 protocol AutotestTransportServiceDelegate: AnyObject {
-    func runTestCase(testInfo: TestScreenData)
-    func collectTestData( testInfo: TestScreenData) -> TestScreenData
+    func runTestCase(_ testInfo: ELTestRun)
+    func collectTestData(_ testInfo: TestCaseData) -> TestCaseData
+    
+    func startRecording(_ testInfo: TestCaseData)
+    func addRecordingScreenshot()
+    func endRecording() -> TestCaseData
+//    func runEventResponse() -> TestRunEventResult
+}
+
+public class ForeverReconnectPolicy: ReconnectPolicy {
+    public init() {
+    }
+
+    public func nextAttemptInterval(retryContext: RetryContext) -> DispatchTimeInterval {
+        return .seconds(2)
+    }
 }
 
 class SignalRService: AutotestTransportServiceProtocol {
+    static var deviceId = "ios_forum_client_1"
     private var connection: HubConnection
     
     weak var delegate: AutotestTransportServiceDelegate?
     
-    func sendRunTestCaseResponse(testInfo: TestScreenData) {
+    func sendRunTestCaseResponse(_ testInfo: TestCaseData) {
         self.connection.send(method: "runTestCaseResponse", testInfo)
     }
     
-    func sendGetTestDataResponse(testInfo: TestScreenData) {
+    func sendGetTestDataResponse(_ testInfo: TestCaseData) {
         self.connection.send(method: "getTestDataResponse", testInfo)
     }
     
+//    func sendRecordActionsResponse(_ testInfo: AutotestSetupData) {
+//        self.connection.send(method: "endRecordingResponse", testInfo)
+//    }
+//
+    func endRecordingResponse(_ testInfo: TestCaseData) {
+        self.connection.send(method: "endRecordingResponse", testInfo)
+    }
+    
+    func testRunEventResponse(_ eventResult: TestRunEventResult) {
+        self.connection.send(method: "testRunEventResponse", eventResult)
+    }
+    
     public init(url: URL) {
-        connection = HubConnectionBuilder(url: url).withLogging(minLogLevel: .error).build()
+        
+        connection = HubConnectionBuilder(url: url).withLogging(minLogLevel: .error).withAutoReconnect(reconnectPolicy: ForeverReconnectPolicy()).build()
         connection.delegate = self
         
-        connection.on(method: "runTestCaseRequest", callback: { (testInfo: TestScreenData) in
-            self.delegate?.runTestCase(testInfo: testInfo)
+//        connection.on(method: "connectionDidClose", callback: { (testInfo: TestCaseData) in
+//            print("connectionDidClose")
+////            connection.handshakeStatus.isReconnect
+//        })
+        
+        connection.on(method: "runTestCaseRequest", callback: { (testInfo: ELTestRun) in
+            self.delegate?.runTestCase(testInfo)
         })
         
-        connection.on(method: "getTestDataRequest", callback: { (testInfo: TestScreenData) in
-            if let testInfo = self.delegate?.collectTestData(testInfo: testInfo) {
-                self.sendGetTestDataResponse(testInfo: testInfo)
+        connection.on(method: "getTestDataRequest", callback: { (testInfo: TestCaseData) in
+            if let testInfo = self.delegate?.collectTestData(testInfo) {
+                self.sendGetTestDataResponse(testInfo)
             }
         })
         
+        connection.on(method: "startRecording", callback: { (testInfo: TestCaseData) in
+            print("startRecording")
+            self.delegate?.startRecording(testInfo)
+        })
+        connection.on(method: "addRecordingScreenshot", callback: {
+            print("addRecordingScreenshot")
+            self.delegate?.addRecordingScreenshot()
+        })
+        connection.on(method: "endRecording", callback: {
+            if let testData = self.delegate?.endRecording() {
+                var json = testData.toJson()
+                print(json)
+                self.endRecordingResponse(testData)
+            }
+            
+        })
+//        connection.on(method: :", callback: <#T##(ArgumentExtractor) throws -> Void##(ArgumentExtractor) throws -> Void##(_ argumentExtractor: ArgumentExtractor) throws -> Void#>)
         connection.on(method: "Connected", callback: { (user: String) in
             print(user)
         })
@@ -46,7 +96,7 @@ class SignalRService: AutotestTransportServiceProtocol {
 extension SignalRService: HubConnectionDelegate {
     
     func updateDeviceName() {
-        self.connection.send(method: "updateDeviceName", "ios_forum_client_1")
+        self.connection.send(method: "updateDeviceName", SignalRService.deviceId)
     }
     
     public func connectionDidOpen(hubConnection: HubConnection) {

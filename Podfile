@@ -6,5 +6,6 @@ target 'ELIOSAutoTest' do
   use_frameworks!
   pod 'SwiftSignalRClient'
   pod 'SwiftGen'
+  pod 'SwiftLint'
   # Pods for SCTPTest
 end
