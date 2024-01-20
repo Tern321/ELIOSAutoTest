@@ -14,7 +14,6 @@
 #import <UIKit/UIKit.h>
 
 //@interface ObjcTestClass
-//
 //@end
 
 @implementation UIWindow (swizzTest)
@@ -59,9 +58,29 @@
 
 
 @implementation ObjcTestClass
- 
-+ (NSArray *)start:(id)obj {
+NSNumber *findMissing(NSArray *list) {
+    double summ = (((NSNumber*)list.lastObject).doubleValue  + ((NSNumber*)list.firstObject).doubleValue) / 2 * (list.count + 1);
     
+    for (NSNumber* object in list) {
+        summ -= object.doubleValue;
+    }
+    
+    return @(summ);
+}
+
+- (void)intanseMethod {
+    NSLog(@"instance method in ObjectiveC");
+}
+
++ (NSArray *)start:(id)obj {
+    ObjcTestClass* a = [[ObjcTestClass alloc] init];
+    [a intanseMethod];
+    
+    
+    NSArray* testObjects = [NSArray arrayWithObjects:[NSNumber numberWithInt:2],[NSNumber numberWithInt:4],[NSNumber numberWithInt:8], nil];
+    
+    NSNumber *result = findMissing(testObjects);
+    NSLog(result.stringValue);
 //    m1 = class_getInstanceMethod([MyClass class], @selector(originalMethodName));
 //
 //    m2 = class_getInstanceMethod([MyClass class], @selector(swizzle_originalMethodName));

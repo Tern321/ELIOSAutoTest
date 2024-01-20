@@ -51,6 +51,16 @@ class RootViewController: ELTestableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        var notif = MyLocalNotification()
+        notif.send()
+        
+        Task {
+            print("sended")
+            var sended = await notif.readNotifications()
+            print(sended)
+        }
+        
         ObjcTestClass.start(self)
 //        print(pc.button1)
         

@@ -7,8 +7,6 @@
 
 import UIKit
 
-
-
 class TestCaseData: Codable {
     var standardTestCaseDataId: Int?
     

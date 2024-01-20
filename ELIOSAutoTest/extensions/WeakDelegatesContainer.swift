@@ -1,6 +1,5 @@
 import UIKit
 
-
 protocol ObjectDeletedProtocol: AnyObject {
     func objectDeleted(memAddress: String)
 }
